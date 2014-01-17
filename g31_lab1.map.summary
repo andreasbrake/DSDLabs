@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jan 17 13:31:27 2014
+Quartus II 64-Bit Version : 9.0 Build 235 06/17/2009 SP 2 SJ Full Version
+Revision Name : g31_lab1
+Top-level Entity Name : g31_lab1
+Family : Cyclone II
+Total logic elements : 5
+    Total combinational functions : 5
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 15
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

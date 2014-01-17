@@ -1,0 +1,62 @@
+Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Full Version
+11
+980
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+g31_lab1
+# storage
+db|g31_lab1.(0).cnf
+db|g31_lab1.(0).cnf
+# case_insensitive
+# source_file
+g31_lab1.bdf
+81964498eefb515c9eb38edade67099
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+g31_comp7
+# storage
+db|g31_lab1.(1).cnf
+db|g31_lab1.(1).cnf
+# case_insensitive
+# source_file
+g31_comp7.bdf
+2d340705e9ad9518c21b87cc175
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+g31_comp7:inst
+}
+# macro_sequence
+
+# end
+# complete
+
