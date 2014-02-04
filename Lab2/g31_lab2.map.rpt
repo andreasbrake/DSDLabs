@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g31_lab2
-Fri Jan 24 15:16:27 2014
+Mon Feb 03 15:29:12 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jan 24 15:16:27 2014         ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 03 15:29:12 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; g31_lab2                                      ;
-; Top-level Entity Name              ; g31_lab2                                      ;
+; Top-level Entity Name              ; g31_seven_segment_decoder                     ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 78                                            ;
-;     Total combinational functions  ; 78                                            ;
+; Total logic elements               ; 9                                             ;
+;     Total combinational functions  ; 9                                             ;
 ;     Dedicated logic registers      ; 0                                             ;
 ; Total registers                    ; 0                                             ;
-; Total pins                         ; 34                                            ;
+; Total pins                         ; 13                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
 ; Embedded Multiplier 9-bit elements ; 0                                             ;
@@ -57,83 +57,83 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; g31_lab2           ; g31_lab2           ;
-; Family name                                                                ; Cyclone II         ; Stratix II         ;
-; Use Generated Physical Constraints File                                    ; Off                ;                    ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
-; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
+; Option                                                                     ; Setting                   ; Default Value      ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7              ;                    ;
+; Top-level entity name                                                      ; g31_seven_segment_decoder ; g31_lab2           ;
+; Family name                                                                ; Cyclone II                ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                       ;                    ;
+; Use smart compilation                                                      ; Off                       ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                        ; On                 ;
+; Enable compact report table                                                ; Off                       ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                      ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                       ; Off                ;
+; Preserve fewer node names                                                  ; On                        ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                       ; Off                ;
+; Verilog Version                                                            ; Verilog_2001              ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993                 ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                      ; Auto               ;
+; Safe State Machine                                                         ; Off                       ; Off                ;
+; Extract Verilog State Machines                                             ; On                        ; On                 ;
+; Extract VHDL State Machines                                                ; On                        ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                       ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                      ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                       ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                        ; On                 ;
+; Parallel Synthesis                                                         ; On                        ; On                 ;
+; DSP Block Balancing                                                        ; Auto                      ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                        ; On                 ;
+; Power-Up Don't Care                                                        ; On                        ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                       ; Off                ;
+; Remove Duplicate Registers                                                 ; On                        ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                       ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                       ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                       ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                       ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                       ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                        ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                       ; Off                ;
+; Optimization Technique                                                     ; Balanced                  ; Balanced           ;
+; Carry Chain Length                                                         ; 70                        ; 70                 ;
+; Auto Carry Chains                                                          ; On                        ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                        ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                       ; Off                ;
+; Auto ROM Replacement                                                       ; On                        ; On                 ;
+; Auto RAM Replacement                                                       ; On                        ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                      ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                        ; On                 ;
+; Strict RAM Replacement                                                     ; Off                       ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                        ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                       ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                       ; Off                ;
+; Auto Resource Sharing                                                      ; Off                       ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                       ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                       ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                       ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                        ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                       ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                       ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                        ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                       ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                         ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation        ; Normal compilation ;
+; HDL message level                                                          ; Level2                    ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                       ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                      ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                       ; 100                ;
+; Clock MUX Protection                                                       ; On                        ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                       ; Off                ;
+; Block Design Naming                                                        ; Auto                      ; Auto               ;
+; SDC constraint protection                                                  ; Off                       ; Off                ;
+; Synthesis Effort                                                           ; Auto                      ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                        ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium                    ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                      ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                        ; On                 ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
 
 
 +------------------------------------------+
@@ -153,53 +153,51 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path          ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------+
-; g31_dayseconds.vhd               ; yes             ; User VHDL File                     ; C:/altera/g31_lab2/g31_dayseconds.vhd ;
-; g31_lab2.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/altera/g31_lab2/g31_lab2.bdf       ;
-+----------------------------------+-----------------+------------------------------------+---------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+
+; g31_seven_segment_decoder.vhd    ; yes             ; User VHDL File  ; C:/Users/hsayar/Desktop/DSDLab2/g31_seven_segment_decoder.vhd ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                              ;
-+---------------------------------------------+----------------------------+
-; Resource                                    ; Usage                      ;
-+---------------------------------------------+----------------------------+
-; Estimated Total logic elements              ; 78                         ;
-;                                             ;                            ;
-; Total combinational functions               ; 78                         ;
-; Logic element usage by number of LUT inputs ;                            ;
-;     -- 4 input functions                    ; 0                          ;
-;     -- 3 input functions                    ; 54                         ;
-;     -- <=2 input functions                  ; 24                         ;
-;                                             ;                            ;
-; Logic elements by mode                      ;                            ;
-;     -- normal mode                          ; 8                          ;
-;     -- arithmetic mode                      ; 70                         ;
-;                                             ;                            ;
-; Total registers                             ; 0                          ;
-;     -- Dedicated logic registers            ; 0                          ;
-;     -- I/O registers                        ; 0                          ;
-;                                             ;                            ;
-; I/O pins                                    ; 34                         ;
-; Maximum fan-out node                        ; g31_dayseconds:inst|Add4~0 ;
-; Maximum fan-out                             ; 5                          ;
-; Total fan-out                               ; 213                        ;
-; Average fan-out                             ; 1.90                       ;
-+---------------------------------------------+----------------------------+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 9       ;
+;                                             ;         ;
+; Total combinational functions               ; 9       ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 8       ;
+;     -- 3 input functions                    ; 0       ;
+;     -- <=2 input functions                  ; 1       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 9       ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 0       ;
+;     -- Dedicated logic registers            ; 0       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 13      ;
+; Maximum fan-out node                        ; code[0] ;
+; Maximum fan-out                             ; 8       ;
+; Total fan-out                               ; 42      ;
+; Average fan-out                             ; 1.91    ;
++---------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
-; |g31_lab2                  ; 78 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |g31_lab2                     ; work         ;
-;    |g31_dayseconds:inst|   ; 78 (78)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_lab2|g31_dayseconds:inst ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; |g31_seven_segment_decoder ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |g31_seven_segment_decoder ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -224,7 +222,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Fri Jan 24 15:16:26 2014
+    Info: Processing started: Mon Feb 03 15:29:11 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g31_lab2 -c g31_lab2
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file g31_dayseconds.vhd
@@ -232,15 +230,24 @@ Info: Found 2 design units, including 1 entities, in source file g31_dayseconds.
     Info: Found entity 1: g31_dayseconds
 Info: Found 1 design units, including 1 entities, in source file g31_lab2.bdf
     Info: Found entity 1: g31_lab2
-Info: Elaborating entity "g31_lab2" for the top level hierarchy
-Info: Elaborating entity "g31_dayseconds" for hierarchy "g31_dayseconds:inst"
-Info: Implemented 112 device resources after synthesis - the final resource count might be different
-    Info: Implemented 17 input pins
-    Info: Implemented 17 output pins
-    Info: Implemented 78 logic cells
+Info: Found 2 design units, including 1 entities, in source file g31_binary_to_bcd.vhd
+    Info: Found design unit 1: g31_binary_to_BCD-a
+    Info: Found entity 1: g31_binary_to_BCD
+Info: Found 1 design units, including 1 entities, in source file g31_binary_to_bcd_circuit.bdf
+    Info: Found entity 1: g31_binary_to_BCD_circuit
+Info: Found 1 design units, including 1 entities, in source file g31_seven_segment_decoder_circuit.bdf
+    Info: Found entity 1: g31_seven_segment_decoder_circuit
+Info: Found 2 design units, including 1 entities, in source file g31_seven_segment_decoder.vhd
+    Info: Found design unit 1: g31_seven_segment_decoder-a
+    Info: Found entity 1: g31_seven_segment_decoder
+Info: Elaborating entity "g31_seven_segment_decoder" for the top level hierarchy
+Info: Implemented 22 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 9 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 303 megabytes
-    Info: Processing ended: Fri Jan 24 15:16:27 2014
+    Info: Processing ended: Mon Feb 03 15:29:12 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

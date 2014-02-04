@@ -17,24 +17,17 @@ begin
 	
 	crc_rom: lpm_rom
 	GENERIC MAP (
-		clock_enable_input_a => "BYPASS",
-		clock_enable_output_a => "BYPASS",
-		init_file => "crc_rom.mif",
-		intended_device_family => "Cyclone II",
-		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
-		lpm_type => "altsyncram",
-		numwords_a => 64,
-		operation_mode => "ROM",
-		outdata_aclr_a => "NONE",
-		outdata_reg_a => "CLOCK0",
-		widthad_a => 6,
-		width_a => 8,
-		width_byteena_a => 1
+		lpm_address_control => "REGISTERED",
+		lpm_file => "crc_rom.mif",
+		lpm_numwords => 64,
+		lpm_outdata => "UNREGISTERED",
+		lpm_widthad => 6,
+		lpm_width => 8
 	)
 	PORT MAP (
-		clock0 => clock,
-		address_a => std_logic_vector(bin),
-		q_a => BCD
+		inclock => clock,
+		address => std_logic_vector(bin),
+		q => BCD
 	);
 	
 	
