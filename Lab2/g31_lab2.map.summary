@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon Feb 03 15:29:12 2014
+Analysis & Synthesis Status : Successful - Tue Feb 04 16:03:32 2014
 Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
 Revision Name : g31_lab2
-Top-level Entity Name : g31_seven_segment_decoder
+Top-level Entity Name : g31_lab2
 Family : Cyclone II
-Total logic elements : 9
-    Total combinational functions : 9
+Total logic elements : 29
+    Total combinational functions : 29
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 13
+Total pins : 34
 Total virtual pins : 0
 Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
+Embedded Multiplier 9-bit elements : 3
 Total PLLs : 0
