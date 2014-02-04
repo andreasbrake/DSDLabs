@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Feb 04 17:22:56 2014
+Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : g31_binary_to_seven_segment
+Top-level Entity Name : g31_binary_to_seven_segment_circuit
+Family : Cyclone II
+Total logic elements : 23
+    Total combinational functions : 23
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 512
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

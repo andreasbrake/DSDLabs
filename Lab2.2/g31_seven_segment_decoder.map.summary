@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Feb 04 17:08:20 2014
+Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : g31_seven_segment_decoder
+Top-level Entity Name : g31_seven_segment_decoder_circuit
+Family : Cyclone II
+Total logic elements : 15
+    Total combinational functions : 15
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 13
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

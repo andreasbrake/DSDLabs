@@ -1,0 +1,66 @@
+|g31_seven_segment_decoder_circuit
+RippleBlank_Out <= g31_seven_segment_decoder:inst.RippleBlank_Out
+RippleBlank_In => g31_seven_segment_decoder:inst.RippleBlank_In
+code[0] => g31_seven_segment_decoder:inst.code[0]
+code[1] => g31_seven_segment_decoder:inst.code[1]
+code[2] => g31_seven_segment_decoder:inst.code[2]
+code[3] => g31_seven_segment_decoder:inst.code[3]
+segments[0] <= g31_seven_segment_decoder:inst.segments[0]
+segments[1] <= g31_seven_segment_decoder:inst.segments[1]
+segments[2] <= g31_seven_segment_decoder:inst.segments[2]
+segments[3] <= g31_seven_segment_decoder:inst.segments[3]
+segments[4] <= g31_seven_segment_decoder:inst.segments[4]
+segments[5] <= g31_seven_segment_decoder:inst.segments[5]
+segments[6] <= g31_seven_segment_decoder:inst.segments[6]
+
+
+|g31_seven_segment_decoder_circuit|g31_seven_segment_decoder:inst
+code[0] => Mux0.IN35
+code[0] => Mux1.IN19
+code[0] => Mux2.IN35
+code[0] => Mux3.IN35
+code[0] => Mux4.IN35
+code[0] => Mux5.IN35
+code[0] => Mux6.IN35
+code[0] => Mux7.IN35
+code[1] => Mux0.IN34
+code[1] => Mux1.IN18
+code[1] => Mux2.IN34
+code[1] => Mux3.IN34
+code[1] => Mux4.IN34
+code[1] => Mux5.IN34
+code[1] => Mux6.IN34
+code[1] => Mux7.IN34
+code[2] => Mux0.IN33
+code[2] => Mux1.IN17
+code[2] => Mux2.IN33
+code[2] => Mux3.IN33
+code[2] => Mux4.IN33
+code[2] => Mux5.IN33
+code[2] => Mux6.IN33
+code[2] => Mux7.IN33
+code[3] => Mux0.IN32
+code[3] => Mux1.IN16
+code[3] => Mux2.IN32
+code[3] => Mux3.IN32
+code[3] => Mux4.IN32
+code[3] => Mux5.IN32
+code[3] => Mux6.IN32
+code[3] => Mux7.IN32
+RippleBlank_In => Mux0.IN36
+RippleBlank_In => Mux2.IN36
+RippleBlank_In => Mux3.IN36
+RippleBlank_In => Mux4.IN36
+RippleBlank_In => Mux5.IN36
+RippleBlank_In => Mux6.IN36
+RippleBlank_In => Mux7.IN36
+RippleBlank_Out <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+segments[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+
+

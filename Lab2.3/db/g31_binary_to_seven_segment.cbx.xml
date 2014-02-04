@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g31_binary_to_seven_segment">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_binary_to_seven_segment_circuit|g31_binary_to_BCD:inst|LPM_ROM:crc_rom|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_e501.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
