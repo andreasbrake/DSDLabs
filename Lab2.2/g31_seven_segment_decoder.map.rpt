@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g31_seven_segment_decoder
-Tue Feb 04 17:08:20 2014
+Mon Feb 10 13:51:07 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 04 17:08:20 2014         ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 10 13:51:07 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; g31_seven_segment_decoder                     ;
 ; Top-level Entity Name              ; g31_seven_segment_decoder_circuit             ;
@@ -153,14 +153,14 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------+
-; File Name with User-Entered Path      ; Used in Netlist ; File Type                          ; File Name with Absolute Path                           ;
-+---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------+
-; g31_seven_segment_decoder.vhd         ; yes             ; User VHDL File                     ; C:/altera/Lab2.2/g31_seven_segment_decoder.vhd         ;
-; g31_seven_segment_decoder_circuit.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2.2/g31_seven_segment_decoder_circuit.bdf ;
-+---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++---------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                         ;
++---------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
+; g31_seven_segment_decoder.vhd         ; yes             ; User VHDL File                     ; C:/altera/DSDLabs/trunk/Lab2.2/g31_seven_segment_decoder.vhd         ;
+; g31_seven_segment_decoder_circuit.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/altera/DSDLabs/trunk/Lab2.2/g31_seven_segment_decoder_circuit.bdf ;
++---------------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -224,20 +224,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Tue Feb 04 17:08:18 2014
+    Info: Processing started: Mon Feb 10 13:51:06 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g31_seven_segment_decoder -c g31_seven_segment_decoder
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info: Found 2 design units, including 1 entities, in source file g31_seven_segment_decoder.vhd
-    Info: Found design unit 1: g31_seven_segment_decoder-a
-    Info: Found entity 1: g31_seven_segment_decoder
-Info: Found 1 design units, including 1 entities, in source file g31_seven_segment_decoder_circuit.bdf
-    Info: Found entity 1: g31_seven_segment_decoder_circuit
 Info: Found 2 design units, including 1 entities, in source file g31_binary_to_bcd.vhd
     Info: Found design unit 1: g31_binary_to_BCD-a
     Info: Found entity 1: g31_binary_to_BCD
 Info: Found 2 design units, including 1 entities, in source file g31_binary_to_seven_segment.vhd
     Info: Found design unit 1: g31_binary_to_seven_segment-a
     Info: Found entity 1: g31_binary_to_seven_segment
+Info: Found 1 design units, including 1 entities, in source file g31_binary_to_seven_segment_circuit.bdf
+    Info: Found entity 1: g31_binary_to_seven_segment_circuit
+Info: Found 2 design units, including 1 entities, in source file g31_seven_segment_decoder.vhd
+    Info: Found design unit 1: g31_seven_segment_decoder-a
+    Info: Found entity 1: g31_seven_segment_decoder
+Info: Found 1 design units, including 1 entities, in source file g31_seven_segment_decoder_circuit.bdf
+    Info: Found entity 1: g31_seven_segment_decoder_circuit
 Info: Elaborating entity "g31_seven_segment_decoder_circuit" for the top level hierarchy
 Info: Elaborating entity "g31_seven_segment_decoder" for hierarchy "g31_seven_segment_decoder:inst"
 Info: Implemented 28 device resources after synthesis - the final resource count might be different
@@ -246,8 +248,8 @@ Info: Implemented 28 device resources after synthesis - the final resource count
     Info: Implemented 15 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 303 megabytes
-    Info: Processing ended: Tue Feb 04 17:08:20 2014
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Feb 10 13:51:07 2014
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

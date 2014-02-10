@@ -25,8 +25,8 @@ begin
 		lpm_width => 8
 	)
 	PORT MAP (
-		inclock => clock,
 		address => std_logic_vector(bin),
+		inclock => clock,
 		q => BCD
 	);
 	

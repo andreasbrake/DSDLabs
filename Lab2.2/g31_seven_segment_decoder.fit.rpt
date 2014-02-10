@@ -1,5 +1,5 @@
 Fitter report for g31_seven_segment_decoder
-Tue Feb 04 16:54:57 2014
+Mon Feb 10 13:51:13 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Tue Feb 04 16:54:57 2014         ;
+; Fitter Status                      ; Successful - Mon Feb 10 13:51:12 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; g31_seven_segment_decoder                     ;
 ; Top-level Entity Name              ; g31_seven_segment_decoder_circuit             ;
@@ -140,12 +140,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 3.00        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  33.3%      ;
+;     2-4 processors         ; < 0.1%      ;
 +----------------------------+-------------+
 
 
@@ -185,7 +185,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/altera/Lab2.2/g31_seven_segment_decoder.pin.
+The pin-out file can be found in C:/altera/DSDLabs/trunk/Lab2.2/g31_seven_segment_decoder.pin.
 
 
 +---------------------------------------------------------------------+
@@ -1025,7 +1025,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Tue Feb 04 16:54:54 2014
+    Info: Processing started: Mon Feb 10 13:51:10 2014
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off g31_seven_segment_decoder -c g31_seven_segment_decoder
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Selected device EP2C20F484C7 for design "g31_seven_segment_decoder"
@@ -1085,10 +1085,10 @@ Warning: Found 8 output pins without output pin load capacitance assignment
     Info: Pin "segments[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info: Delay annotation completed successfully
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Generated suppressed messages file C:/altera/Lab2.2/g31_seven_segment_decoder.fit.smsg
+Info: Generated suppressed messages file C:/altera/DSDLabs/trunk/Lab2.2/g31_seven_segment_decoder.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 355 megabytes
-    Info: Processing ended: Tue Feb 04 16:54:57 2014
+    Info: Processing ended: Mon Feb 10 13:51:13 2014
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
@@ -1096,6 +1096,6 @@ Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/altera/Lab2.2/g31_seven_segment_decoder.fit.smsg.
+The suppressed messages can be found in C:/altera/DSDLabs/trunk/Lab2.2/g31_seven_segment_decoder.fit.smsg.
 
 

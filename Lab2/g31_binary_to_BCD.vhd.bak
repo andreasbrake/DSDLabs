@@ -17,7 +17,7 @@ begin
 	
 	crc_rom: lpm_rom
 	GENERIC MAP (
-		lpm_address_control => "UNREGISTERED",
+		lpm_address_control => "REGISTERED",
 		lpm_file => "crc_rom.mif",
 		lpm_numwords => 64,
 		lpm_outdata => "UNREGISTERED",

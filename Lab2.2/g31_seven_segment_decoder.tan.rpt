@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for g31_seven_segment_decoder
-Tue Feb 04 16:55:05 2014
+Mon Feb 10 13:51:19 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -148,7 +148,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Tue Feb 04 16:55:05 2014
+    Info: Processing started: Mon Feb 10 13:51:19 2014
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off g31_seven_segment_decoder -c g31_seven_segment_decoder --timing_analysis_only
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Longest tpd from source pin "code[1]" to destination pin "RippleBlank_Out" is 8.785 ns
@@ -160,7 +160,7 @@ Info: Longest tpd from source pin "code[1]" to destination pin "RippleBlank_Out"
     Info: Total interconnect delay = 3.954 ns ( 45.01 % )
 Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 216 megabytes
-    Info: Processing ended: Tue Feb 04 16:55:05 2014
+    Info: Processing ended: Mon Feb 10 13:51:19 2014
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
