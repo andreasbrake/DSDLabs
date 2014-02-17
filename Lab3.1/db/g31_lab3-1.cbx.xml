@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g31_lab3-1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_epulse|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_go4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_epulse|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_bhj.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
