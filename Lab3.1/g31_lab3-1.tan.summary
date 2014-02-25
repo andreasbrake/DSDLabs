@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.221 ns
+From           : reset
+To             : g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.732 ns
+From           : g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]
+To             : eOneSeg[0]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -1.170 ns
+From           : enable
+To             : g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 164.74 MHz ( period = 6.070 ns )
+From           : g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]
+To             : g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

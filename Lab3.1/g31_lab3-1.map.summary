@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Feb 17 15:21:34 2014
+Analysis & Synthesis Status : Successful - Tue Feb 25 15:56:55 2014
 Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
 Revision Name : g31_lab3-1
-Top-level Entity Name : g31_epulse
+Top-level Entity Name : g31_test_bed
 Family : Cyclone II
-Total logic elements : 39
-    Total combinational functions : 39
-    Dedicated logic registers : 27
-Total registers : 27
-Total pins : 4
+Total logic elements : 145
+    Total combinational functions : 145
+    Dedicated logic registers : 68
+Total registers : 68
+Total pins : 31
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

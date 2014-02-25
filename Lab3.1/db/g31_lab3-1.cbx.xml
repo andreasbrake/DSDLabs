@@ -1,7 +1,13 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="g31_lab3-1">
-		<CBX_INST_ENTRY INSTANCE_NAME="|g31_epulse|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_go4.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|g31_epulse|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_bhj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_basic_timer:timer|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_fo4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_basic_timer:timer|LPM_CONSTANT:const2" CBX_FILE_NAME="lpm_constant_1n4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_time_counter:counter1|LPM_COUNTER:tenCounter" CBX_FILE_NAME="cntr_bpk.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_time_counter:counter2|LPM_COUNTER:seecCounter" CBX_FILE_NAME="cntr_bpk.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_basic_timer:timer|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_basic_timer:timer|LPM_COUNTER:counter2" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_time_counter:counter1|LPM_COUNTER:seecCounter" CBX_FILE_NAME="cntr_bpk.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_test_bed|g31_time_counter:counter2|LPM_COUNTER:tenCounter" CBX_FILE_NAME="cntr_bpk.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

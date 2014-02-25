@@ -1,0 +1,47 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+library lpm;
+use lpm.lpm_components.all;
+
+entity g31_hour_counter is
+	PORT(	reset		: in std_logic;
+			loadEn		: in std_logic;
+			clock		: in std_logic;
+			pulseIn		: in std_logic;
+			hourIn		: in std_logic_vector(4 downto 0);
+			hourPulse	: out std_logic;
+			hours		: out std_logic_vector(4 downto 0));
+			
+end g31_hour_counter;
+
+architecture a of g31_hour_counter is
+	signal hourOut	: std_logic_vector(4 downto 0);
+	signal hour_Pulse: std_logic;
+	signal dataIn	: std_logic_vector(4 downto 0);
+	
+begin			
+	-- MINUTE COUNTER
+	hourCounter: lpm_counter
+	GENERIC MAP	(
+		LPM_DIRECTION => "UP",
+		LPM_WIDTH => 5
+	)
+	PORT MAP (
+		clock => clock,
+		data => dataIn,
+		cnt_en => pulseIn,
+		sload => loadEn or reset or hour_Pulse,
+		q => hourOut
+	);
+	with hourOut select
+		hour_Pulse <= '1' when "10111",
+					'0' when others;
+	with loadEn select
+		dataIn	<= 	hourIn when '1',
+					"00000" when '0';
+	hourPulse <= hour_Pulse;
+	hours <= hourOut;
+	
+end a;

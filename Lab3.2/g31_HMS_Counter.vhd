@@ -1,0 +1,80 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+library lpm;
+use lpm.lpm_components.all;
+
+entity g31_HMS_Counter is
+	PORT(	clock			: in std_logic; --master clock
+			reset			: in std_logic; --master reset
+			sec_clock		: in std_logic; --second clock
+			count_enabled	: in std_logic; --master enable
+			load_enabled	: in std_logic; --
+			H_Set			: in std_logic_vector(4 downto 0);
+			M_Set			: in std_logic_vector(5 downto 0);
+			S_Set			: in std_logic_vector(5 downto 0);
+			Hours			: out std_logic_vector(4 downto 0);
+			Minutes			: out std_logic_vector(5 downto 0);
+			Seconds			: out std_logic_vector(5 downto 0);
+			end_of_day		: out std_logic);
+			
+end g31_HMS_Counter;
+
+architecture a of g31_HMS_Counter is
+	component g31_second_counter 
+		PORT(	reset	: in std_logic;
+				loadEn	: in std_logic;
+				clock	: in std_logic;
+				pulseIn	: in std_logic;
+				secIn	: in std_logic_vector(5 downto 0);
+				secPulse: out std_logic; -- also reset
+				seconds	: out std_logic_vector(5 downto 0));
+	end component;
+	component g31_minute_counter 
+		PORT(	reset	: in std_logic;
+				loadEn	: in std_logic;
+				clock	: in std_logic;
+				pulseIn	: in std_logic;
+				minIn	: in std_logic_vector(5 downto 0);
+				minPulse: out std_logic;
+				minutes	: out std_logic_vector(5 downto 0));
+		end component;
+	component g31_hour_counter 
+		PORT(	reset		: in std_logic;
+				loadEn	: in std_logic;
+				clock		: in std_logic;
+				pulseIn		: in std_logic;
+				hourIn		: in std_logic_vector(4 downto 0);
+				hourPulse	: out std_logic;
+				hours		: out std_logic_vector(4 downto 0));
+	end component;
+	
+	signal secPulse : std_logic;
+	signal minPulse : std_logic;
+begin			
+	secCounter :	g31_second_counter
+	PORT MAP( 	reset 		=> reset,
+				loadEn		=> load_enabled,
+				clock 		=> clock,
+				pulseIn 	=> sec_clock,
+				secIn		=> S_Set,
+				secPulse	=> secPulse,
+				seconds 	=> Seconds);
+	minCounter :	g31_minute_counter
+	PORT MAP( 	reset 		=> reset,
+				loadEn		=> load_enabled,
+				clock 		=> clock,
+				pulseIn 	=> secPulse,
+				minIn		=> M_Set,
+				minPulse	=> minPulse,
+				minutes 	=> Minutes);
+	hourCounter :	g31_hour_counter
+	PORT MAP( 	reset 		=> reset,
+				loadEn		=> load_enabled,
+				clock 		=> clock,
+				pulseIn 	=> minPulse,
+				hourIn		=> H_Set,
+				hourPulse	=> end_of_day,
+				hours	 	=> Hours);
+end a;

@@ -1,0 +1,833 @@
+Classic Timing Analyzer report for g31_lab3-1
+Tue Feb 25 15:57:10 2014
+Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clock'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                                   ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                                               ; To                                                                                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 8.221 ns                         ; reset                                                                              ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 10.732 ns                        ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[0]                                                                          ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.170 ns                        ; enable                                                                             ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]        ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; 164.74 MHz ( period = 6.070 ns ) ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]      ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                                                    ;                                                                                     ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                                                                                                                                            ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                                          ; To                                                                                  ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.808 ns                ;
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.808 ns                ;
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.808 ns                ;
+; N/A                                     ; 164.74 MHz ( period = 6.070 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.808 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.794 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.794 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.794 ns                ;
+; N/A                                     ; 165.13 MHz ( period = 6.056 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.794 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 167.14 MHz ( period = 5.983 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 167.20 MHz ( period = 5.981 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.20 MHz ( period = 5.981 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.20 MHz ( period = 5.981 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.20 MHz ( period = 5.981 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 167.73 MHz ( period = 5.962 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 167.73 MHz ( period = 5.962 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 167.73 MHz ( period = 5.962 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 167.73 MHz ( period = 5.962 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.655 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.655 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.655 ns                ;
+; N/A                                     ; 169.00 MHz ( period = 5.917 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.655 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.651 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.651 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.651 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.651 ns                ;
+; N/A                                     ; 171.53 MHz ( period = 5.830 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.568 ns                ;
+; N/A                                     ; 171.53 MHz ( period = 5.830 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.568 ns                ;
+; N/A                                     ; 171.53 MHz ( period = 5.830 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.568 ns                ;
+; N/A                                     ; 171.53 MHz ( period = 5.830 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.568 ns                ;
+; N/A                                     ; 172.56 MHz ( period = 5.795 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.535 ns                ;
+; N/A                                     ; 172.56 MHz ( period = 5.795 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.535 ns                ;
+; N/A                                     ; 172.56 MHz ( period = 5.795 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.535 ns                ;
+; N/A                                     ; 172.56 MHz ( period = 5.795 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.535 ns                ;
+; N/A                                     ; 172.62 MHz ( period = 5.793 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 172.62 MHz ( period = 5.793 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 172.62 MHz ( period = 5.793 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 172.62 MHz ( period = 5.793 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.531 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.13 MHz ( period = 5.743 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.502 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.49 MHz ( period = 5.731 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock      ; clock    ; None                        ; None                      ; 5.492 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.55 MHz ( period = 5.729 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.488 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 174.92 MHz ( period = 5.717 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock      ; clock    ; None                        ; None                      ; 5.478 ns                ;
+; N/A                                     ; 175.69 MHz ( period = 5.692 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.430 ns                ;
+; N/A                                     ; 175.69 MHz ( period = 5.692 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.430 ns                ;
+; N/A                                     ; 175.69 MHz ( period = 5.692 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.430 ns                ;
+; N/A                                     ; 175.69 MHz ( period = 5.692 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.430 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.415 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 176.87 MHz ( period = 5.654 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.18 MHz ( period = 5.644 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock      ; clock    ; None                        ; None                      ; 5.405 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.24 MHz ( period = 5.642 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock      ; clock    ; None                        ; None                      ; 5.403 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.394 ns                ;
+; N/A                                     ; 177.71 MHz ( period = 5.627 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.367 ns                ;
+; N/A                                     ; 177.71 MHz ( period = 5.627 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.367 ns                ;
+; N/A                                     ; 177.71 MHz ( period = 5.627 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.367 ns                ;
+; N/A                                     ; 177.71 MHz ( period = 5.627 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10] ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.367 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 177.84 MHz ( period = 5.623 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock      ; clock    ; None                        ; None                      ; 5.384 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 178.89 MHz ( period = 5.590 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock      ; clock    ; None                        ; None                      ; 5.349 ns                ;
+; N/A                                     ; 179.05 MHz ( period = 5.585 ns )                    ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock      ; clock    ; None                        ; None                      ; 5.327 ns                ;
+; N/A                                     ; 179.05 MHz ( period = 5.585 ns )                    ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock      ; clock    ; None                        ; None                      ; 5.327 ns                ;
+; N/A                                     ; 179.05 MHz ( period = 5.585 ns )                    ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock      ; clock    ; None                        ; None                      ; 5.327 ns                ;
+; N/A                                     ; 179.05 MHz ( period = 5.585 ns )                    ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock      ; clock    ; None                        ; None                      ; 5.327 ns                ;
+; N/A                                     ; 179.08 MHz ( period = 5.584 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock      ; clock    ; None                        ; None                      ; 5.345 ns                ;
+; N/A                                     ; 179.08 MHz ( period = 5.584 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock      ; clock    ; None                        ; None                      ; 5.345 ns                ;
+; N/A                                     ; 179.08 MHz ( period = 5.584 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock      ; clock    ; None                        ; None                      ; 5.345 ns                ;
+; N/A                                     ; 179.08 MHz ( period = 5.584 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock      ; clock    ; None                        ; None                      ; 5.345 ns                ;
+; N/A                                     ; 179.08 MHz ( period = 5.584 ns )                    ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12] ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock      ; clock    ; None                        ; None                      ; 5.345 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                                               ;                                                                                     ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                         ;
++-------+--------------+------------+--------+-------------------------------------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                                                                  ; To Clock ;
++-------+--------------+------------+--------+-------------------------------------------------------------------------------------+----------+
+; N/A   ; None         ; 8.221 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock    ;
+; N/A   ; None         ; 8.221 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock    ;
+; N/A   ; None         ; 8.221 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock    ;
+; N/A   ; None         ; 8.221 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock    ;
+; N/A   ; None         ; 7.341 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock    ;
+; N/A   ; None         ; 7.341 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock    ;
+; N/A   ; None         ; 7.341 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock    ;
+; N/A   ; None         ; 7.341 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock    ;
+; N/A   ; None         ; 7.127 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; clock    ;
+; N/A   ; None         ; 7.127 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; clock    ;
+; N/A   ; None         ; 7.127 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; clock    ;
+; N/A   ; None         ; 7.127 ns   ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; clock    ;
+; N/A   ; None         ; 6.505 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; clock    ;
+; N/A   ; None         ; 6.505 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; clock    ;
+; N/A   ; None         ; 6.505 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; clock    ;
+; N/A   ; None         ; 6.505 ns   ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock    ;
+; N/A   ; None         ; 6.446 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[0]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[1]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[3]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[4]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[5]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[2]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[9]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[8]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[7]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[6]         ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[12]        ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[10]        ; clock    ;
+; N/A   ; None         ; 6.398 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[22]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[25]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[24]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[16]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[17]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[15]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[14]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[13]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[21]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[20]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[19]        ; clock    ;
+; N/A   ; None         ; 6.393 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]        ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock    ;
+; N/A   ; None         ; 6.384 ns   ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[0]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[1]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[3]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[4]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[5]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[2]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[9]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[8]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[7]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[6]         ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[12]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[10]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock    ;
+; N/A   ; None         ; 1.981 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock    ;
+; N/A   ; None         ; 1.425 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[22]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[25]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[24]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[16]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[17]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[15]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[14]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[13]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[21]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[20]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[19]        ; clock    ;
+; N/A   ; None         ; 1.418 ns   ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]        ; clock    ;
++-------+--------------+------------+--------+-------------------------------------------------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                               ;
++-------+--------------+------------+-------------------------------------------------------------------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                                                                ; To         ; From Clock ;
++-------+--------------+------------+-------------------------------------------------------------------------------------+------------+------------+
+; N/A   ; None         ; 10.732 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.670 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.669 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.607 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.585 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.539 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.522 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.517 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.514 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.503 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.478 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.466 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.455 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.446 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.404 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.388 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.388 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.384 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.370 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.365 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.354 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.352 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.340 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.329 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.325 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.319 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.299 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.234 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.214 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.205 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.203 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 10.198 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 10.180 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.173 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.122 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 10.102 ns  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.060 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 10.054 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 10.049 ns  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 9.705 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.518 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.403 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 9.364 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.362 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.343 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 9.337 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.324 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 9.314 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.290 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 9.272 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.237 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 9.218 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 9.211 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.202 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.200 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.198 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.157 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.142 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 9.135 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 9.121 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 9.065 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.059 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 9.057 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.028 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 9.024 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 9.008 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 8.989 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 8.963 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 8.949 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 8.949 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 8.931 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 8.915 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 8.872 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 8.822 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.811 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 8.797 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[5] ; clock      ;
+; N/A   ; None         ; 8.790 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 8.761 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[4] ; clock      ;
+; N/A   ; None         ; 8.716 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 8.669 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.641 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; mOneSeg[6] ; clock      ;
+; N/A   ; None         ; 8.625 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[5] ; clock      ;
+; N/A   ; None         ; 8.619 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.563 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 8.557 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.532 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 8.472 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.398 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[6] ; clock      ;
+; N/A   ; None         ; 8.327 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[3] ; clock      ;
+; N/A   ; None         ; 8.285 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[6] ; clock      ;
+; N/A   ; None         ; 8.281 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[4] ; clock      ;
+; N/A   ; None         ; 8.275 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eOneSeg[1] ; clock      ;
+; N/A   ; None         ; 8.267 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[1] ; clock      ;
+; N/A   ; None         ; 8.263 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[2] ; clock      ;
+; N/A   ; None         ; 8.226 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[1] ; clock      ;
+; N/A   ; None         ; 8.222 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[2] ; clock      ;
+; N/A   ; None         ; 8.193 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[6] ; clock      ;
+; N/A   ; None         ; 8.128 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[6] ; clock      ;
+; N/A   ; None         ; 8.114 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[5] ; clock      ;
+; N/A   ; None         ; 8.111 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[6] ; clock      ;
+; N/A   ; None         ; 8.095 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[4] ; clock      ;
+; N/A   ; None         ; 8.081 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[2] ; clock      ;
+; N/A   ; None         ; 8.081 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[1] ; clock      ;
+; N/A   ; None         ; 8.079 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[5] ; clock      ;
+; N/A   ; None         ; 8.079 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[3] ; clock      ;
+; N/A   ; None         ; 8.070 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[3] ; clock      ;
+; N/A   ; None         ; 8.068 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[6] ; clock      ;
+; N/A   ; None         ; 8.068 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[0] ; clock      ;
+; N/A   ; None         ; 8.059 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; mTenSeg[4] ; clock      ;
+; N/A   ; None         ; 8.050 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[6] ; clock      ;
+; N/A   ; None         ; 8.039 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[6] ; clock      ;
+; N/A   ; None         ; 8.036 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[3] ; clock      ;
+; N/A   ; None         ; 8.035 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[5] ; clock      ;
+; N/A   ; None         ; 8.035 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[5] ; clock      ;
+; N/A   ; None         ; 8.030 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[2] ; clock      ;
+; N/A   ; None         ; 8.028 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[1] ; clock      ;
+; N/A   ; None         ; 8.025 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[2] ; clock      ;
+; N/A   ; None         ; 8.024 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[0] ; clock      ;
+; N/A   ; None         ; 8.019 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[4] ; clock      ;
+; N/A   ; None         ; 8.015 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; mTenSeg[4] ; clock      ;
+; N/A   ; None         ; 8.007 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 8.005 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[1] ; clock      ;
+; N/A   ; None         ; 8.000 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[2] ; clock      ;
+; N/A   ; None         ; 7.994 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[3] ; clock      ;
+; N/A   ; None         ; 7.942 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; eOneSeg[6] ; clock      ;
+; N/A   ; None         ; 7.897 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; mOneSeg[2] ; clock      ;
+; N/A   ; None         ; 7.892 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[6] ; clock      ;
+; N/A   ; None         ; 7.892 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; eOneSeg[6] ; clock      ;
+; N/A   ; None         ; 7.883 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; eOneSeg[0] ; clock      ;
+; N/A   ; None         ; 7.881 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[5] ; clock      ;
+; N/A   ; None         ; 7.875 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[1] ; clock      ;
+; N/A   ; None         ; 7.872 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[2] ; clock      ;
+; N/A   ; None         ; 7.871 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[6] ; clock      ;
+; N/A   ; None         ; 7.866 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[4] ; clock      ;
+; N/A   ; None         ; 7.849 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[1] ; clock      ;
+; N/A   ; None         ; 7.844 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[2] ; clock      ;
+; N/A   ; None         ; 7.838 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[5] ; clock      ;
+; N/A   ; None         ; 7.838 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[3] ; clock      ;
+; N/A   ; None         ; 7.838 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; mOneSeg[0] ; clock      ;
+; N/A   ; None         ; 7.831 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[3] ; clock      ;
+; N/A   ; None         ; 7.826 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[0] ; clock      ;
+; N/A   ; None         ; 7.818 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; mTenSeg[4] ; clock      ;
+; N/A   ; None         ; 7.780 ns   ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; eOneSeg[6] ; clock      ;
+; N/A   ; None         ; 7.750 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; eTenSeg[0] ; clock      ;
+; N/A   ; None         ; 7.727 ns   ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; mOneSeg[3] ; clock      ;
+; N/A   ; None         ; 7.718 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[6] ; clock      ;
+; N/A   ; None         ; 7.698 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[6] ; clock      ;
+; N/A   ; None         ; 7.685 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[5] ; clock      ;
+; N/A   ; None         ; 7.685 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[3] ; clock      ;
+; N/A   ; None         ; 7.683 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[5] ; clock      ;
+; N/A   ; None         ; 7.674 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; eTenSeg[0] ; clock      ;
+; N/A   ; None         ; 7.673 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[0] ; clock      ;
+; N/A   ; None         ; 7.667 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[4] ; clock      ;
+; N/A   ; None         ; 7.664 ns   ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; mTenSeg[4] ; clock      ;
+; N/A   ; None         ; 7.654 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[1] ; clock      ;
+; N/A   ; None         ; 7.648 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[2] ; clock      ;
+; N/A   ; None         ; 7.646 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[3] ; clock      ;
+; N/A   ; None         ; 7.510 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; eTenSeg[0] ; clock      ;
+; N/A   ; None         ; 7.325 ns   ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; eTenSeg[0] ; clock      ;
++-------+--------------+------------+-------------------------------------------------------------------------------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                ;
++---------------+-------------+-----------+--------+-------------------------------------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                                                                  ; To Clock ;
++---------------+-------------+-----------+--------+-------------------------------------------------------------------------------------+----------+
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[22]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[25]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[24]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[16]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[17]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[15]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[14]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[13]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[21]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[20]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[19]        ; clock    ;
+; N/A           ; None        ; -1.170 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]        ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock    ;
+; N/A           ; None        ; -1.177 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[0]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[1]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[3]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[4]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[5]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[2]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[9]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[8]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[7]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[6]         ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[12]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[10]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock    ;
+; N/A           ; None        ; -1.733 ns ; enable ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[22]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[25]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[24]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[16]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[17]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[15]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[14]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[13]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[21]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[20]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[19]        ; clock    ;
+; N/A           ; None        ; -5.417 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[18]        ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]       ; clock    ;
+; N/A           ; None        ; -5.642 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]       ; clock    ;
+; N/A           ; None        ; -5.733 ns ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; clock    ;
+; N/A           ; None        ; -5.733 ns ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; clock    ;
+; N/A           ; None        ; -5.733 ns ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; clock    ;
+; N/A           ; None        ; -5.733 ns ; reset  ; g31_time_counter:counter2|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[0]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[1]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[3]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[4]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[5]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[2]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[9]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[8]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[7]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[6]         ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[12]        ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[10]        ; clock    ;
+; N/A           ; None        ; -5.980 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[11]        ; clock    ;
+; N/A           ; None        ; -6.042 ns ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[3]  ; clock    ;
+; N/A           ; None        ; -6.042 ns ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]  ; clock    ;
+; N/A           ; None        ; -6.042 ns ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[1]  ; clock    ;
+; N/A           ; None        ; -6.042 ns ; reset  ; g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[0]  ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]       ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]       ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]       ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]        ; clock    ;
+; N/A           ; None        ; -6.148 ns ; reset  ; g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]        ; clock    ;
+; N/A           ; None        ; -6.262 ns ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock    ;
+; N/A           ; None        ; -6.262 ns ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock    ;
+; N/A           ; None        ; -6.262 ns ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock    ;
+; N/A           ; None        ; -6.262 ns ; reset  ; g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock    ;
+; N/A           ; None        ; -7.144 ns ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3] ; clock    ;
+; N/A           ; None        ; -7.144 ns ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[2] ; clock    ;
+; N/A           ; None        ; -7.144 ns ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[0] ; clock    ;
+; N/A           ; None        ; -7.144 ns ; reset  ; g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[1] ; clock    ;
++---------------+-------------+-----------+--------+-------------------------------------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Tue Feb 25 15:57:09 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off g31_lab3-1 -c g31_lab3-1 --timing_analysis_only
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Info: Clock "clock" has Internal fmax of 164.74 MHz between source register "g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]" and destination register "g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]" (period= 6.07 ns)
+    Info: + Longest register to register delay is 5.808 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X13_Y14_N13; Fanout = 3; REG Node = 'g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]'
+        Info: 2: + IC(0.932 ns) + CELL(0.450 ns) = 1.382 ns; Loc. = LCCOMB_X13_Y13_N8; Fanout = 1; COMB Node = 'g31_basic_timer:timer|Equal1~1'
+        Info: 3: + IC(0.830 ns) + CELL(0.512 ns) = 2.724 ns; Loc. = LCCOMB_X13_Y14_N28; Fanout = 3; COMB Node = 'g31_basic_timer:timer|Equal1~4'
+        Info: 4: + IC(1.747 ns) + CELL(0.319 ns) = 4.790 ns; Loc. = LCCOMB_X4_Y20_N8; Fanout = 4; COMB Node = 'g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|_~0'
+        Info: 5: + IC(0.260 ns) + CELL(0.758 ns) = 5.808 ns; Loc. = LCFF_X4_Y20_N29; Fanout = 10; REG Node = 'g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]'
+        Info: Total cell delay = 2.039 ns ( 35.11 % )
+        Info: Total interconnect delay = 3.769 ns ( 64.89 % )
+    Info: - Smallest clock skew is -0.023 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 2.839 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clock'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 68; COMB Node = 'clock~clkctrl'
+            Info: 3: + IC(0.973 ns) + CELL(0.602 ns) = 2.839 ns; Loc. = LCFF_X4_Y20_N29; Fanout = 10; REG Node = 'g31_time_counter:counter2|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]'
+            Info: Total cell delay = 1.628 ns ( 57.34 % )
+            Info: Total interconnect delay = 1.211 ns ( 42.66 % )
+        Info: - Longest clock path from clock "clock" to source register is 2.862 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clock'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 68; COMB Node = 'clock~clkctrl'
+            Info: 3: + IC(0.996 ns) + CELL(0.602 ns) = 2.862 ns; Loc. = LCFF_X13_Y14_N13; Fanout = 3; REG Node = 'g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]'
+            Info: Total cell delay = 1.628 ns ( 56.88 % )
+            Info: Total interconnect delay = 1.234 ns ( 43.12 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]" (data pin = "reset", clock pin = "clock") is 8.221 ns
+    Info: + Longest pin to register delay is 11.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_R22; Fanout = 8; PIN Node = 'reset'
+        Info: 2: + IC(7.109 ns) + CELL(0.521 ns) = 8.494 ns; Loc. = LCCOMB_X2_Y20_N8; Fanout = 5; COMB Node = 'g31_time_counter:counter1|comb~0'
+        Info: 3: + IC(1.067 ns) + CELL(0.521 ns) = 10.082 ns; Loc. = LCCOMB_X7_Y20_N8; Fanout = 4; COMB Node = 'g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|_~0'
+        Info: 4: + IC(0.260 ns) + CELL(0.758 ns) = 11.100 ns; Loc. = LCFF_X7_Y20_N27; Fanout = 10; REG Node = 'g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]'
+        Info: Total cell delay = 2.664 ns ( 24.00 % )
+        Info: Total interconnect delay = 8.436 ns ( 76.00 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 2.841 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 68; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.975 ns) + CELL(0.602 ns) = 2.841 ns; Loc. = LCFF_X7_Y20_N27; Fanout = 10; REG Node = 'g31_time_counter:counter1|lpm_counter:seecCounter|cntr_bpk:auto_generated|safe_q[3]'
+        Info: Total cell delay = 1.628 ns ( 57.30 % )
+        Info: Total interconnect delay = 1.213 ns ( 42.70 % )
+Info: tco from clock "clock" to destination pin "eOneSeg[0]" through register "g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]" is 10.732 ns
+    Info: + Longest clock path from clock "clock" to source register is 2.836 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 68; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.970 ns) + CELL(0.602 ns) = 2.836 ns; Loc. = LCFF_X2_Y20_N25; Fanout = 11; REG Node = 'g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]'
+        Info: Total cell delay = 1.628 ns ( 57.40 % )
+        Info: Total interconnect delay = 1.208 ns ( 42.60 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 7.619 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X2_Y20_N25; Fanout = 11; REG Node = 'g31_time_counter:counter1|lpm_counter:tenCounter|cntr_bpk:auto_generated|safe_q[2]'
+        Info: 2: + IC(0.489 ns) + CELL(0.455 ns) = 0.944 ns; Loc. = LCCOMB_X2_Y20_N0; Fanout = 6; COMB Node = 'g31_time_counter:counter1|g31_seven_segment_decoder:sevenSeg2|Mux0~0'
+        Info: 3: + IC(1.119 ns) + CELL(0.542 ns) = 2.605 ns; Loc. = LCCOMB_X7_Y20_N0; Fanout = 1; COMB Node = 'g31_time_counter:counter1|g31_seven_segment_decoder:sevenSeg1|Mux7~0'
+        Info: 4: + IC(0.292 ns) + CELL(0.516 ns) = 3.413 ns; Loc. = LCCOMB_X7_Y20_N18; Fanout = 1; COMB Node = 'g31_time_counter:counter1|g31_seven_segment_decoder:sevenSeg1|Mux7~1'
+        Info: 5: + IC(1.396 ns) + CELL(2.810 ns) = 7.619 ns; Loc. = PIN_J2; Fanout = 0; PIN Node = 'eOneSeg[0]'
+        Info: Total cell delay = 4.323 ns ( 56.74 % )
+        Info: Total interconnect delay = 3.296 ns ( 43.26 % )
+Info: th for register "g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]" (data pin = "enable", clock pin = "clock") is -1.170 ns
+    Info: + Longest clock path from clock "clock" to destination register is 2.862 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G2; Fanout = 68; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(0.996 ns) + CELL(0.602 ns) = 2.862 ns; Loc. = LCFF_X14_Y14_N21; Fanout = 3; REG Node = 'g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]'
+        Info: Total cell delay = 1.628 ns ( 56.88 % )
+        Info: Total interconnect delay = 1.234 ns ( 43.12 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 4.318 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L22; Fanout = 2; PIN Node = 'enable'
+        Info: 2: + IC(1.712 ns) + CELL(0.545 ns) = 3.283 ns; Loc. = LCCOMB_X14_Y14_N30; Fanout = 26; COMB Node = 'g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|_~0'
+        Info: 3: + IC(0.277 ns) + CELL(0.758 ns) = 4.318 ns; Loc. = LCFF_X14_Y14_N21; Fanout = 3; REG Node = 'g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[23]'
+        Info: Total cell delay = 2.329 ns ( 53.94 % )
+        Info: Total interconnect delay = 1.989 ns ( 46.06 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 214 megabytes
+    Info: Processing ended: Tue Feb 25 15:57:10 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

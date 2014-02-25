@@ -13,17 +13,15 @@ entity g31_epulse is
 end g31_epulse;
 
 architecture a of g31_epulse is
-	--type array_type_2 is array (0 to 25) of std_logic_vector(0 downto 0);
-	signal constSig	: std_logic_vector(26 downto 0);
-	signal countOut	: std_logic_vector(26 downto 0);
-	signal orIn		: std_logic_2d(26 downto 0, 0 downto 0);
-	signal orOut	: std_logic_vector(0 downto 0);
+	signal constSig	: std_logic_vector(25 downto 0);
+	signal countOut	: std_logic_vector(25 downto 0);
+	signal orOut	: std_logic;
 
 begin
 	const: lpm_constant
 	GENERIC MAP (
-		LPM_WIDTH => 27,
-		LPM_CVALUE => 49999999
+		LPM_WIDTH => 26,
+		LPM_CVALUE => 499--99999
 	)
 	PORT MAP (
 		result => constSig
@@ -31,32 +29,21 @@ begin
 	
 	counter: lpm_counter
 	GENERIC MAP	(
-		LPM_WIDTH => 27
+		LPM_DIRECTION => "DOWN",
+		LPM_WIDTH => 26
 	)
 	PORT MAP (
 		clock => clock,
 		data => constSig,
 		cnt_en => enable,
-		sload => (not orOut(0)) or reset,
+		sload => orOut or reset,
 		q => countOut
 	);
 	
-	orGate: lpm_or
-	GENERIC MAP (
-		LPM_WIDTH => 1,
-		LPM_SIZE => 27
-	)
-	PORT MAP (
-		data => orIn,
-		result => orOut
-	);
 	
-	PROCESS(countOut)
-    BEGIN
-        FOR i IN 0 TO 26 LOOP
-            orIn(i,0) <= countOut(i);
-        END LOOP;
-    END PROCESS;
-    
-	EPULSE <= not orOut(0);
+	with countOut select
+		orOut <= 	'1' when "00000000000000000000000000",
+					'0' when others;
+
+	EPULSE <= orOut;
 end a;
