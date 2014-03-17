@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity g31_Month_Block is 
+	PORT(	clock			: in std_logic; -- master clock
+			reset			: in std_logic; -- master reset
+			load_enable		: in std_logic; -- master load_enable
+			M_Set			: in std_logic_vector(3 downto 0);
+			month_count_en	: in std_logic;
+			leap_year_set	: in std_logic;
+			month_pulse		: out std_logic;
+			max_day_set		: out std_logic_vector(1 downto 0);
+			Months			: out std_logic_vector(3 downto 0)
+		);
+
+end g31_Month_Block;
+	
+architecture behaviour of g31_Month_Block is 
+
+	signal max_days_out	: std_logic_vector(1 downto 0);
+	signal months_out	: std_logic_vector(3 downto 0);
+	signal internal_reset : std_logic;
+	signal pulse: std_logic;
+
+begin
+	
+	internal_reset <= pulse or reset;
+	Months <= months_out;
+	month_pulse <= pulse;
+	max_day_set <= max_days_out;
+	
+	-- Determines the number of days in the month based on the month and whether or not it is a leap year
+	process_max_day: process(leap_year_set, months_out)
+	begin
+		if months_out = "0010" and leap_year_set = '0' then max_days_out <= "00";
+			elsif months_out = "0010" and leap_year_set = '1' then max_days_out <= "01";
+			elsif months_out = "0100" or months_out = "0110" or months_out = "1001" or months_out = "1011" then max_days_out <= "10";
+			else max_days_out <= "11";
+		end if;
+	end process;
+	
+	-- Either increments the month, keeps the monththe same, or sets the month to the pre-defined value based on the inputs
+	process_counter: process(load_enable, internal_reset, months_out, clock)
+	begin
+		if clock = '1' and clock'event then
+			if internal_reset = '1' then months_out <= "0001";
+				elsif month_count_en = '1' and load_enable = '0' then months_out <= months_out + 1;
+				elsif load_enable = '1' then months_out <= M_set;
+				else months_out <= months_out;
+			end if;
+		else months_out <= months_out;
+		end if;
+	end process;
+
+
+	-- Pulses to the year counter to increment
+	process_pulse: process(months_out)
+	begin
+		if months_out < "1010" then pulse <= '0';
+		else pulse <= '1';
+		end if;
+	end process;
+	
+end behaviour;

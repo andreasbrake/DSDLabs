@@ -1,0 +1,516 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 1000.0;
+	SIMULATION_TIME = 1000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("g31_Day_Block|clock")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("g31_Day_Block|D_Set")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 5;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("g31_Day_Block|D_Set[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "g31_Day_Block|D_Set";
+}
+
+SIGNAL("g31_Day_Block|D_Set[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "g31_Day_Block|D_Set";
+}
+
+SIGNAL("g31_Day_Block|D_Set[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "g31_Day_Block|D_Set";
+}
+
+SIGNAL("g31_Day_Block|D_Set[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "g31_Day_Block|D_Set";
+}
+
+SIGNAL("g31_Day_Block|D_Set[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "g31_Day_Block|D_Set";
+}
+
+SIGNAL("g31_Day_Block|day_count_en")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("g31_Day_Block|Days")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 5;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("g31_Day_Block|Days[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "g31_Day_Block|Days";
+}
+
+SIGNAL("g31_Day_Block|Days[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "g31_Day_Block|Days";
+}
+
+SIGNAL("g31_Day_Block|Days[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "g31_Day_Block|Days";
+}
+
+SIGNAL("g31_Day_Block|Days[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "g31_Day_Block|Days";
+}
+
+SIGNAL("g31_Day_Block|Days[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "g31_Day_Block|Days";
+}
+
+SIGNAL("g31_Day_Block|load_enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("g31_Day_Block|reset")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("day_pulse")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("g31_Day_Block|clock")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+		}
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|D_Set[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|D_Set[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|D_Set[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|D_Set[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|D_Set[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|day_count_en")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|Days[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|Days[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|Days[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|Days[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|Days[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 990.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|load_enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("g31_Day_Block|reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("day_pulse")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|clock";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+	CHILDREN = 2, 3, 4, 5, 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|D_Set[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|day_count_en";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|reset";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|load_enable";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+	CHILDREN = 11, 12, 13, 14, 15;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "g31_Day_Block|Days[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 1;
+	PARENT = 10;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "day_pulse";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 0;
+}
+
+TIME_BAR
+{
+	TIME = 21575;
+	MASTER = TRUE;
+}
+;
