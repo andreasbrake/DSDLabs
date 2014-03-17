@@ -17,23 +17,23 @@ entity g31_Day_Block is
 end g31_Day_Block;
 
 architecture behaviour of g31_Day_Block is 
-	signal max_days_in	: std_logic_vector(4 downto 0);
-	signal days_out	: std_logic_vector(4 downto 0);
+	signal max_days_in	: std_logic_vector(5 downto 0);
+	signal days_out	: std_logic_vector(5 downto 0);
 	signal internal_reset : std_logic;
 	signal pulse: std_logic;
 begin
-
+	
 	internal_reset <= pulse or reset;
-	Days <= days_out;
+	Days <= days_out(4 downto 0);
 	day_pulse <= pulse;
 	
 	-- Sets the max number of days based on the input received from the month counter
 	process_set : process(max_day_set)
 	begin
-		if max_day_set = "00" then max_days_in <= "11100";
-			elsif max_day_set = "01" then max_days_in <= "11101";
-			elsif max_day_set = "10" then max_days_in <= "11110";
-			else max_days_in <= "11111";
+		if max_day_set = "00" then max_days_in <= "011100";
+			elsif max_day_set = "01" then max_days_in <= "011101";
+			elsif max_day_set = "10" then max_days_in <= "011110";
+			else max_days_in <= "011111";
 		end if;
 	end process;
 
@@ -41,9 +41,9 @@ begin
 	process_counter: process(load_enable, internal_reset, days_out, clock)
 	begin
 		if clock = '1' and clock'event then
-			if internal_reset = '1' then days_out <= "00001";
+			if internal_reset = '1' then days_out <= "000001";
 			elsif day_count_en = '1' and load_enable = '0' then days_out <= (days_out) + 1;
-			elsif load_enable = '1' then days_out <= D_set;
+			elsif load_enable = '1' then days_out <= '0' & D_set;
 			else days_out <= days_out;
 			end if;
 		else days_out <= days_out;
@@ -53,7 +53,7 @@ begin
 	-- Determines if the day counter has reached the final day in the month
 	process_pulse: process(max_days_in, days_out)
 	begin
-		if days_out < max_days_in then pulse <= '0';
+		if days_out <= max_days_in then pulse <= '0';
 		else pulse <= '1';
 		end if;
 	end process;

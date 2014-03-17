@@ -1,6 +1,6 @@
 Analysis & Synthesis report for g31_YMD_Counter
-Fri Mar 14 14:40:52 2014
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Mon Mar 17 15:25:08 2014
+Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
 ---------------------
@@ -41,15 +41,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 14 14:40:52 2014         ;
-; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 17 15:25:08 2014         ;
+; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; g31_YMD_Counter                               ;
 ; Top-level Entity Name              ; g31_YMD_Counter                               ;
 ; Family                             ; Cyclone II                                    ;
 ; Total logic elements               ; 53                                            ;
 ;     Total combinational functions  ; 53                                            ;
-;     Dedicated logic registers      ; 21                                            ;
-; Total registers                    ; 21                                            ;
+;     Dedicated logic registers      ; 22                                            ;
+; Total registers                    ; 22                                            ;
 ; Total pins                         ; 46                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
@@ -175,23 +175,23 @@ applicable agreement for further details.
 ;                                             ;       ;
 ; Total combinational functions               ; 53    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 25    ;
-;     -- 3 input functions                    ; 9     ;
-;     -- <=2 input functions                  ; 19    ;
+;     -- 4 input functions                    ; 24    ;
+;     -- 3 input functions                    ; 8     ;
+;     -- <=2 input functions                  ; 21    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 38    ;
-;     -- arithmetic mode                      ; 15    ;
+;     -- normal mode                          ; 37    ;
+;     -- arithmetic mode                      ; 16    ;
 ;                                             ;       ;
-; Total registers                             ; 21    ;
-;     -- Dedicated logic registers            ; 21    ;
+; Total registers                             ; 22    ;
+;     -- Dedicated logic registers            ; 22    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 46    ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 21    ;
-; Total fan-out                               ; 276   ;
-; Average fan-out                             ; 2.30  ;
+; Maximum fan-out                             ; 22    ;
+; Total fan-out                               ; 275   ;
+; Average fan-out                             ; 2.27  ;
 +---------------------------------------------+-------+
 
 
@@ -200,10 +200,10 @@ applicable agreement for further details.
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 ; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Library Name ;
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
-; |g31_YMD_Counter                 ; 53 (0)            ; 21 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |g31_YMD_Counter                             ; work         ;
-;    |g31_Day_Block:day_block|     ; 25 (25)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Day_Block:day_block     ;              ;
-;    |g31_Month_Block:month_block| ; 14 (14)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Month_Block:month_block ; work         ;
-;    |g31_Year_Block:year_block|   ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Year_Block:year_block   ;              ;
+; |g31_YMD_Counter                 ; 53 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |g31_YMD_Counter                             ; work         ;
+;    |g31_Day_Block:day_block|     ; 25 (25)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Day_Block:day_block     ;              ;
+;    |g31_Month_Block:month_block| ; 13 (13)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Month_Block:month_block ;              ;
+;    |g31_Year_Block:year_block|   ; 15 (15)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_YMD_Counter|g31_Year_Block:year_block   ;              ;
 +----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -213,7 +213,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 21    ;
+; Total registers                              ; 22    ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -238,9 +238,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Fri Mar 14 14:40:51 2014
+    Info: Processing started: Mon Mar 17 15:25:07 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g31_YMD_Counter -c g31_YMD_Counter
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file g31_ymd_counter.vhd
@@ -255,12 +255,31 @@ Info: Found 2 design units, including 1 entities, in source file g31_month_block
 Info: Found 2 design units, including 1 entities, in source file g31_year_block.vhd
     Info: Found design unit 1: g31_Year_Block-behaviour
     Info: Found entity 1: g31_Year_Block
-Info: Found 1 design units, including 1 entities, in source file g31_day_counter.bdf
-    Info: Found entity 1: g31_day_counter
+Info: Found 1 design units, including 1 entities, in source file g31_ymd_counter_testbed_circuit.bdf
+    Info: Found entity 1: g31_YMD_counter_testbed_circuit
 Info: Found 1 design units, including 1 entities, in source file g31_ymd_counter_circuit.bdf
     Info: Found entity 1: g31_YMD_counter_circuit
+Info: Found 1 design units, including 1 entities, in source file g31_year_counter.bdf
+    Info: Found entity 1: g31_year_counter
 Info: Found 1 design units, including 1 entities, in source file g31_month_counter.bdf
     Info: Found entity 1: g31_month_counter
+Info: Found 1 design units, including 1 entities, in source file g31_day_counter.bdf
+    Info: Found entity 1: g31_day_counter
+Info: Found 2 design units, including 1 entities, in source file g31_ymd_counter_testbed.vhd
+    Info: Found design unit 1: g31_YMD_Counter_Testbed-behavior
+    Info: Found entity 1: g31_YMD_Counter_Testbed
+Info: Found 2 design units, including 1 entities, in source file g31_basic_timer.vhd
+    Info: Found design unit 1: g31_basic_timer-a
+    Info: Found entity 1: g31_basic_timer
+Info: Found 2 design units, including 1 entities, in source file g31_binary_to_seven_segment.vhd
+    Info: Found design unit 1: g31_binary_to_seven_segment-a
+    Info: Found entity 1: g31_binary_to_seven_segment
+Info: Found 2 design units, including 1 entities, in source file g31_seven_segment_decoder.vhd
+    Info: Found design unit 1: g31_seven_segment_decoder-a
+    Info: Found entity 1: g31_seven_segment_decoder
+Info: Found 2 design units, including 1 entities, in source file g31_binary_to_bcd.vhd
+    Info: Found design unit 1: g31_binary_to_BCD-a
+    Info: Found entity 1: g31_binary_to_BCD
 Info: Elaborating entity "g31_YMD_Counter" for the top level hierarchy
 Info: Elaborating entity "g31_Day_Block" for hierarchy "g31_Day_Block:day_block"
 Info: Elaborating entity "g31_Month_Block" for hierarchy "g31_Month_Block:month_block"
@@ -269,9 +288,9 @@ Info: Implemented 99 device resources after synthesis - the final resource count
     Info: Implemented 25 input pins
     Info: Implemented 21 output pins
     Info: Implemented 53 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 232 megabytes
-    Info: Processing ended: Fri Mar 14 14:40:52 2014
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 305 megabytes
+    Info: Processing ended: Mon Mar 17 15:25:08 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

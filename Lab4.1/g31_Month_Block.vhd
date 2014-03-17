@@ -58,7 +58,7 @@ begin
 	-- Pulses to the year counter to increment
 	process_pulse: process(months_out)
 	begin
-		if months_out <= "1011" then pulse <= '0';
+		if months_out <= "1100" then pulse <= '0';
 		else pulse <= '1';
 		end if;
 	end process;
