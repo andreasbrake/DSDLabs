@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="g31_lab4_2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_basic_timer:timer|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_basic_timer:timer|LPM_COUNTER:counter2" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_binary_to_seven_segment:displayer|g31_binary_to_BCD:bin_BCD_1|LPM_ROM:crc_rom|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_e501.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_basic_timer:timer|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_3l4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_basic_timer:timer|LPM_CONSTANT:const2" CBX_FILE_NAME="lpm_constant_1n4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_YMD_Counter_Testbed|g31_binary_to_seven_segment:displayer|g31_binary_to_BCD:bin_BCD_2|LPM_ROM:crc_rom|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_e501.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

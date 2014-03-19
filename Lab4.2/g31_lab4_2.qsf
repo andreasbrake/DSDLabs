@@ -18,14 +18,14 @@
 #
 # Quartus II 64-Bit
 # Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-# Date created = 14:17:40  March 10, 2014
+# Date created = 14:50:21  March 17, 2014
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		g31_YMD_Counter_assignment_defaults.qdf
+#		g31_lab4_2_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -40,20 +40,27 @@ set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C20F484C7
 set_global_assignment -name TOP_LEVEL_ENTITY g31_YMD_Counter_Testbed
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:17:40  MARCH 10, 2014"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:50:21  MARCH 17, 2014"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
-set_global_assignment -name MISC_FILE "C:/altera/g31/Lab4.1/g31_YMD_Counter.dpf"
+set_global_assignment -name MIF_FILE ../Lab4.1/crc_rom.mif
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_basic_timer.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_BCD.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_seven_segment.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Day_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Month_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_seven_segment_decoder.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Year_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_YMD_Counter.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_YMD_Counter_Testbed.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -entity g31_lab4_2 -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity g31_lab4_2 -section_id "Root Region"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_L1 -to clock
-set_location_assignment PIN_R21 -to day_count_en
-set_location_assignment PIN_R22 -to reset
-set_location_assignment PIN_L2 -to showDay
-set_location_assignment PIN_M1 -to showMonth
-set_location_assignment PIN_M2 -to showYear
 set_location_assignment PIN_J2 -to segments1[0]
 set_location_assignment PIN_J1 -to segments1[1]
 set_location_assignment PIN_H2 -to segments1[2]
@@ -82,29 +89,20 @@ set_location_assignment PIN_J4 -to segments4[3]
 set_location_assignment PIN_L8 -to segments4[4]
 set_location_assignment PIN_F3 -to segments4[5]
 set_location_assignment PIN_D4 -to segments4[6]
-set_global_assignment -name VHDL_FILE g31_YMD_Counter.vhd
-set_global_assignment -name VHDL_FILE g31_Day_Block.vhd
-set_global_assignment -name VHDL_FILE g31_Month_Block.vhd
-set_global_assignment -name VHDL_FILE g31_Year_Block.vhd
-set_global_assignment -name BDF_FILE g31_YMD_counter_testbed_circuit.bdf
-set_global_assignment -name BDF_FILE g31_YMD_counter_circuit.bdf
-set_global_assignment -name BDF_FILE g31_year_counter.bdf
-set_global_assignment -name BDF_FILE g31_month_counter.bdf
-set_global_assignment -name BDF_FILE g31_day_counter.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE g31_YMD_counter_testbed_sim.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE g31_YMD_Counter_sim.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE g31_month_counter_sim.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE g31_day_counter_sim.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE g31_year_counter_sim.vwf
-set_global_assignment -name VHDL_FILE g31_YMD_Counter_Testbed.vhd
-set_global_assignment -name VHDL_FILE g31_basic_timer.vhd
-set_global_assignment -name VHDL_FILE g31_binary_to_seven_segment.vhd
-set_global_assignment -name VHDL_FILE g31_seven_segment_decoder.vhd
-set_global_assignment -name VHDL_FILE g31_binary_to_BCD.vhd
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE g31_YMD_counter_sim.vwf
-set_location_assignment PIN_T22 -to load_enable
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R22 -to reset
+set_location_assignment PIN_M2 -to day_count_en
+set_location_assignment PIN_U11 -to load_enable
+set_global_assignment -name MISC_FILE "C:/altera/g31/Lab4.2/g31_lab4_2.dpf"
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_location_assignment PIN_L2 -to show2
+set_location_assignment PIN_M1 -to show1
+set_location_assignment PIN_L22 -to Initial_Set[0]
+set_location_assignment PIN_L21 -to Initial_Set[1]
+set_location_assignment PIN_M22 -to Initial_Set[2]
+set_location_assignment PIN_V12 -to Initial_Set[3]
+set_location_assignment PIN_W12 -to Initial_Set[4]
+set_location_assignment PIN_R21 -to load_d
+set_location_assignment PIN_T22 -to load_m
+set_location_assignment PIN_T21 -to load_y
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

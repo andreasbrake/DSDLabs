@@ -1,5 +1,5 @@
-Analysis & Synthesis report for g31_YMD_Counter
-Wed Mar 19 15:13:47 2014
+Analysis & Synthesis report for g31_lab4_2
+Wed Mar 19 15:35:36 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -59,9 +59,9 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 19 15:13:47 2014         ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 19 15:35:36 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
-; Revision Name                      ; g31_YMD_Counter                               ;
+; Revision Name                      ; g31_lab4_2                                    ;
 ; Top-level Entity Name              ; g31_YMD_Counter_Testbed                       ;
 ; Family                             ; Cyclone II                                    ;
 ; Total logic elements               ; 178                                           ;
@@ -82,7 +82,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting                 ; Default Value      ;
 +----------------------------------------------------------------------------+-------------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7            ;                    ;
-; Top-level entity name                                                      ; g31_YMD_Counter_Testbed ; g31_YMD_Counter    ;
+; Top-level entity name                                                      ; g31_YMD_Counter_Testbed ; g31_lab4_2         ;
 ; Family name                                                                ; Cyclone II              ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                     ;                    ;
 ; Use smart compilation                                                      ; Off                     ; Off                ;
@@ -172,29 +172,28 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                     ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------+
-; g31_YMD_Counter.vhd              ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_YMD_Counter.vhd                         ;
-; g31_Day_Block.vhd                ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_Day_Block.vhd                           ;
-; g31_Month_Block.vhd              ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_Month_Block.vhd                         ;
-; g31_Year_Block.vhd               ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_Year_Block.vhd                          ;
-; g31_YMD_Counter_Testbed.vhd      ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_YMD_Counter_Testbed.vhd                 ;
-; g31_basic_timer.vhd              ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_basic_timer.vhd                         ;
-; g31_binary_to_seven_segment.vhd  ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_binary_to_seven_segment.vhd             ;
-; g31_seven_segment_decoder.vhd    ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_seven_segment_decoder.vhd               ;
-; g31_binary_to_BCD.vhd            ; yes             ; User VHDL File                         ; C:/altera/g31/Lab4.1/g31_binary_to_BCD.vhd                       ;
-; lpm_constant.tdf                 ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf  ;
-; db/cntr_cfl.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/altera/g31/Lab4.1/db/cntr_cfl.tdf                             ;
-; lpm_rom.tdf                      ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_rom.tdf      ;
-; altrom.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altrom.tdf       ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf   ;
-; db/altsyncram_e501.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/altera/g31/Lab4.1/db/altsyncram_e501.tdf                      ;
-; crc_rom.mif                      ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/g31/Lab4.1/crc_rom.mif                                 ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; ../Lab4.1/g31_basic_timer.vhd             ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_basic_timer.vhd                         ;
+; ../Lab4.1/g31_binary_to_BCD.vhd           ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_binary_to_BCD.vhd                       ;
+; ../Lab4.1/g31_binary_to_seven_segment.vhd ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_binary_to_seven_segment.vhd             ;
+; ../Lab4.1/g31_Day_Block.vhd               ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Day_Block.vhd                           ;
+; ../Lab4.1/g31_Month_Block.vhd             ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Month_Block.vhd                         ;
+; ../Lab4.1/g31_seven_segment_decoder.vhd   ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_seven_segment_decoder.vhd               ;
+; ../Lab4.1/g31_Year_Block.vhd              ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Year_Block.vhd                          ;
+; ../Lab4.1/g31_YMD_Counter.vhd             ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_YMD_Counter.vhd                         ;
+; ../Lab4.1/g31_YMD_Counter_Testbed.vhd     ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_YMD_Counter_Testbed.vhd                 ;
+; lpm_constant.tdf                          ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf ;
+; lpm_counter.tdf                           ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf  ;
+; db/cntr_cfl.tdf                           ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.2/db/cntr_cfl.tdf                             ;
+; lpm_rom.tdf                               ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_rom.tdf      ;
+; altrom.tdf                                ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altrom.tdf       ;
+; altsyncram.tdf                            ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf   ;
+; db/altsyncram_e501.tdf                    ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.2/db/altsyncram_e501.tdf                      ;
++-------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -206,8 +205,8 @@ applicable agreement for further details.
 ;                                             ;       ;
 ; Total combinational functions               ; 178   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 94    ;
-;     -- 3 input functions                    ; 36    ;
+;     -- 4 input functions                    ; 92    ;
+;     -- 3 input functions                    ; 38    ;
 ;     -- <=2 input functions                  ; 48    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
@@ -222,8 +221,8 @@ applicable agreement for further details.
 ; Total memory bits                           ; 1024  ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 64    ;
-; Total fan-out                               ; 892   ;
-; Average fan-out                             ; 3.14  ;
+; Total fan-out                               ; 890   ;
+; Average fan-out                             ; 3.13  ;
 +---------------------------------------------+-------+
 
 
@@ -543,50 +542,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Wed Mar 19 15:13:44 2014
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g31_YMD_Counter -c g31_YMD_Counter
+    Info: Processing started: Wed Mar 19 15:35:34 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g31_lab4_2 -c g31_lab4_2
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info: Found 2 design units, including 1 entities, in source file g31_ymd_counter.vhd
-    Info: Found design unit 1: g31_YMD_Counter-behaviour
-    Info: Found entity 1: g31_YMD_Counter
-Info: Found 2 design units, including 1 entities, in source file g31_day_block.vhd
-    Info: Found design unit 1: g31_Day_Block-behaviour
-    Info: Found entity 1: g31_Day_Block
-Info: Found 2 design units, including 1 entities, in source file g31_month_block.vhd
-    Info: Found design unit 1: g31_Month_Block-behaviour
-    Info: Found entity 1: g31_Month_Block
-Info: Found 2 design units, including 1 entities, in source file g31_year_block.vhd
-    Info: Found design unit 1: g31_Year_Block-behaviour
-    Info: Found entity 1: g31_Year_Block
-Info: Found 1 design units, including 1 entities, in source file g31_ymd_counter_testbed_circuit.bdf
-    Info: Found entity 1: g31_YMD_counter_testbed_circuit
-Info: Found 1 design units, including 1 entities, in source file g31_ymd_counter_circuit.bdf
-    Info: Found entity 1: g31_YMD_counter_circuit
-Info: Found 1 design units, including 1 entities, in source file g31_year_counter.bdf
-    Info: Found entity 1: g31_year_counter
-Info: Found 1 design units, including 1 entities, in source file g31_month_counter.bdf
-    Info: Found entity 1: g31_month_counter
-Info: Found 1 design units, including 1 entities, in source file g31_day_counter.bdf
-    Info: Found entity 1: g31_day_counter
-Info: Found 2 design units, including 1 entities, in source file g31_ymd_counter_testbed.vhd
-    Info: Found design unit 1: g31_YMD_Counter_Testbed-behavior
-    Info: Found entity 1: g31_YMD_Counter_Testbed
-Info: Found 2 design units, including 1 entities, in source file g31_basic_timer.vhd
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_basic_timer.vhd
     Info: Found design unit 1: g31_basic_timer-a
     Info: Found entity 1: g31_basic_timer
-Info: Found 2 design units, including 1 entities, in source file g31_binary_to_seven_segment.vhd
-    Info: Found design unit 1: g31_binary_to_seven_segment-a
-    Info: Found entity 1: g31_binary_to_seven_segment
-Info: Found 2 design units, including 1 entities, in source file g31_seven_segment_decoder.vhd
-    Info: Found design unit 1: g31_seven_segment_decoder-a
-    Info: Found entity 1: g31_seven_segment_decoder
-Info: Found 2 design units, including 1 entities, in source file g31_binary_to_bcd.vhd
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_binary_to_bcd.vhd
     Info: Found design unit 1: g31_binary_to_BCD-a
     Info: Found entity 1: g31_binary_to_BCD
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_binary_to_seven_segment.vhd
+    Info: Found design unit 1: g31_binary_to_seven_segment-a
+    Info: Found entity 1: g31_binary_to_seven_segment
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_day_block.vhd
+    Info: Found design unit 1: g31_Day_Block-behaviour
+    Info: Found entity 1: g31_Day_Block
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_month_block.vhd
+    Info: Found design unit 1: g31_Month_Block-behaviour
+    Info: Found entity 1: g31_Month_Block
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_seven_segment_decoder.vhd
+    Info: Found design unit 1: g31_seven_segment_decoder-a
+    Info: Found entity 1: g31_seven_segment_decoder
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_year_block.vhd
+    Info: Found design unit 1: g31_Year_Block-behaviour
+    Info: Found entity 1: g31_Year_Block
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_ymd_counter.vhd
+    Info: Found design unit 1: g31_YMD_Counter-behaviour
+    Info: Found entity 1: g31_YMD_Counter
+Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab4.1/g31_ymd_counter_testbed.vhd
+    Info: Found design unit 1: g31_YMD_Counter_Testbed-behavior
+    Info: Found entity 1: g31_YMD_Counter_Testbed
 Info: Elaborating entity "g31_YMD_Counter_Testbed" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(79): signal "load_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(79): signal "Initial_Set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(80): signal "year_set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(83): signal "Initial_Set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(84): signal "month_set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(87): signal "Initial_Set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(88): signal "day_set" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(77): inferring latch(es) for signal or variable "year_set", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at g31_YMD_Counter_Testbed.vhd(77): inferring latch(es) for signal or variable "month_set", which holds its previous value in one or more paths through the process
@@ -716,15 +707,18 @@ Info: 26 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]" lost all its fanouts during netlist optimizations.
     Info: Register "g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]" lost all its fanouts during netlist optimizations.
     Info: Register "g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]" lost all its fanouts during netlist optimizations.
+Warning: Ignored assignments for entity "g31_lab4_2" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity g31_lab4_2 -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity g31_lab4_2 -section_id "Root Region" was ignored
 Info: Implemented 236 device resources after synthesis - the final resource count might be different
     Info: Implemented 14 input pins
     Info: Implemented 28 output pins
     Info: Implemented 178 logic cells
     Info: Implemented 16 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 330 megabytes
-    Info: Processing ended: Wed Mar 19 15:13:47 2014
-    Info: Elapsed time: 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 331 megabytes
+    Info: Processing ended: Wed Mar 19 15:35:36 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
