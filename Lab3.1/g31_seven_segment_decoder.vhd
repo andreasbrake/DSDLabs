@@ -1,3 +1,12 @@
+-- This deconder takes in a BCD value and converts it into an
+-- input for a seven-segment display.
+--
+-- entity name: g31_seven_segment_decoder
+--
+-- Copyright (C) 2014 Andreas Brake, Hadi Sayar
+-- Vesion 1.0
+-- Author: Andreas Brake, Hadi Sayar
+-- Date: 2014-03-20
 
 library ieee;
 use ieee.std_logic_1164.all;

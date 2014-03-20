@@ -29,7 +29,7 @@ begin
 	
 	counter: lpm_counter
 	GENERIC MAP	(
-		LPM_DIRECTION => "DOWN"
+		LPM_DIRECTION => "DOWN",
 		LPM_WIDTH => 26
 	)
 	PORT MAP (

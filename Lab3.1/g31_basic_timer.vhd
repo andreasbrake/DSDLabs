@@ -1,3 +1,14 @@
+-- This circuit converts a 50MHz clock pulse into a signal that pulses once every second
+-- i.e. once every 50,000,000 clock pulses for the earth pulse
+-- and once every 51,374,562 clock pulses for the martian pulse.
+--
+-- entity name: g31_basic_timer
+--
+-- Copyright (C) 2014 Andreas Brake, Hadi Sayar
+-- Vesion 1.0
+-- Author: Andreas Brake, Hadi Sayar
+-- Date: 2014-03-20
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
