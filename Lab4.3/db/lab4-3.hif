@@ -381,6 +381,10 @@ CLOCK
 -1
 3
 }
+# hierarchies {
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2
+}
 # macro_sequence
 
 # end
@@ -561,6 +565,10 @@ clock
 -1
 3
 }
+# hierarchies {
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated
+}
 # macro_sequence
 
 # end
@@ -672,46 +680,9 @@ RESULT0
 -1
 3
 }
-# macro_sequence
-
-# end
-# entity
-g31_second_counter
-# storage
-db|lab4-3.(7).cnf
-db|lab4-3.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
+# hierarchies {
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_constant:const2
 }
-# case_insensitive
-# source_file
-|altera|g31|lab3.2|g31_second_counter.vhd
-48b0268164d56ea1e5b6425b3294ca9
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(secin)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(seconds)
-5 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -846,6 +817,10 @@ CLOCK
 -1
 3
 }
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter
+}
 # macro_sequence
 
 # end
@@ -906,86 +881,10 @@ clock
 -1
 3
 }
-# macro_sequence
-
-# end
-# entity
-g31_minute_counter
-# storage
-db|lab4-3.(10).cnf
-db|lab4-3.(10).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated
 }
-# case_insensitive
-# source_file
-|altera|g31|lab3.2|g31_minute_counter.vhd
-7c101b06cb4a4788fdc5f8117f7f91e
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(minin)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(minutes)
-5 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_hour_counter
-# storage
-db|lab4-3.(11).cnf
-db|lab4-3.(11).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|altera|g31|lab3.2|g31_hour_counter.vhd
-5d389a1c9a5d48cebe19dca382563df6
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(hourin)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(hours)
-4 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end
@@ -1114,6 +1013,9 @@ CLOCK
 -1
 3
 }
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter
+}
 # macro_sequence
 
 # end
@@ -1168,6 +1070,9 @@ clock
 -1
 3
 }
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated
+}
 # macro_sequence
 
 # end
@@ -1221,6 +1126,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+g31_synchronizer:sync|g31_YMD_Counter:YMDCounter
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -1264,6 +1172,9 @@ USR
 4 downto 0
 PARAMETER_STRING
 USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -1309,6 +1220,9 @@ USR
 PARAMETER_STRING
 USR
 }
+# hierarchies {
+g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block
+}
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
 a36c8ec425c8a2589af98b2d4daabc3
@@ -1348,6 +1262,9 @@ USR
 11 downto 0
 PARAMETER_STRING
 USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf
@@ -1800,36 +1717,6 @@ RESULT0
 
 # end
 # entity
-g31_basic_timer
-# storage
-db|lab4-3.(1).cnf
-db|lab4-3.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|altera|g31|lab3.2|g31_basic_timer.vhd
-6d8daf275322b541129ad36ff7d2de
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LPM_CONSTANT
 # storage
 db|lab4-3.(22).cnf
@@ -1936,6 +1823,9 @@ RESULT1
 RESULT0
 -1
 3
+}
+# hierarchies {
+g31_synchronizer:sync|g31_basic_timer:timer|lpm_constant:const
 }
 # macro_sequence
 
@@ -21872,176 +21762,6 @@ denominator0
 
 # end
 # entity
-g31_HMS_Counter
-# storage
-db|lab4-3.(23).cnf
-db|lab4-3.(23).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|altera|g31|lab3.2|g31_hms_counter.vhd
-2b58ef2b26bb36fcd56bc35733d9e84b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(h_set)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(m_set)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(s_set)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(hours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(minutes)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(seconds)
-5 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_synchronizer
-# storage
-db|lab4-3.(0).cnf
-db|lab4-3.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_synchronizer.vhd
-9855ef305239b2b13d509ff44f746761
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_date_compressor
-# storage
-db|lab4-3.(66).cnf
-db|lab4-3.(66).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_date_compressor.vhd
-a940dd7bca484d2321cd21a8d14b188
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(ndays)
-12 downto 0
-PARAMETER_STRING
-USR
- constraint(nsecs)
-16 downto 0
-PARAMETER_STRING
-USR
- constraint(ndate)
-24 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_Seconds_to_Days
-# storage
-db|lab4-3.(78).cnf
-db|lab4-3.(78).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|altera|g31|lab1.2|g31_seconds_to_days.vhd
-2c2f8eab7e24839d6445b6c6a438c99
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(seconds)
-16 downto 0
-PARAMETER_STRING
-USR
- constraint(day_fractions)
-39 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LPM_MULT
 # storage
 db|lab4-3.(91).cnf
@@ -24928,80 +24648,6 @@ denom0
 
 # end
 # entity
-g31_date_compressor
-# storage
-db|lab4-3.(105).cnf
-db|lab4-3.(105).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_date_compressor.vhd
-a940dd7bca484d2321cd21a8d14b188
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(ndays)
-12 downto 0
-PARAMETER_STRING
-USR
- constraint(nsecs)
-16 downto 0
-PARAMETER_STRING
-USR
- constraint(ndate)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_UTC_to_MTC
-# storage
-db|lab4-3.(6).cnf
-db|lab4-3.(6).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_utc_to_mtc.vhd
-57dc104d55bfded214683779365dd9b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LPM_MULT
 # storage
 db|lab4-3.(106).cnf
@@ -26659,7 +26305,7 @@ DATAB1
 2
 }
 # hierarchies {
-lpm_mult:conversionMult
+g31_mars_converter:converter|lpm_mult:conversionMult
 }
 # macro_sequence
 
@@ -26953,7 +26599,7 @@ dataa0
 3
 }
 # hierarchies {
-lpm_mult:conversionMult|mult_qao:auto_generated
+g31_mars_converter:converter|lpm_mult:conversionMult|mult_qao:auto_generated
 }
 # macro_sequence
 
@@ -27976,7 +27622,7 @@ DATAB3
 2
 }
 # hierarchies {
-lpm_mult:hourMult
+g31_mars_converter:converter|lpm_mult:hourMult
 }
 # macro_sequence
 
@@ -28126,7 +27772,7 @@ dataa0
 3
 }
 # hierarchies {
-lpm_mult:hourMult|mult_29o:auto_generated
+g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated
 }
 # macro_sequence
 
@@ -28388,7 +28034,7 @@ DATAB2
 2
 }
 # hierarchies {
-lpm_mult:minuteMult
+g31_mars_converter:converter|lpm_mult:minuteMult
 }
 # macro_sequence
 
@@ -28544,8 +28190,8 @@ dataa0
 3
 }
 # hierarchies {
-lpm_mult:minuteMult|mult_59o:auto_generated
-lpm_mult:secondMult|mult_59o:auto_generated
+g31_mars_converter:converter|lpm_mult:minuteMult|mult_59o:auto_generated
+g31_mars_converter:converter|lpm_mult:secondMult|mult_59o:auto_generated
 }
 # macro_sequence
 
@@ -28756,7 +28402,7 @@ DATAB2
 2
 }
 # hierarchies {
-lpm_mult:secondMult
+g31_mars_converter:converter|lpm_mult:secondMult
 }
 # macro_sequence
 
@@ -30034,10 +29680,614 @@ DATAB2
 
 # end
 # entity
+LPM_MULT
+# storage
+db|lab4-3.(7).cnf
+db|lab4-3.(7).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
+6ec8d746e6da2f4aae33fe9d4e4dfb1
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTHA
+30
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHB
+16
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHP
+32
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHR
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_WIDTHS
+1
+PARAMETER_SIGNED_DEC
+USR
+LPM_REPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LATENCY
+0
+PARAMETER_UNKNOWN
+DEF
+INPUT_A_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+USE_EAB
+OFF
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+APEX20K_TECHNOLOGY_MAPPER
+LUT
+TECH_MAPPER_APEX20K
+USR
+DEDICATED_MULTIPLIER_CIRCUITRY
+AUTO
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+mult_gao
+PARAMETER_UNKNOWN
+USR
+INPUT_A_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+USE_AHDL_IMPLEMENTATION
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT31
+-1
+3
+RESULT30
+-1
+3
+RESULT3
+-1
+3
+RESULT29
+-1
+3
+RESULT28
+-1
+3
+RESULT27
+-1
+3
+RESULT26
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+DATAA9
+-1
+3
+DATAA8
+-1
+3
+DATAA7
+-1
+3
+DATAA6
+-1
+3
+DATAA5
+-1
+3
+DATAA4
+-1
+3
+DATAA3
+-1
+3
+DATAA29
+-1
+3
+DATAA28
+-1
+3
+DATAA27
+-1
+3
+DATAA26
+-1
+3
+DATAA25
+-1
+3
+DATAA24
+-1
+3
+DATAA23
+-1
+3
+DATAA22
+-1
+3
+DATAA21
+-1
+3
+DATAA20
+-1
+3
+DATAA2
+-1
+3
+DATAA19
+-1
+3
+DATAA18
+-1
+3
+DATAA17
+-1
+3
+DATAA16
+-1
+3
+DATAA15
+-1
+3
+DATAA14
+-1
+3
+DATAA13
+-1
+3
+DATAA12
+-1
+3
+DATAA11
+-1
+3
+DATAA10
+-1
+3
+DATAA1
+-1
+3
+DATAA0
+-1
+3
+DATAB9
+-1
+1
+DATAB7
+-1
+1
+DATAB6
+-1
+1
+DATAB4
+-1
+1
+DATAB3
+-1
+1
+DATAB10
+-1
+1
+DATAB0
+-1
+1
+DATAB8
+-1
+2
+DATAB5
+-1
+2
+DATAB2
+-1
+2
+DATAB15
+-1
+2
+DATAB14
+-1
+2
+DATAB13
+-1
+2
+DATAB12
+-1
+2
+DATAB11
+-1
+2
+DATAB1
+-1
+2
+}
+# macro_sequence
+
+# end
+# entity
+mult_gao
+# storage
+db|lab4-3.(10).cnf
+db|lab4-3.(10).cnf
+# case_insensitive
+# source_file
+db|mult_gao.tdf
+48788a426e23938bbb79333ad5b7f4
+7
+# used_port {
+result9
+-1
+3
+result8
+-1
+3
+result7
+-1
+3
+result6
+-1
+3
+result5
+-1
+3
+result4
+-1
+3
+result31
+-1
+3
+result30
+-1
+3
+result3
+-1
+3
+result29
+-1
+3
+result28
+-1
+3
+result27
+-1
+3
+result26
+-1
+3
+result25
+-1
+3
+result24
+-1
+3
+result23
+-1
+3
+result22
+-1
+3
+result21
+-1
+3
+result20
+-1
+3
+result2
+-1
+3
+result19
+-1
+3
+result18
+-1
+3
+result17
+-1
+3
+result16
+-1
+3
+result15
+-1
+3
+result14
+-1
+3
+result13
+-1
+3
+result12
+-1
+3
+result11
+-1
+3
+result10
+-1
+3
+result1
+-1
+3
+result0
+-1
+3
+datab9
+-1
+3
+datab8
+-1
+3
+datab7
+-1
+3
+datab6
+-1
+3
+datab5
+-1
+3
+datab4
+-1
+3
+datab3
+-1
+3
+datab2
+-1
+3
+datab15
+-1
+3
+datab14
+-1
+3
+datab13
+-1
+3
+datab12
+-1
+3
+datab11
+-1
+3
+datab10
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa9
+-1
+3
+dataa8
+-1
+3
+dataa7
+-1
+3
+dataa6
+-1
+3
+dataa5
+-1
+3
+dataa4
+-1
+3
+dataa3
+-1
+3
+dataa29
+-1
+3
+dataa28
+-1
+3
+dataa27
+-1
+3
+dataa26
+-1
+3
+dataa25
+-1
+3
+dataa24
+-1
+3
+dataa23
+-1
+3
+dataa22
+-1
+3
+dataa21
+-1
+3
+dataa20
+-1
+3
+dataa2
+-1
+3
+dataa19
+-1
+3
+dataa18
+-1
+3
+dataa17
+-1
+3
+dataa16
+-1
+3
+dataa15
+-1
+3
+dataa14
+-1
+3
+dataa13
+-1
+3
+dataa12
+-1
+3
+dataa11
+-1
+3
+dataa10
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
 g31_mars_converter
 # storage
-db|lab4-3.(100).cnf
-db|lab4-3.(100).cnf
+db|lab4-3.(1).cnf
+db|lab4-3.(1).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -30058,7 +30308,384 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # hierarchies {
+g31_mars_converter:converter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_date_compressor
+# storage
+db|lab4-3.(11).cnf
+db|lab4-3.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+g31_date_compressor.vhd
+c81023688a5cc730dedd69b3f1fdff7
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(ndays)
+12 downto 0
+PARAMETER_STRING
+USR
+ constraint(nsecs)
+16 downto 0
+PARAMETER_STRING
+USR
+ constraint(ndate)
+29 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_date_compressor:compressor
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_Seconds_to_Days
+# storage
+db|lab4-3.(23).cnf
+db|lab4-3.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab1.2|g31_seconds_to_days.vhd
+2c2f8eab7e24839d6445b6c6a438c99
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(seconds)
+16 downto 0
+PARAMETER_STRING
+USR
+ constraint(day_fractions)
+39 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_HMS_Counter
+# storage
+db|lab4-3.(78).cnf
+db|lab4-3.(78).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab3.2|g31_hms_counter.vhd
+af939a921d82fa7b35ba1a9ab71ded8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(h_set)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(m_set)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(s_set)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(hours)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(minutes)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(seconds)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_second_counter
+# storage
+db|lab4-3.(100).cnf
+db|lab4-3.(100).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab3.2|g31_second_counter.vhd
+48b0268164d56ea1e5b6425b3294ca9
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(secin)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(seconds)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_minute_counter
+# storage
+db|lab4-3.(105).cnf
+db|lab4-3.(105).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab3.2|g31_minute_counter.vhd
+7c101b06cb4a4788fdc5f8117f7f91e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(minin)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(minutes)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_hour_counter
+# storage
+db|lab4-3.(126).cnf
+db|lab4-3.(126).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab3.2|g31_hour_counter.vhd
+5d389a1c9a5d48cebe19dca382563df6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(hourin)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(hours)
+4 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_UTC_to_MTC
+# storage
+db|lab4-3.(6).cnf
+db|lab4-3.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+g31_utc_to_mtc.vhd
+3fa84ae590559fa32ac3390a21f6e51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
 |
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_synchronizer
+# storage
+db|lab4-3.(0).cnf
+db|lab4-3.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+g31_synchronizer.vhd
+66cbbf49ed43d6a6acfcde419fc8594e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+g31_synchronizer:sync
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+g31_basic_timer
+# storage
+db|lab4-3.(66).cnf
+db|lab4-3.(66).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|altera|g31|lab3.2|g31_basic_timer.vhd
+b28ab112679a8062dd6d292d6bc26ff6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+g31_synchronizer:sync|g31_basic_timer:timer
 }
 # lmf
 |altera|91sp2|quartus|lmf|maxplus2.lmf

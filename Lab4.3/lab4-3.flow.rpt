@@ -1,5 +1,5 @@
 Flow report for lab4-3
-Tue Mar 25 10:25:42 2014
+Tue Mar 25 16:27:36 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -38,19 +38,19 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 25 10:25:42 2014         ;
+; Flow Status                        ; Successful - Tue Mar 25 16:27:36 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; lab4-3                                        ;
-; Top-level Entity Name              ; g31_mars_converter                            ;
+; Top-level Entity Name              ; g31_UTC_to_MTC                                ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C20F484C7                                  ;
 ; Timing Models                      ; Final                                         ;
 ; Met timing requirements            ; N/A                                           ;
-; Total logic elements               ; 71                                            ;
-;     Total combinational functions  ; 71                                            ;
-;     Dedicated logic registers      ; 0                                             ;
-; Total registers                    ; 0                                             ;
-; Total pins                         ; 123                                           ;
+; Total logic elements               ; 370                                           ;
+;     Total combinational functions  ; 370                                           ;
+;     Dedicated logic registers      ; 95                                            ;
+; Total registers                    ; 95                                            ;
+; Total pins                         ; 89                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
 ; Embedded Multiplier 9-bit elements ; 10                                            ;
@@ -63,25 +63,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/25/2014 10:25:41 ;
+; Start date & time ; 03/25/2014 16:27:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab4-3              ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+------------------------------------+---------------------------------+---------------+--------------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value ; Entity Name        ; Section Id     ;
-+------------------------------------+---------------------------------+---------------+--------------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 132129496018668.139575754105784 ; --            ; --                 ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --                 ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --                 ; --             ;
-; PARTITION_COLOR                    ; 16764057                        ; --            ; g31_mars_converter ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; g31_mars_converter ; Top            ;
-; TOP_LEVEL_ENTITY                   ; g31_mars_converter              ; lab4-3        ; --                 ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --                 ; eda_blast_fpga ;
-+------------------------------------+---------------------------------+---------------+--------------------+----------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++------------------------------------+---------------------------------+---------------+----------------+----------------+
+; Assignment Name                    ; Value                           ; Default Value ; Entity Name    ; Section Id     ;
++------------------------------------+---------------------------------+---------------+----------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 132129495421963.139577925301380 ; --            ; --             ; --             ;
+; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --             ; --             ;
+; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --             ; --             ;
+; PARTITION_COLOR                    ; 16764057                        ; --            ; g31_UTC_to_MTC ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; g31_UTC_to_MTC ; Top            ;
+; TOP_LEVEL_ENTITY                   ; g31_UTC_to_MTC                  ; lab4-3        ; --             ; --             ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --             ; eda_blast_fpga ;
++------------------------------------+---------------------------------+---------------+----------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -89,8 +89,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 320 MB              ; 00:00:01                           ;
-; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:04     ; 1.0                     ; 326 MB              ; 00:00:02                           ;
+; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -99,7 +99,7 @@ applicable agreement for further details.
 +----------------------+------------------+---------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +----------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis ; 156TR4060DS-02   ; Windows Vista ; 6.1        ; x86_64         ;
+; Analysis & Synthesis ; 156TR4060DS-03   ; Windows Vista ; 6.1        ; x86_64         ;
 +----------------------+------------------+---------------+------------+----------------+
 
 

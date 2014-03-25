@@ -33,8 +33,7 @@ architecture a of g31_synchronizer is
 		PORT(	reset	: in std_logic;
 				clock	: in std_logic;
 				enable	: in std_logic;
-				EPULSE	: out std_logic;
-				MPULSE	: out std_logic);
+				EPULSE	: out std_logic);
 	end component;
 	
 	component g31_HMS_Counter
@@ -47,8 +46,7 @@ architecture a of g31_synchronizer is
 				S_Set			: in std_logic_vector(5 downto 0);
 				Hours			: out std_logic_vector(4 downto 0);
 				Minutes			: out std_logic_vector(5 downto 0);
-				Seconds			: out std_logic_vector(5 downto 0);
-				end_of_day		: out std_logic);		
+				Seconds			: out std_logic_vector(5 downto 0));		
 	end component;
 
 	component g31_YMD_Counter 
@@ -78,15 +76,14 @@ architecture a of g31_synchronizer is
 	signal seconds:	 	std_logic_vector(5 downto 0);
 	
 	signal epulse:		std_logic;
-	signal mpulse:		std_logic;
 	signal doneD:		std_logic;
 	signal doneS:		std_logic;
-	signal eod:			std_logic;
 	
 	signal Nsec:		std_logic_vector(16 downto 0);
 	signal Nday:		std_logic_vector(12 downto 0);
 	signal dayFrac:		std_logic_vector(39 downto 0);
 begin
+	epulseOut <= epulse
 	day_count <= Nday;
 	second_count <= Nsec;
 	
@@ -140,8 +137,7 @@ begin
 		reset	=> reset,
 		clock	=> clock,
 		enable	=> count_enabled and not (doneD and doneS),
-		EPULSE	=> epulse,
-		MPULSE	=> mpulse);
+		EPULSE	=> epulse);
 		
 	HMSCounter: g31_HMS_Counter
 	PORT MAP(
@@ -154,8 +150,7 @@ begin
 		S_Set => "000000",
 		Hours => hours,
 		Minutes => minutes,
-		Seconds => seconds,
-		end_of_day => eod);
+		Seconds => seconds);
 
 	YMDCounter : g31_YMD_Counter
 	PORT MAP(

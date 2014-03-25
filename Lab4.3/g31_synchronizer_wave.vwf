@@ -1292,6 +1292,16 @@ SIGNAL("done_out_s")
 	PARENT = "";
 }
 
+SIGNAL("epulseOut")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -3187,6 +3197,22 @@ TRANSITION_LIST("done_out_s")
 	}
 }
 
+TRANSITION_LIST("epulseOut")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 10.0;
+		NODE
+		{
+			REPEAT = 12911;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+		}
+		LEVEL 0 FOR 483550.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -4438,6 +4464,15 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 125;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "epulseOut";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 126;
 	TREE_LEVEL = 0;
 }
 

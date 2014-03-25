@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4-3
-Tue Mar 25 10:25:42 2014
+Tue Mar 25 16:27:36 2014
 Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
@@ -14,13 +14,33 @@ Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Versio
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis DSP Block Usage Summary
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: LPM_MULT:conversionMult
- 11. Parameter Settings for User Entity Instance: LPM_MULT:hourMult
- 12. Parameter Settings for User Entity Instance: LPM_MULT:minuteMult
- 13. Parameter Settings for User Entity Instance: LPM_MULT:secondMult
- 14. lpm_mult Parameter Settings by Entity Instance
- 15. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter
+ 13. Source assignments for g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter2
+ 14. Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter
+ 15. Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter
+ 16. Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter
+ 17. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const
+ 18. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter
+ 19. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2
+ 20. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter2
+ 21. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter
+ 22. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter
+ 23. Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter
+ 24. Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:conversionMult
+ 25. Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:hourMult
+ 26. Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:minuteMult
+ 27. Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:secondMult
+ 28. lpm_mult Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "g31_mars_converter:converter"
+ 30. Port Connectivity Checks: "g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker"
+ 31. Port Connectivity Checks: "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter"
+ 32. Port Connectivity Checks: "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter"
+ 33. Port Connectivity Checks: "g31_synchronizer:sync|g31_basic_timer:timer"
+ 34. Port Connectivity Checks: "g31_synchronizer:sync"
+ 35. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +66,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 25 10:25:42 2014         ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 25 16:27:36 2014         ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Full Version ;
 ; Revision Name                      ; lab4-3                                        ;
-; Top-level Entity Name              ; g31_mars_converter                            ;
+; Top-level Entity Name              ; g31_UTC_to_MTC                                ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 71                                            ;
-;     Total combinational functions  ; 71                                            ;
-;     Dedicated logic registers      ; 0                                             ;
-; Total registers                    ; 0                                             ;
-; Total pins                         ; 123                                           ;
+; Total logic elements               ; 370                                           ;
+;     Total combinational functions  ; 370                                           ;
+;     Dedicated logic registers      ; 95                                            ;
+; Total registers                    ; 95                                            ;
+; Total pins                         ; 89                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
 ; Embedded Multiplier 9-bit elements ; 10                                            ;
@@ -69,7 +89,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; g31_mars_converter ; lab4-3             ;
+; Top-level entity name                                                      ; g31_UTC_to_MTC     ; lab4-3             ;
 ; Family name                                                                ; Cyclone II         ; Stratix II         ;
 ; Use Generated Physical Constraints File                                    ; Off                ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -159,64 +179,103 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                 ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+
-; g31_mars_converter.vhd           ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.3/g31_mars_converter.vhd                  ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf ;
-; db/mult_qao.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_qao.tdf                         ;
-; db/mult_29o.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_29o.tdf                         ;
-; db/mult_59o.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_59o.tdf                         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
+; ../Lab1.2/g31_Seconds_to_Days.vhd ; yes             ; User VHDL File               ; C:/altera/g31/Lab1.2/g31_Seconds_to_Days.vhd                     ;
+; ../Lab3.2/g31_basic_timer.vhd     ; yes             ; User VHDL File               ; C:/altera/g31/Lab3.2/g31_basic_timer.vhd                         ;
+; ../Lab3.2/g31_second_counter.vhd  ; yes             ; User VHDL File               ; C:/altera/g31/Lab3.2/g31_second_counter.vhd                      ;
+; ../Lab3.2/g31_minute_counter.vhd  ; yes             ; User VHDL File               ; C:/altera/g31/Lab3.2/g31_minute_counter.vhd                      ;
+; ../Lab3.2/g31_hour_counter.vhd    ; yes             ; User VHDL File               ; C:/altera/g31/Lab3.2/g31_hour_counter.vhd                        ;
+; ../Lab4.1/g31_Day_Block.vhd       ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Day_Block.vhd                           ;
+; ../Lab4.1/g31_Month_Block.vhd     ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Month_Block.vhd                         ;
+; ../Lab4.1/g31_Year_Block.vhd      ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_Year_Block.vhd                          ;
+; ../Lab3.2/g31_HMS_Counter.vhd     ; yes             ; User VHDL File               ; C:/altera/g31/Lab3.2/g31_HMS_Counter.vhd                         ;
+; ../Lab4.1/g31_YMD_Counter.vhd     ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.1/g31_YMD_Counter.vhd                         ;
+; g31_synchronizer.vhd              ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.3/g31_synchronizer.vhd                        ;
+; g31_date_compressor.vhd           ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.3/g31_date_compressor.vhd                     ;
+; g31_mars_converter.vhd            ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.3/g31_mars_converter.vhd                      ;
+; g31_UTC_to_MTC.vhd                ; yes             ; User VHDL File               ; C:/altera/g31/Lab4.3/g31_UTC_to_MTC.vhd                          ;
+; lpm_constant.tdf                  ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf ;
+; lpm_counter.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf  ;
+; db/cntr_cfl.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/cntr_cfl.tdf                             ;
+; db/cntr_77l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/cntr_77l.tdf                             ;
+; db/cntr_67l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/cntr_67l.tdf                             ;
+; lpm_mult.tdf                      ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf     ;
+; db/mult_qao.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_qao.tdf                             ;
+; db/mult_29o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_29o.tdf                             ;
+; db/mult_59o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/altera/g31/Lab4.3/db/mult_59o.tdf                             ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                            ;
-+---------------------------------------------+----------------------------------------------------------+
-; Resource                                    ; Usage                                                    ;
-+---------------------------------------------+----------------------------------------------------------+
-; Estimated Total logic elements              ; 71                                                       ;
-;                                             ;                                                          ;
-; Total combinational functions               ; 71                                                       ;
-; Logic element usage by number of LUT inputs ;                                                          ;
-;     -- 4 input functions                    ; 0                                                        ;
-;     -- 3 input functions                    ; 17                                                       ;
-;     -- <=2 input functions                  ; 54                                                       ;
-;                                             ;                                                          ;
-; Logic elements by mode                      ;                                                          ;
-;     -- normal mode                          ; 3                                                        ;
-;     -- arithmetic mode                      ; 68                                                       ;
-;                                             ;                                                          ;
-; Total registers                             ; 0                                                        ;
-;     -- Dedicated logic registers            ; 0                                                        ;
-;     -- I/O registers                        ; 0                                                        ;
-;                                             ;                                                          ;
-; I/O pins                                    ; 123                                                      ;
-; Embedded Multiplier 9-bit elements          ; 10                                                       ;
-; Maximum fan-out node                        ; lpm_mult:conversionMult|mult_qao:auto_generated|w231w[0] ;
-; Maximum fan-out                             ; 34                                                       ;
-; Total fan-out                               ; 306                                                      ;
-; Average fan-out                             ; 1.50                                                     ;
-+---------------------------------------------+----------------------------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 370   ;
+;                                             ;       ;
+; Total combinational functions               ; 370   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 62    ;
+;     -- 3 input functions                    ; 164   ;
+;     -- <=2 input functions                  ; 144   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 95    ;
+;     -- arithmetic mode                      ; 275   ;
+;                                             ;       ;
+; Total registers                             ; 95    ;
+;     -- Dedicated logic registers            ; 95    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 89    ;
+; Embedded Multiplier 9-bit elements          ; 10    ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 95    ;
+; Total fan-out                               ; 1491  ;
+; Average fan-out                             ; 2.64  ;
++---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Library Name ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
-; |g31_mars_converter             ; 71 (43)           ; 0 (0)        ; 0           ; 10           ; 0       ; 5         ; 123  ; 0            ; |g31_mars_converter                                                 ; work         ;
-;    |lpm_mult:conversionMult|    ; 28 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:conversionMult                         ;              ;
-;       |mult_qao:auto_generated| ; 28 (28)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:conversionMult|mult_qao:auto_generated ;              ;
-;    |lpm_mult:hourMult|          ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:hourMult                               ; work         ;
-;       |mult_29o:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:hourMult|mult_29o:auto_generated       ; work         ;
-;    |lpm_mult:minuteMult|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:minuteMult                             ; work         ;
-;       |mult_59o:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:minuteMult|mult_59o:auto_generated     ; work         ;
-;    |lpm_mult:secondMult|        ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:secondMult                             ; work         ;
-;       |mult_59o:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_mars_converter|lpm_mult:secondMult|mult_59o:auto_generated     ; work         ;
-+---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |g31_UTC_to_MTC                          ; 370 (2)           ; 95 (0)       ; 0           ; 10           ; 0       ; 5         ; 89   ; 0            ; |g31_UTC_to_MTC                                                                                                                               ; work         ;
+;    |g31_date_compressor:compressor|      ; 161 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_date_compressor:compressor                                                                                                ; work         ;
+;       |g31_Seconds_to_Days:fracMaker|    ; 161 (161)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker                                                                  ; work         ;
+;    |g31_mars_converter:converter|        ; 44 (29)           ; 0 (0)        ; 0           ; 10           ; 0       ; 5         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter                                                                                                  ; work         ;
+;       |lpm_mult:conversionMult|          ; 15 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:conversionMult                                                                          ; work         ;
+;          |mult_qao:auto_generated|       ; 15 (15)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:conversionMult|mult_qao:auto_generated                                                  ; work         ;
+;       |lpm_mult:hourMult|                ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:hourMult                                                                                ; work         ;
+;          |mult_29o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated                                                        ; work         ;
+;       |lpm_mult:minuteMult|              ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:minuteMult                                                                              ; work         ;
+;          |mult_59o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:minuteMult|mult_59o:auto_generated                                                      ; work         ;
+;       |lpm_mult:secondMult|              ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:secondMult                                                                              ; work         ;
+;          |mult_59o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_mars_converter:converter|lpm_mult:secondMult|mult_59o:auto_generated                                                      ; work         ;
+;    |g31_synchronizer:sync|               ; 163 (57)          ; 95 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync                                                                                                         ;              ;
+;       |g31_HMS_Counter:HMSCounter|       ; 26 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter                                                                              ; work         ;
+;          |g31_hour_counter:hourCounter|  ; 8 (2)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter                                                 ; work         ;
+;             |lpm_counter:hourCounter|    ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                         ; work         ;
+;                |cntr_67l:auto_generated| ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated ; work         ;
+;          |g31_minute_counter:minCounter| ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter                                                ; work         ;
+;             |lpm_counter:minCounter|     ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                         ; work         ;
+;                |cntr_77l:auto_generated| ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated ; work         ;
+;          |g31_second_counter:secCounter| ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter                                                ; work         ;
+;             |lpm_counter:secCounter|     ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                         ; work         ;
+;                |cntr_77l:auto_generated| ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated ; work         ;
+;       |g31_YMD_Counter:YMDCounter|       ; 43 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter                                                                              ; work         ;
+;          |g31_Day_Block:day_block|       ; 21 (21)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block                                                      ; work         ;
+;          |g31_Month_Block:month_block|   ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block                                                  ; work         ;
+;          |g31_Year_Block:year_block|     ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block                                                    ; work         ;
+;       |g31_basic_timer:timer|            ; 37 (10)           ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_basic_timer:timer                                                                                   ; work         ;
+;          |lpm_counter:counter|           ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter                                                               ; work         ;
+;             |cntr_cfl:auto_generated|    ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated                                       ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -238,212 +297,526 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
++-----------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                          ;
++--------------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                          ; Reason for Removal ;
++--------------------------------------------------------------------------------------------------------+--------------------+
+; g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0..25] ; Lost fanout        ;
+; Total Number of Removed Registers = 26                                                                 ;                    ;
++--------------------------------------------------------------------------------------------------------+--------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 95    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 55    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 87    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_MULT:conversionMult              ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 30         ; Signed Integer      ;
-; LPM_WIDTHB                                     ; 16         ; Signed Integer      ;
-; LPM_WIDTHP                                     ; 46         ; Signed Integer      ;
-; LPM_WIDTHR                                     ; 0          ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Signed Integer      ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Signed Integer      ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_qao   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[4]       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[11]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |g31_UTC_to_MTC|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block|months_out[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Source assignments for g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter ;
++---------------------------+-------+------+---------------------------------------------+
+; Assignment                ; Value ; From ; To                                          ;
++---------------------------+-------+------+---------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                           ;
++---------------------------+-------+------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter2 ;
++---------------------------+-------+------+----------------------------------------------+
+; Assignment                ; Value ; From ; To                                           ;
++---------------------------+-------+------+----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                            ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                            ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                            ;
++---------------------------+-------+------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                 ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                 ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                                                ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                                                                 ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                                                                 ;
++---------------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const ;
++--------------------+------------------+---------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                ;
++--------------------+------------------+---------------------------------------------------------------------+
+; LPM_WIDTH          ; 26               ; Signed Integer                                                      ;
+; LPM_CVALUE         ; 1                ; Signed Integer                                                      ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                             ;
+; CBXI_PARAMETER     ; lpm_constant_kh4 ; Untyped                                                             ;
++--------------------+------------------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_MULT:hourMult                    ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 17         ; Signed Integer      ;
-; LPM_WIDTHB                                     ; 5          ; Signed Integer      ;
-; LPM_WIDTHP                                     ; 22         ; Signed Integer      ;
-; LPM_WIDTHR                                     ; 0          ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Signed Integer      ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Signed Integer      ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_29o   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter ;
++------------------------+-------------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                            ;
++------------------------+-------------------+-----------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                                  ;
+; LPM_WIDTH              ; 26                ; Signed Integer                                                  ;
+; LPM_DIRECTION          ; DOWN              ; Untyped                                                         ;
+; LPM_MODULUS            ; 0                 ; Signed Integer                                                  ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                         ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                         ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                         ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                              ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                              ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                         ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                         ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                         ;
+; CBXI_PARAMETER         ; cntr_cfl          ; Untyped                                                         ;
++------------------------+-------------------+-----------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_MULT:minuteMult                  ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 17         ; Signed Integer      ;
-; LPM_WIDTHB                                     ; 6          ; Signed Integer      ;
-; LPM_WIDTHP                                     ; 23         ; Signed Integer      ;
-; LPM_WIDTHR                                     ; 0          ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Signed Integer      ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Signed Integer      ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_59o   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2 ;
++--------------------+------------------+----------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                 ;
++--------------------+------------------+----------------------------------------------------------------------+
+; LPM_WIDTH          ; 26               ; Signed Integer                                                       ;
+; LPM_CVALUE         ; 51374562         ; Signed Integer                                                       ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                              ;
+; CBXI_PARAMETER     ; lpm_constant_1n4 ; Untyped                                                              ;
++--------------------+------------------+----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_MULT:secondMult                  ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 17         ; Signed Integer      ;
-; LPM_WIDTHB                                     ; 6          ; Signed Integer      ;
-; LPM_WIDTHP                                     ; 23         ; Signed Integer      ;
-; LPM_WIDTHR                                     ; 0          ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Signed Integer      ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Signed Integer      ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_59o   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter2 ;
++------------------------+-------------------+------------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                             ;
++------------------------+-------------------+------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                                   ;
+; LPM_WIDTH              ; 26                ; Signed Integer                                                   ;
+; LPM_DIRECTION          ; DOWN              ; Untyped                                                          ;
+; LPM_MODULUS            ; 0                 ; Signed Integer                                                   ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                          ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                          ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                          ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped                                                          ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                          ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                               ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                               ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                          ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                          ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                          ;
+; CBXI_PARAMETER         ; cntr_cfl          ; Untyped                                                          ;
++------------------------+-------------------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                  ;
-+---------------------------------------+-------------------------+
-; Name                                  ; Value                   ;
-+---------------------------------------+-------------------------+
-; Number of entity instances            ; 4                       ;
-; Entity Instance                       ; LPM_MULT:conversionMult ;
-;     -- LPM_WIDTHA                     ; 30                      ;
-;     -- LPM_WIDTHB                     ; 16                      ;
-;     -- LPM_WIDTHP                     ; 46                      ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                      ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                      ;
-;     -- USE_EAB                        ; OFF                     ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                    ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                      ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                      ;
-; Entity Instance                       ; LPM_MULT:hourMult       ;
-;     -- LPM_WIDTHA                     ; 17                      ;
-;     -- LPM_WIDTHB                     ; 5                       ;
-;     -- LPM_WIDTHP                     ; 22                      ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                      ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                      ;
-;     -- USE_EAB                        ; OFF                     ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                    ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                      ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                      ;
-; Entity Instance                       ; LPM_MULT:minuteMult     ;
-;     -- LPM_WIDTHA                     ; 17                      ;
-;     -- LPM_WIDTHB                     ; 6                       ;
-;     -- LPM_WIDTHP                     ; 23                      ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                      ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                      ;
-;     -- USE_EAB                        ; OFF                     ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                    ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                      ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                      ;
-; Entity Instance                       ; LPM_MULT:secondMult     ;
-;     -- LPM_WIDTHA                     ; 17                      ;
-;     -- LPM_WIDTHB                     ; 6                       ;
-;     -- LPM_WIDTHP                     ; 23                      ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                      ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                      ;
-;     -- USE_EAB                        ; OFF                     ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                    ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                      ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                      ;
-+---------------------------------------+-------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                                                                  ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                                                                        ;
+; LPM_WIDTH              ; 6                 ; Signed Integer                                                                                        ;
+; LPM_DIRECTION          ; UP                ; Untyped                                                                                               ;
+; LPM_MODULUS            ; 0                 ; Signed Integer                                                                                        ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                                                               ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped                                                                                               ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                                                                    ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                                                                    ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                                                               ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                                                               ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                                                               ;
+; CBXI_PARAMETER         ; cntr_77l          ; Untyped                                                                                               ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                                                                  ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                                                                        ;
+; LPM_WIDTH              ; 6                 ; Signed Integer                                                                                        ;
+; LPM_DIRECTION          ; UP                ; Untyped                                                                                               ;
+; LPM_MODULUS            ; 0                 ; Signed Integer                                                                                        ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                                                               ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped                                                                                               ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                                                                    ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                                                                    ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                                                               ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                                                               ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                                                               ;
+; CBXI_PARAMETER         ; cntr_77l          ; Untyped                                                                                               ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                                                                  ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                                                                        ;
+; LPM_WIDTH              ; 5                 ; Signed Integer                                                                                        ;
+; LPM_DIRECTION          ; UP                ; Untyped                                                                                               ;
+; LPM_MODULUS            ; 0                 ; Signed Integer                                                                                        ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                                                               ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                                                               ;
+; DEVICE_FAMILY          ; Cyclone II        ; Untyped                                                                                               ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                                                                    ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                                                                    ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                                                               ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                                                               ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                                                               ;
+; CBXI_PARAMETER         ; cntr_67l          ; Untyped                                                                                               ;
++------------------------+-------------------+-------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:conversionMult ;
++------------------------------------------------+------------+-------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                ;
++------------------------------------------------+------------+-------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                      ;
+; LPM_WIDTHA                                     ; 30         ; Signed Integer                      ;
+; LPM_WIDTHB                                     ; 16         ; Signed Integer                      ;
+; LPM_WIDTHP                                     ; 46         ; Signed Integer                      ;
+; LPM_WIDTHR                                     ; 0          ; Untyped                             ;
+; LPM_WIDTHS                                     ; 1          ; Signed Integer                      ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                             ;
+; LPM_PIPELINE                                   ; 0          ; Signed Integer                      ;
+; LATENCY                                        ; 0          ; Untyped                             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                             ;
+; USE_EAB                                        ; OFF        ; Untyped                             ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                 ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                             ;
+; CBXI_PARAMETER                                 ; mult_qao   ; Untyped                             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                             ;
++------------------------------------------------+------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:hourMult ;
++------------------------------------------------+------------+-------------------------------+
+; Parameter Name                                 ; Value      ; Type                          ;
++------------------------------------------------+------------+-------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                ;
+; LPM_WIDTHA                                     ; 17         ; Signed Integer                ;
+; LPM_WIDTHB                                     ; 5          ; Signed Integer                ;
+; LPM_WIDTHP                                     ; 22         ; Signed Integer                ;
+; LPM_WIDTHR                                     ; 0          ; Untyped                       ;
+; LPM_WIDTHS                                     ; 1          ; Signed Integer                ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                       ;
+; LPM_PIPELINE                                   ; 0          ; Signed Integer                ;
+; LATENCY                                        ; 0          ; Untyped                       ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                       ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                       ;
+; USE_EAB                                        ; OFF        ; Untyped                       ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                       ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                       ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                       ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K           ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                       ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                       ;
+; CBXI_PARAMETER                                 ; mult_29o   ; Untyped                       ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                       ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                       ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                       ;
++------------------------------------------------+------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:minuteMult ;
++------------------------------------------------+------------+---------------------------------+
+; Parameter Name                                 ; Value      ; Type                            ;
++------------------------------------------------+------------+---------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                  ;
+; LPM_WIDTHA                                     ; 17         ; Signed Integer                  ;
+; LPM_WIDTHB                                     ; 6          ; Signed Integer                  ;
+; LPM_WIDTHP                                     ; 23         ; Signed Integer                  ;
+; LPM_WIDTHR                                     ; 0          ; Untyped                         ;
+; LPM_WIDTHS                                     ; 1          ; Signed Integer                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                         ;
+; LPM_PIPELINE                                   ; 0          ; Signed Integer                  ;
+; LATENCY                                        ; 0          ; Untyped                         ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                         ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                         ;
+; USE_EAB                                        ; OFF        ; Untyped                         ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                         ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                         ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                         ;
+; CBXI_PARAMETER                                 ; mult_59o   ; Untyped                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                         ;
++------------------------------------------------+------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: g31_mars_converter:converter|LPM_MULT:secondMult ;
++------------------------------------------------+------------+---------------------------------+
+; Parameter Name                                 ; Value      ; Type                            ;
++------------------------------------------------+------------+---------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                  ;
+; LPM_WIDTHA                                     ; 17         ; Signed Integer                  ;
+; LPM_WIDTHB                                     ; 6          ; Signed Integer                  ;
+; LPM_WIDTHP                                     ; 23         ; Signed Integer                  ;
+; LPM_WIDTHR                                     ; 0          ; Untyped                         ;
+; LPM_WIDTHS                                     ; 1          ; Signed Integer                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped                         ;
+; LPM_PIPELINE                                   ; 0          ; Signed Integer                  ;
+; LATENCY                                        ; 0          ; Untyped                         ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                         ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                         ;
+; USE_EAB                                        ; OFF        ; Untyped                         ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                         ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                         ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                         ;
+; CBXI_PARAMETER                                 ; mult_59o   ; Untyped                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                         ;
++------------------------------------------------+------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                               ;
++---------------------------------------+------------------------------------------------------+
+; Name                                  ; Value                                                ;
++---------------------------------------+------------------------------------------------------+
+; Number of entity instances            ; 4                                                    ;
+; Entity Instance                       ; g31_mars_converter:converter|LPM_MULT:conversionMult ;
+;     -- LPM_WIDTHA                     ; 30                                                   ;
+;     -- LPM_WIDTHB                     ; 16                                                   ;
+;     -- LPM_WIDTHP                     ; 46                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
+; Entity Instance                       ; g31_mars_converter:converter|LPM_MULT:hourMult       ;
+;     -- LPM_WIDTHA                     ; 17                                                   ;
+;     -- LPM_WIDTHB                     ; 5                                                    ;
+;     -- LPM_WIDTHP                     ; 22                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
+; Entity Instance                       ; g31_mars_converter:converter|LPM_MULT:minuteMult     ;
+;     -- LPM_WIDTHA                     ; 17                                                   ;
+;     -- LPM_WIDTHB                     ; 6                                                    ;
+;     -- LPM_WIDTHP                     ; 23                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
+; Entity Instance                       ; g31_mars_converter:converter|LPM_MULT:secondMult     ;
+;     -- LPM_WIDTHA                     ; 17                                                   ;
+;     -- LPM_WIDTHB                     ; 6                                                    ;
+;     -- LPM_WIDTHP                     ; 23                                                   ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                             ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                   ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                   ;
+;     -- USE_EAB                        ; OFF                                                  ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                 ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                   ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                   ;
++---------------------------------------+------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_mars_converter:converter"                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; days_out   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; mtc_out    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; jdmars_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker"                                       ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; day_fractions[22..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter" ;
++--------------+-------+----------+--------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                    ;
++--------------+-------+----------+--------------------------------------------+
+; y_set[10..6] ; Input ; Info     ; Stuck at VCC                               ;
+; y_set[3..0]  ; Input ; Info     ; Stuck at GND                               ;
+; y_set[11]    ; Input ; Info     ; Stuck at GND                               ;
+; y_set[5]     ; Input ; Info     ; Stuck at GND                               ;
+; y_set[4]     ; Input ; Info     ; Stuck at VCC                               ;
+; m_set[3..1]  ; Input ; Info     ; Stuck at GND                               ;
+; m_set[0]     ; Input ; Info     ; Stuck at VCC                               ;
+; d_set[2..1]  ; Input ; Info     ; Stuck at VCC                               ;
+; d_set[4..3]  ; Input ; Info     ; Stuck at GND                               ;
+; d_set[0]     ; Input ; Info     ; Stuck at GND                               ;
++--------------+-------+----------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter"                                                                                                     ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                      ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; h_set         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; m_set         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; s_set         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; count_enabled ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; end_of_day    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_synchronizer:sync|g31_basic_timer:timer"                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; mpulse ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_synchronizer:sync"                                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; done_out_d  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; done_out_s  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_years   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_months  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_days    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_hours   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_minutes ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; out_seconds ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; epulseout   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -452,7 +825,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
-    Info: Processing started: Tue Mar 25 10:25:38 2014
+    Info: Processing started: Tue Mar 25 16:27:33 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4-3 -c lab4-3
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 2 design units, including 1 entities, in source file /altera/g31/lab1.2/g31_seconds_to_days.vhd
@@ -503,10 +876,92 @@ Info: Found 2 design units, including 1 entities, in source file g31_mars_conver
 Info: Found 2 design units, including 1 entities, in source file g31_utc_to_mtc.vhd
     Info: Found design unit 1: g31_UTC_to_MTC-a
     Info: Found entity 1: g31_UTC_to_MTC
-Info: Elaborating entity "g31_mars_converter" for the top level hierarchy
-Info: Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:conversionMult"
-Info: Elaborated megafunction instantiation "LPM_MULT:conversionMult"
-Info: Instantiated megafunction "LPM_MULT:conversionMult" with the following parameter:
+Info: Elaborating entity "g31_UTC_to_MTC" for the top level hierarchy
+Info: Elaborating entity "g31_synchronizer" for hierarchy "g31_synchronizer:sync"
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(104): signal "desired_years" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(104): signal "desired_months" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(104): signal "desired_days" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(110): signal "desired_hours" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(110): signal "desired_minutes" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(110): signal "desired_seconds" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(118): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_synchronizer.vhd(128): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "g31_basic_timer" for hierarchy "g31_synchronizer:sync|g31_basic_timer:timer"
+Info: Elaborating entity "LPM_CONSTANT" for hierarchy "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const"
+Info: Elaborated megafunction instantiation "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const"
+Info: Instantiated megafunction "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "26"
+    Info: Parameter "LPM_CVALUE" = "1"
+    Info: Parameter "LPM_STRENGTH" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_CONSTANT"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "LPM_COUNTER" for hierarchy "g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter"
+Info: Elaborated megafunction instantiation "g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter"
+Info: Instantiated megafunction "g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "26"
+    Info: Parameter "LPM_MODULUS" = "0"
+    Info: Parameter "LPM_DIRECTION" = "DOWN"
+    Info: Parameter "LPM_AVALUE" = "UNUSED"
+    Info: Parameter "LPM_SVALUE" = "UNUSED"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_CONNECTIVITY"
+    Info: Parameter "LPM_PVALUE" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_cfl.tdf
+    Info: Found entity 1: cntr_cfl
+Info: Elaborating entity "cntr_cfl" for hierarchy "g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter|cntr_cfl:auto_generated"
+Info: Elaborating entity "LPM_CONSTANT" for hierarchy "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2"
+Info: Elaborated megafunction instantiation "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2"
+Info: Instantiated megafunction "g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "26"
+    Info: Parameter "LPM_CVALUE" = "51374562"
+    Info: Parameter "LPM_STRENGTH" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_CONSTANT"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "g31_HMS_Counter" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter"
+Info: Elaborating entity "g31_second_counter" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter"
+Info: Elaborating entity "LPM_COUNTER" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter"
+Info: Elaborated megafunction instantiation "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter"
+Info: Instantiated megafunction "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "6"
+    Info: Parameter "LPM_MODULUS" = "0"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_AVALUE" = "UNUSED"
+    Info: Parameter "LPM_SVALUE" = "UNUSED"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_CONNECTIVITY"
+    Info: Parameter "LPM_PVALUE" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_77l.tdf
+    Info: Found entity 1: cntr_77l
+Info: Elaborating entity "cntr_77l" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter|cntr_77l:auto_generated"
+Info: Elaborating entity "g31_minute_counter" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter"
+Info: Elaborating entity "g31_hour_counter" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter"
+Info: Elaborating entity "LPM_COUNTER" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter"
+Info: Elaborated megafunction instantiation "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter"
+Info: Instantiated megafunction "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "5"
+    Info: Parameter "LPM_MODULUS" = "0"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_AVALUE" = "UNUSED"
+    Info: Parameter "LPM_SVALUE" = "UNUSED"
+    Info: Parameter "LPM_PORT_UPDOWN" = "PORT_CONNECTIVITY"
+    Info: Parameter "LPM_PVALUE" = "UNUSED"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_67l.tdf
+    Info: Found entity 1: cntr_67l
+Info: Elaborating entity "cntr_67l" for hierarchy "g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter|cntr_67l:auto_generated"
+Info: Elaborating entity "g31_YMD_Counter" for hierarchy "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter"
+Info: Elaborating entity "g31_Day_Block" for hierarchy "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block"
+Info: Elaborating entity "g31_Month_Block" for hierarchy "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block"
+Info: Elaborating entity "g31_Year_Block" for hierarchy "g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block"
+Info: Elaborating entity "g31_date_compressor" for hierarchy "g31_date_compressor:compressor"
+Info: Elaborating entity "g31_Seconds_to_Days" for hierarchy "g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker"
+Info: Elaborating entity "g31_mars_converter" for hierarchy "g31_mars_converter:converter"
+Info: Elaborating entity "LPM_MULT" for hierarchy "g31_mars_converter:converter|LPM_MULT:conversionMult"
+Info: Elaborated megafunction instantiation "g31_mars_converter:converter|LPM_MULT:conversionMult"
+Info: Instantiated megafunction "g31_mars_converter:converter|LPM_MULT:conversionMult" with the following parameter:
     Info: Parameter "LPM_WIDTHA" = "30"
     Info: Parameter "LPM_WIDTHB" = "16"
     Info: Parameter "LPM_WIDTHS" = "1"
@@ -517,10 +972,10 @@ Info: Instantiated megafunction "LPM_MULT:conversionMult" with the following par
     Info: Parameter "LPM_HINT" = "UNUSED"
 Info: Found 1 design units, including 1 entities, in source file db/mult_qao.tdf
     Info: Found entity 1: mult_qao
-Info: Elaborating entity "mult_qao" for hierarchy "LPM_MULT:conversionMult|mult_qao:auto_generated"
-Info: Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:hourMult"
-Info: Elaborated megafunction instantiation "LPM_MULT:hourMult"
-Info: Instantiated megafunction "LPM_MULT:hourMult" with the following parameter:
+Info: Elaborating entity "mult_qao" for hierarchy "g31_mars_converter:converter|LPM_MULT:conversionMult|mult_qao:auto_generated"
+Info: Elaborating entity "LPM_MULT" for hierarchy "g31_mars_converter:converter|LPM_MULT:hourMult"
+Info: Elaborated megafunction instantiation "g31_mars_converter:converter|LPM_MULT:hourMult"
+Info: Instantiated megafunction "g31_mars_converter:converter|LPM_MULT:hourMult" with the following parameter:
     Info: Parameter "LPM_WIDTHA" = "17"
     Info: Parameter "LPM_WIDTHB" = "5"
     Info: Parameter "LPM_WIDTHS" = "1"
@@ -531,10 +986,10 @@ Info: Instantiated megafunction "LPM_MULT:hourMult" with the following parameter
     Info: Parameter "LPM_HINT" = "UNUSED"
 Info: Found 1 design units, including 1 entities, in source file db/mult_29o.tdf
     Info: Found entity 1: mult_29o
-Info: Elaborating entity "mult_29o" for hierarchy "LPM_MULT:hourMult|mult_29o:auto_generated"
-Info: Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:minuteMult"
-Info: Elaborated megafunction instantiation "LPM_MULT:minuteMult"
-Info: Instantiated megafunction "LPM_MULT:minuteMult" with the following parameter:
+Info: Elaborating entity "mult_29o" for hierarchy "g31_mars_converter:converter|LPM_MULT:hourMult|mult_29o:auto_generated"
+Info: Elaborating entity "LPM_MULT" for hierarchy "g31_mars_converter:converter|LPM_MULT:minuteMult"
+Info: Elaborated megafunction instantiation "g31_mars_converter:converter|LPM_MULT:minuteMult"
+Info: Instantiated megafunction "g31_mars_converter:converter|LPM_MULT:minuteMult" with the following parameter:
     Info: Parameter "LPM_WIDTHA" = "17"
     Info: Parameter "LPM_WIDTHB" = "6"
     Info: Parameter "LPM_WIDTHS" = "1"
@@ -545,10 +1000,10 @@ Info: Instantiated megafunction "LPM_MULT:minuteMult" with the following paramet
     Info: Parameter "LPM_HINT" = "UNUSED"
 Info: Found 1 design units, including 1 entities, in source file db/mult_59o.tdf
     Info: Found entity 1: mult_59o
-Info: Elaborating entity "mult_59o" for hierarchy "LPM_MULT:minuteMult|mult_59o:auto_generated"
-Info: Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:secondMult"
-Info: Elaborated megafunction instantiation "LPM_MULT:secondMult"
-Info: Instantiated megafunction "LPM_MULT:secondMult" with the following parameter:
+Info: Elaborating entity "mult_59o" for hierarchy "g31_mars_converter:converter|LPM_MULT:minuteMult|mult_59o:auto_generated"
+Info: Elaborating entity "LPM_MULT" for hierarchy "g31_mars_converter:converter|LPM_MULT:secondMult"
+Info: Elaborated megafunction instantiation "g31_mars_converter:converter|LPM_MULT:secondMult"
+Info: Instantiated megafunction "g31_mars_converter:converter|LPM_MULT:secondMult" with the following parameter:
     Info: Parameter "LPM_WIDTHA" = "17"
     Info: Parameter "LPM_WIDTHB" = "6"
     Info: Parameter "LPM_WIDTHS" = "1"
@@ -559,15 +1014,43 @@ Info: Instantiated megafunction "LPM_MULT:secondMult" with the following paramet
     Info: Parameter "LPM_HINT" = "UNUSED"
 Info: Ignored 72 buffer(s)
     Info: Ignored 72 SOFT buffer(s)
-Info: Implemented 204 device resources after synthesis - the final resource count might be different
-    Info: Implemented 30 input pins
-    Info: Implemented 93 output pins
-    Info: Implemented 71 logic cells
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info: 26 registers lost all their fanouts during netlist optimizations. The first 26 are displayed below.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]" lost all its fanouts during netlist optimizations.
+Info: Implemented 469 device resources after synthesis - the final resource count might be different
+    Info: Implemented 42 input pins
+    Info: Implemented 47 output pins
+    Info: Implemented 370 logic cells
     Info: Implemented 10 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 320 megabytes
-    Info: Processing ended: Tue Mar 25 10:25:42 2014
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 326 megabytes
+    Info: Processing ended: Tue Mar 25 16:27:36 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

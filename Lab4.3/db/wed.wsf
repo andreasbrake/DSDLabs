@@ -25,7 +25,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_synchronizer_wave.vwf")
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 1000000000;
-		NUMERATOR = 1104;
+		NUMERATOR = 1156;
 		DENOMINATOR = 1000000000;
 		TOP_INDEX = 3;
 	}
@@ -1045,15 +1045,23 @@ VECTOR("C:/altera/g31/Lab4.3/g31_synchronizer_wave.vwf")
 		VISIBLE = Y;
 		FLAG = N;
 	}
+	LINE{
+		SIGNAL = "epulseOut";
+		INDEX = 126;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
 }
 
 VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 {
 	ZOOM{
 		ZBEGIN = 0;
-		ZEND = 55200;
-		NUMERATOR = 20;
-		DENOMINATOR = 1000;
+		ZEND = 1000000000;
+		NUMERATOR = 1156;
+		DENOMINATOR = 1000000000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -1457,7 +1465,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[16]";
+		SIGNAL = "MHours[4]";
 		INDEX = 49;
 		FORMAT = E;
 		SCALE = 1;
@@ -1465,7 +1473,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[15]";
+		SIGNAL = "MHours[3]";
 		INDEX = 50;
 		FORMAT = E;
 		SCALE = 1;
@@ -1473,7 +1481,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[14]";
+		SIGNAL = "MHours[2]";
 		INDEX = 51;
 		FORMAT = E;
 		SCALE = 1;
@@ -1481,7 +1489,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[13]";
+		SIGNAL = "MHours[1]";
 		INDEX = 52;
 		FORMAT = E;
 		SCALE = 1;
@@ -1489,7 +1497,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[12]";
+		SIGNAL = "MHours[0]";
 		INDEX = 53;
 		FORMAT = E;
 		SCALE = 1;
@@ -1497,15 +1505,15 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[11]";
+		SIGNAL = "MMinutes";
 		INDEX = 54;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[10]";
+		SIGNAL = "MMinutes[5]";
 		INDEX = 55;
 		FORMAT = E;
 		SCALE = 1;
@@ -1513,7 +1521,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[9]";
+		SIGNAL = "MMinutes[4]";
 		INDEX = 56;
 		FORMAT = E;
 		SCALE = 1;
@@ -1521,7 +1529,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[8]";
+		SIGNAL = "MMinutes[3]";
 		INDEX = 57;
 		FORMAT = E;
 		SCALE = 1;
@@ -1529,7 +1537,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[7]";
+		SIGNAL = "MMinutes[2]";
 		INDEX = 58;
 		FORMAT = E;
 		SCALE = 1;
@@ -1537,7 +1545,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[6]";
+		SIGNAL = "MMinutes[1]";
 		INDEX = 59;
 		FORMAT = E;
 		SCALE = 1;
@@ -1545,7 +1553,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[5]";
+		SIGNAL = "MMinutes[0]";
 		INDEX = 60;
 		FORMAT = E;
 		SCALE = 1;
@@ -1553,152 +1561,8 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "MHours[4]";
-		INDEX = 61;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MHours[3]";
-		INDEX = 62;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MHours[2]";
-		INDEX = 63;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MHours[1]";
-		INDEX = 64;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MHours[0]";
-		INDEX = 65;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes";
-		INDEX = 66;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[11]";
-		INDEX = 67;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[10]";
-		INDEX = 68;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[9]";
-		INDEX = 69;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[8]";
-		INDEX = 70;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[7]";
-		INDEX = 71;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[6]";
-		INDEX = 72;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[5]";
-		INDEX = 73;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[4]";
-		INDEX = 74;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[3]";
-		INDEX = 75;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[2]";
-		INDEX = 76;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[1]";
-		INDEX = 77;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MMinutes[0]";
-		INDEX = 78;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "MSeconds";
-		INDEX = 79;
+		INDEX = 61;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1706,7 +1570,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[5]";
-		INDEX = 80;
+		INDEX = 62;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1714,7 +1578,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[4]";
-		INDEX = 81;
+		INDEX = 63;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1722,7 +1586,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[3]";
-		INDEX = 82;
+		INDEX = 64;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1730,7 +1594,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[2]";
-		INDEX = 83;
+		INDEX = 65;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1738,7 +1602,7 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[1]";
-		INDEX = 84;
+		INDEX = 66;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -1746,7 +1610,263 @@ VECTOR("C:/altera/g31/Lab4.3/g31_UTC_to_MTC_wave.vwf")
 	}
 	LINE{
 		SIGNAL = "MSeconds[0]";
+		INDEX = 67;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut";
+		INDEX = 68;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[12]";
+		INDEX = 69;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[11]";
+		INDEX = 70;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[10]";
+		INDEX = 71;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[9]";
+		INDEX = 72;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[8]";
+		INDEX = 73;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[7]";
+		INDEX = 74;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[6]";
+		INDEX = 75;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[5]";
+		INDEX = 76;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[4]";
+		INDEX = 77;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[3]";
+		INDEX = 78;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[2]";
+		INDEX = 79;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[1]";
+		INDEX = 80;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "dayCountOut[0]";
+		INDEX = 81;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut";
+		INDEX = 82;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[16]";
+		INDEX = 83;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[15]";
+		INDEX = 84;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[14]";
 		INDEX = 85;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[13]";
+		INDEX = 86;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[12]";
+		INDEX = 87;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[11]";
+		INDEX = 88;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[10]";
+		INDEX = 89;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[9]";
+		INDEX = 90;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[8]";
+		INDEX = 91;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[7]";
+		INDEX = 92;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[6]";
+		INDEX = 93;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[5]";
+		INDEX = 94;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[4]";
+		INDEX = 95;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[3]";
+		INDEX = 96;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[2]";
+		INDEX = 97;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[1]";
+		INDEX = 98;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "secCountOut[0]";
+		INDEX = 99;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

@@ -18,9 +18,11 @@ entity g31_UTC_to_MTC is
 		desired_hours: 		in std_logic_vector(4 downto 0);
 		desired_minutes:	in std_logic_vector(5 downto 0);
 		desired_seconds:	in std_logic_vector(5 downto 0);
-		MHours:				out std_logic_vector(16 downto 0);
-		MMinutes:			out std_logic_vector(11 downto 0);
-		MSeconds:			out std_logic_vector(5 downto 0)
+		MHours:				out std_logic_vector(4 downto 0);
+		MMinutes:			out std_logic_vector(5 downto 0);
+		MSeconds:			out std_logic_vector(5 downto 0);
+		dayCountOut:		out std_logic_vector(12 downto 0);
+		secCountOut:		out std_logic_vector(16 downto 0)
 	);
 end g31_UTC_to_MTC;
 
@@ -46,25 +48,27 @@ architecture a of g31_UTC_to_MTC is
 		port(
 			NDays: 	in std_logic_vector(12 downto 0);
 			NSecs:	in std_logic_vector(16 downto 0);
-			NDate:	out std_logic_vector(15 downto 0)
+			NDate:	out std_logic_vector(29 downto 0)
 		);
 	end component;
 
 	component g31_mars_converter is
 		port(
-			JDEarth: 		in std_logic_vector(15 downto 0);
-			MHours:			out std_logic_vector(16 downto 0);
-			MMinutes:		out std_logic_vector(11 downto 0);
+			JDEarth: 		in std_logic_vector(29 downto 0);
+			MHours:			out std_logic_vector(4 downto 0);
+			MMinutes:		out std_logic_vector(5 downto 0);
 			MSeconds:		out std_logic_vector(5 downto 0)
 		);
 	end component;
 	
 	signal dayCount: 	std_logic_vector(12 downto 0);
 	signal secCount: 	std_logic_vector(16 downto 0);
-	signal dateCount:	std_logic_vector(15 downto 0);
+	signal dateCount:	std_logic_vector(29 downto 0);
 	signal done:		std_logic;
 	
 begin
+	dayCountOut <= dayCount;
+	secCountOut <= secCount;
 	sync: g31_synchronizer
 	PORT MAP(
 		clock => clock,

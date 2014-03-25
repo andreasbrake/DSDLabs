@@ -27,7 +27,7 @@ begin
 	const: lpm_constant
 	GENERIC MAP (
 		LPM_WIDTH => 26,
-		LPM_CVALUE => 49999999
+		LPM_CVALUE => 1--49999999
 	)
 	PORT MAP (
 		result => constSig1

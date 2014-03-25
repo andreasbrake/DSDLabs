@@ -24,7 +24,8 @@ entity g31_synchronizer is
 	out_days: 		out std_logic_vector(4 downto 0);
 	out_hours: 		out std_logic_vector(4 downto 0);
 	out_minutes:	out std_logic_vector(5 downto 0);
-	out_seconds:	out std_logic_vector(5 downto 0)
+	out_seconds:	out std_logic_vector(5 downto 0);
+	epulseOut:			out std_logic
  );
 end g31_synchronizer;
 
@@ -83,6 +84,7 @@ architecture a of g31_synchronizer is
 	signal Nday:		std_logic_vector(12 downto 0);
 	signal dayFrac:		std_logic_vector(39 downto 0);
 begin
+	epulseOut <= epulse;
 	day_count <= Nday;
 	second_count <= Nsec;
 	
