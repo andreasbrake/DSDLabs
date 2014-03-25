@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab4-3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_mars_converter|LPM_MULT:conversionMult" CBX_FILE_NAME="mult_qao.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_mars_converter|LPM_MULT:hourMult" CBX_FILE_NAME="mult_29o.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_mars_converter|LPM_MULT:minuteMult" CBX_FILE_NAME="mult_59o.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_mars_converter|LPM_MULT:secondMult" CBX_FILE_NAME="mult_59o.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

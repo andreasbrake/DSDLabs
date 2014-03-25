@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Mar 25 10:25:42 2014
+Quartus II 64-Bit Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
+Revision Name : lab4-3
+Top-level Entity Name : g31_mars_converter
+Family : Cyclone II
+Total logic elements : 71
+    Total combinational functions : 71
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 123
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 10
+Total PLLs : 0
