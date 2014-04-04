@@ -22,8 +22,7 @@ entity g31_UTC_to_MTC is
 		MMinutes:			out std_logic_vector(5 downto 0);
 		MSeconds:			out std_logic_vector(5 downto 0);
 		dayCountOut:		out std_logic_vector(12 downto 0);
-		secCountOut:		out std_logic_vector(16 downto 0);
-		epulseOut:			out std_logic
+		secCountOut:		out std_logic_vector(16 downto 0)
 	);
 end g31_UTC_to_MTC;
 
@@ -41,7 +40,8 @@ architecture a of g31_UTC_to_MTC is
 			desired_minutes:	in std_logic_vector(5 downto 0);
 			desired_seconds:	in std_logic_vector(5 downto 0);
 			day_count:			out std_logic_vector(12 downto 0);
-			second_count:		out std_logic_vector(16 downto 0)
+			second_count:		out std_logic_vector(16 downto 0);
+			done_out:			out std_logic;
 		);
 	end component;
 	

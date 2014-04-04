@@ -101,13 +101,13 @@ begin
 	-- Sets the done value if the conditions are met
 	process_done_days: process(years, months, days)
 	begin
-		if years = desired_years and months = desired_months and days = desired_days then doneD <= '1';
+		if years >= desired_years and months >= desired_months and days >= desired_days then doneD <= '1';
 		else doneD <= '0';
 		end if;
 	end process;
 	process_done_seconds: process(hours, minutes, seconds)
 	begin
-		if hours = desired_hours and minutes = desired_minutes and seconds = desired_seconds then doneS <= '1';
+		if hours >= desired_hours and minutes >= desired_minutes and seconds >= desired_seconds then doneS <= '1';
 		else doneS <= '0';
 		end if;
 	end process;

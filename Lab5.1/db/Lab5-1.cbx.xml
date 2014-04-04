@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab5-1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_basic_timer:timer|LPM_COUNTER:counter2" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_kh4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_basic_timer:timer|LPM_CONSTANT:const2" CBX_FILE_NAME="lpm_constant_kh4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:minuteMult" CBX_FILE_NAME="mult_49o.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|LPM_COUNTER:counter2" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ioc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|LPM_CONSTANT:const2" CBX_FILE_NAME="lpm_constant_kh4.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ioc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:secondMult" CBX_FILE_NAME="mult_49o.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ioc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter" CBX_FILE_NAME="cntr_67l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter" CBX_FILE_NAME="cntr_67l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:conversionMult" CBX_FILE_NAME="mult_lao.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:hourMult" CBX_FILE_NAME="mult_29o.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_basic_timer:timer|LPM_COUNTER:counter" CBX_FILE_NAME="cntr_cfl.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|LPM_COUNTER:hourCounter" CBX_FILE_NAME="cntr_67l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|LPM_COUNTER:minCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|LPM_COUNTER:secCounter" CBX_FILE_NAME="cntr_77l.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_mux:Mux0" CBX_FILE_NAME="mux_ooc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|g31_user_interface|g31_basic_timer:timer|LPM_CONSTANT:const" CBX_FILE_NAME="lpm_constant_kh4.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
