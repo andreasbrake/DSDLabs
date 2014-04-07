@@ -27,8 +27,10 @@ entity g31_user_interface is
 		-- test outputs --
 		year_out:			out std_logic_vector(11 downto 0);
 		months_out:			out std_logic_vector(3 downto 0);
-		days_out:			out std_logic_vector(4 downto 0);
-		hours_out:			out std_logic_vector(4 downto 0);
+		days_utc_out:		out std_logic_vector(4 downto 0);
+		days_tz_out:		out std_logic_vector(4 downto 0);
+		hours_utc_out:		out std_logic_vector(4 downto 0);
+		hours_tz_out:		out std_logic_vector(4 downto 0);
 		minutes_out:		out std_logic_vector(5 downto 0);
 		seconds_out:		out std_logic_vector(5 downto 0);
 		Mhours_out:			out std_logic_vector(4 downto 0);
@@ -94,6 +96,31 @@ architecture a of g31_user_interface is
 			MSeconds:			out std_logic_vector(5 downto 0)
 		);
 	end component;
+	component g31_time_zone_converter
+		port (
+			clock		: in std_logic;
+			dst			: in std_logic;
+			
+			earth_time_zone		: in std_logic_vector(4 downto 0);
+			mars_time_zone		: in std_logic_vector(4 downto 0);
+			
+			earth_local_days	: in std_logic_vector(4 downto 0);
+			earth_local_hours	: in std_logic_vector(4 downto 0);
+			
+			earth_utc_days		: in std_logic_vector(4 downto 0);
+			earth_utc_hours		: in std_logic_vector(4 downto 0);
+			
+			mars_MTC_hours  	: in std_logic_vector(4 downto 0);
+			
+			earth_utc_days_out	: out std_logic_vector(4 downto 0);
+			earth_utc_hours_out	: out std_logic_vector(4 downto 0);
+
+			earth_tz_days_out	: out std_logic_vector(4 downto 0);
+			earth_tz_hours_out	: out std_logic_vector(4 downto 0);
+			
+			mars_tz_hours_out	: out std_logic_vector(4 downto 0)
+		);
+	end component;
 
 	-- load/enable signals
 	signal count_en:	std_logic;
@@ -110,21 +137,25 @@ architecture a of g31_user_interface is
 	signal load_sync:	std_logic;
 	
 	-- Set signals
-	signal year_set: 	std_logic_vector(11 downto 0);
-	signal month_set: 	std_logic_vector(3 downto 0);
-	signal day_set: 	std_logic_vector(4 downto 0);
-	signal hour_set: 	std_logic_vector(4 downto 0);
-	signal minute_set: 	std_logic_vector(5 downto 0);
-	signal second_set: 	std_logic_vector(5 downto 0);
-	signal Mhours_set:	std_logic_vector(4 downto 0);
-	signal Mminutes_set:std_logic_vector(5 downto 0);
-	signal Mseconds_set:std_logic_vector(5 downto 0);
+	signal year_set: 		std_logic_vector(11 downto 0);
+	signal month_set: 		std_logic_vector(3 downto 0);
+	signal day_local_set: 	std_logic_vector(4 downto 0);
+	signal day_utc_set: 	std_logic_vector(4 downto 0);
+	signal hour_local_set: 	std_logic_vector(4 downto 0);
+	signal hour_utc_set: 	std_logic_vector(4 downto 0);
+	signal minute_set: 		std_logic_vector(5 downto 0);
+	signal second_set: 		std_logic_vector(5 downto 0);
+	signal Mhours_set:		std_logic_vector(4 downto 0);
+	signal Mminutes_set:	std_logic_vector(5 downto 0);
+	signal Mseconds_set:	std_logic_vector(5 downto 0);
 	
 	-- Current value signals
 	signal years: 		std_logic_vector(11 downto 0);
 	signal months: 		std_logic_vector(3 downto 0);
-	signal days: 		std_logic_vector(4 downto 0);
-	signal hours: 		std_logic_vector(4 downto 0);
+	signal days_utc: 	std_logic_vector(4 downto 0);
+	signal days_tz: 	std_logic_vector(4 downto 0);
+	signal hours_utc:	std_logic_vector(4 downto 0);
+	signal hours_tz:	std_logic_vector(4 downto 0);
 	signal minutes: 	std_logic_vector(5 downto 0);
 	signal seconds: 	std_logic_vector(5 downto 0);
 	signal Eeod: 		std_logic;
@@ -132,7 +163,8 @@ architecture a of g31_user_interface is
 	signal Meod:		std_logic;
 	signal mpulse:		std_logic;
 	
-	signal Mhours: 		std_logic_vector(4 downto 0);
+	signal Mhours_mtc:	std_logic_vector(4 downto 0);
+	signal Mhours_tz:	std_logic_vector(4 downto 0);
 	signal Mminutes: 	std_logic_vector(5 downto 0);
 	signal Mseconds: 	std_logic_vector(5 downto 0);
 	
@@ -149,11 +181,12 @@ architecture a of g31_user_interface is
 begin	
 	year_out <= years;
 	months_out <= months;
-	days_out <= days;
-	hours_out <= hours;
+	days_utc_out <= days_utc;
+	days_tz_out <= days_tz;
+	hours_out <= hours_utc;
 	minutes_out <= minutes;
 	seconds_out <= seconds;
-	Mhours_out <= Mhours;
+	Mhours_out <= Mhours_mtc;
 	Mminutes_out <= Mminutes;
 	Mseconds_out <= Mseconds;
 	state <= stateA & stateB & stateC & stateD;
@@ -233,14 +266,14 @@ begin
 				-- set load type
 				if daySecond = '1' then
 					if inputs(5) = '0' then second_set <= load_value(5 downto 0);
-					else day_set <= load_value(4 downto 0);
+					else day_local_set <= load_value(4 downto 0);
 					end if;
 				elsif monthMinute = '1' then
 					if inputs(5) = '0' then minute_set <= load_value(5 downto 0);
 					else month_set <= load_value(3 downto 0);
 					end if;
 				elsif yearHour = '1' then
-					if inputs(5) = '0' then hour_set <= load_value(4 downto 0);
+					if inputs(5) = '0' then hour_local_set <= load_value(4 downto 0);
 					else year_set <= ("00000" & load_value(6 downto 0)) + 2000;
 					end if;
 				end if;
@@ -258,9 +291,8 @@ begin
 	stateC_process: process(stateC, inputs)
 	begin
 		if clock = '1' and clock'event then
-			if stateC = '1' then 
-				EorM <= inputs(5);
-				if EorM  = '1' then
+			if stateC = '1' then
+				if inputs(5) = '0' then -- earth vs. mars
 					ETimeZone <= inputs(4 downto 0);
 				else
 					MTimeZone <= inputs(4 downto 0);
@@ -306,10 +338,10 @@ begin
 		load_enable => load_EDT,
 		M_Set => month_set,
 		Y_Set => year_set,
-		D_Set => day_set,
+		D_Set => day_utc_set,
 		Years => years,
 		Months => months,
-		Days => days);
+		Days => days_utc);
 	
 	EarthHMSCounter: g31_HMS_Counter
 	PORT MAP(
@@ -317,10 +349,10 @@ begin
 		reset => not reset,
 		sec_clock => epulse,
 		load_enabled => load_EDT,
-		H_Set => hour_set,
+		H_Set => hour_utc_set,
 		M_Set => minute_set,
 		S_Set => second_set,
-		Hours => hours,
+		Hours => hours_utc,
 		Minutes => minutes,
 		Seconds => seconds,
 		end_of_day => Eeod);
@@ -331,10 +363,10 @@ begin
 		reset => not reset,
 		sec_clock => mpulse,
 		load_enabled => sync_en,
-		H_Set => "00000",
-		M_Set => "000000",
-		S_Set => "000000",
-		Hours => Mhours,
+		H_Set => Mhours_set,
+		M_Set => Mminutes_set,
+		S_Set => Mseconds_set,
+		Hours => Mhours_mtc,
 		Minutes => Mminutes,
 		Seconds => Mseconds,
 		end_of_day => Meod);
@@ -347,11 +379,37 @@ begin
 		count_enabled => sync_en,
 		desired_years => years + 2000,
 		desired_months => months,
-		desired_days => days,
-		desired_hours => hours,
+		desired_days => days_utc,
+		desired_hours => hours_utc,
 		desired_minutes => minutes,
 		desired_seconds => seconds,
-		MHours => Mhours,
-		MMinutes => Mminutes,
-		MSeconds => Mseconds);
+		MHours => Mhours_set,
+		MMinutes => Mminutes_set,
+		MSeconds => Mseconds_set);
+		
+	time_zone_converter: g31_time_zone_converter
+	PORT MAP(
+		clock => clock,
+		dst	=> dst_enable,
+		
+		earth_time_zone => ETimeZone,
+		mars_time_zone => MTimeZone,
+		
+		earth_local_days => day_local_set,
+		earth_local_hours => hour_local_set,
+		
+		earth_utc_days => days_utc,
+		earth_utc_hours	=> hours_utc,
+		
+		mars_MTC_hours => Mhours_mtc,
+		
+		earth_utc_days_out => day_utc_set,
+		earth_utc_hours_out	=> hour_utc_set,
+
+		earth_tz_days_out => days_tz,
+		earth_tz_hours_out => hours_tz,
+		
+		mars_tz_hours_out => Mhours_tz
+	);
+	
 end a;

@@ -45,26 +45,30 @@ set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name SIMULATOR_GENERATE_POWERPLAY_VCD_FILE OFF
 set_global_assignment -name VHDL_FILE ../Lab1.2/g31_Seconds_to_Days.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Day_Block.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Month_Block.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Year_Block.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_hour_counter.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_minute_counter.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_second_counter.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_seven_segment.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.3/g31_date_compressor.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.3/g31_mars_converter.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.3/g31_synchronizer.vhd
-set_global_assignment -name VHDL_FILE ../Lab4.3/g31_UTC_to_MTC.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_HMS_Counter.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Day_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Month_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_Year_Block.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_seven_segment.vhd
 set_global_assignment -name VHDL_FILE ../Lab4.1/g31_basic_timer.vhd
 set_global_assignment -name VHDL_FILE ../Lab4.1/g31_YMD_Counter.vhd
-set_global_assignment -name VHDL_FILE g31_user_interface.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.3/g31_synchronizer.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.3/g31_UTC_to_MTC.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.3/g31_date_compressor.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.3/g31_mars_converter.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE g31_user_interface_wave.vwf
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
-set_global_assignment -name VECTOR_WAVEFORM_FILE ../Lab4.1/g31_UTC_to_MTC_wave.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE g31_UTC_to_MTC_wave.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE g31_time_zone_converter_wave.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE g31_time_zone_wave.vwf
+set_global_assignment -name VHDL_FILE g31_user_interface.vhd
+set_global_assignment -name VHDL_FILE g31_time_zone.vhd
+set_global_assignment -name VHDL_FILE g31_time_zone_converter.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"

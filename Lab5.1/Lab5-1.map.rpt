@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab5-1
-Fri Apr 04 18:56:13 2014
+Sun Apr 06 15:02:38 2014
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -52,16 +52,17 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  44. Parameter Settings for User Entity Instance: g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:minuteMult
  45. Parameter Settings for User Entity Instance: g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|LPM_MULT:secondMult
  46. lpm_mult Parameter Settings by Entity Instance
- 47. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter"
- 48. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker"
- 49. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter"
- 50. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter"
- 51. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer"
- 52. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync"
- 53. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer"
- 54. Port Connectivity Checks: "g31_HMS_Counter:MarsHMSCounter"
- 55. Port Connectivity Checks: "g31_HMS_Counter:EarthHMSCounter"
- 56. Analysis & Synthesis Messages
+ 47. Port Connectivity Checks: "g31_time_zone_converter:time_zone_converter"
+ 48. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter"
+ 49. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker"
+ 50. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter"
+ 51. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter"
+ 52. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer"
+ 53. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync"
+ 54. Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer"
+ 55. Port Connectivity Checks: "g31_HMS_Counter:MarsHMSCounter"
+ 56. Port Connectivity Checks: "g31_HMS_Counter:EarthHMSCounter"
+ 57. Analysis & Synthesis Messages
 
 
 
@@ -87,16 +88,16 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 04 18:56:13 2014        ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 06 15:02:38 2014        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; Lab5-1                                       ;
 ; Top-level Entity Name              ; g31_user_interface                           ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 678                                          ;
-;     Total combinational functions  ; 639                                          ;
-;     Dedicated logic registers      ; 254                                          ;
-; Total registers                    ; 254                                          ;
-; Total pins                         ; 104                                          ;
+; Total logic elements               ; 767                                          ;
+;     Total combinational functions  ; 723                                          ;
+;     Dedicated logic registers      ; 279                                          ;
+; Total registers                    ; 279                                          ;
+; Total pins                         ; 114                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 0                                            ;
 ; Embedded Multiplier 9-bit elements ; 10                                           ;
@@ -194,36 +195,37 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                        ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+
-; ../Lab1.2/g31_Seconds_to_Days.vhd ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab1.2/g31_Seconds_to_Days.vhd ;
-; ../Lab4.1/g31_Day_Block.vhd       ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Day_Block.vhd       ;
-; ../Lab4.1/g31_Month_Block.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Month_Block.vhd     ;
-; ../Lab4.1/g31_Year_Block.vhd      ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Year_Block.vhd      ;
-; ../Lab3.2/g31_hour_counter.vhd    ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_hour_counter.vhd    ;
-; ../Lab3.2/g31_minute_counter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_minute_counter.vhd  ;
-; ../Lab3.2/g31_second_counter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_second_counter.vhd  ;
-; ../Lab4.3/g31_date_compressor.vhd ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_date_compressor.vhd ;
-; ../Lab4.3/g31_mars_converter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_mars_converter.vhd  ;
-; ../Lab4.3/g31_synchronizer.vhd    ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_synchronizer.vhd    ;
-; ../Lab4.3/g31_UTC_to_MTC.vhd      ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_UTC_to_MTC.vhd      ;
-; ../Lab3.2/g31_HMS_Counter.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_HMS_Counter.vhd     ;
-; ../Lab4.1/g31_basic_timer.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_basic_timer.vhd     ;
-; ../Lab4.1/g31_YMD_Counter.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_YMD_Counter.vhd     ;
-; g31_user_interface.vhd            ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/g31_user_interface.vhd  ;
-; lpm_constant.tdf                  ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf         ;
-; lpm_counter.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf          ;
-; db/cntr_cfl.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_cfl.tdf         ;
-; db/cntr_77l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_77l.tdf         ;
-; db/cntr_67l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_67l.tdf         ;
-; lpm_mult.tdf                      ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf             ;
-; db/mult_lao.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_lao.tdf         ;
-; db/mult_29o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_29o.tdf         ;
-; db/mult_49o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_49o.tdf         ;
-+-----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
+; ../Lab1.2/g31_Seconds_to_Days.vhd ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab1.2/g31_Seconds_to_Days.vhd     ;
+; ../Lab3.2/g31_hour_counter.vhd    ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_hour_counter.vhd        ;
+; ../Lab3.2/g31_minute_counter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_minute_counter.vhd      ;
+; ../Lab3.2/g31_second_counter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_second_counter.vhd      ;
+; ../Lab3.2/g31_HMS_Counter.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab3.2/g31_HMS_Counter.vhd         ;
+; ../Lab4.1/g31_Day_Block.vhd       ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Day_Block.vhd           ;
+; ../Lab4.1/g31_Month_Block.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Month_Block.vhd         ;
+; ../Lab4.1/g31_Year_Block.vhd      ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_Year_Block.vhd          ;
+; ../Lab4.1/g31_basic_timer.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_basic_timer.vhd         ;
+; ../Lab4.1/g31_YMD_Counter.vhd     ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.1/g31_YMD_Counter.vhd         ;
+; ../Lab4.3/g31_synchronizer.vhd    ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_synchronizer.vhd        ;
+; ../Lab4.3/g31_UTC_to_MTC.vhd      ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_UTC_to_MTC.vhd          ;
+; ../Lab4.3/g31_date_compressor.vhd ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_date_compressor.vhd     ;
+; ../Lab4.3/g31_mars_converter.vhd  ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab4.3/g31_mars_converter.vhd      ;
+; g31_user_interface.vhd            ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/g31_user_interface.vhd      ;
+; g31_time_zone_converter.vhd       ; yes             ; User VHDL File               ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/g31_time_zone_converter.vhd ;
+; lpm_constant.tdf                  ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf             ;
+; lpm_counter.tdf                   ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_counter.tdf              ;
+; db/cntr_cfl.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_cfl.tdf             ;
+; db/cntr_77l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_77l.tdf             ;
+; db/cntr_67l.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/cntr_67l.tdf             ;
+; lpm_mult.tdf                      ; yes             ; Megafunction                 ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_mult.tdf                 ;
+; db/mult_lao.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_lao.tdf             ;
+; db/mult_29o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_29o.tdf             ;
+; db/mult_49o.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/db/mult_49o.tdf             ;
++-----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -231,97 +233,98 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 678   ;
+; Estimated Total logic elements              ; 767   ;
 ;                                             ;       ;
-; Total combinational functions               ; 639   ;
+; Total combinational functions               ; 723   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 115   ;
-;     -- 3 input functions                    ; 211   ;
-;     -- <=2 input functions                  ; 313   ;
+;     -- 4 input functions                    ; 127   ;
+;     -- 3 input functions                    ; 250   ;
+;     -- <=2 input functions                  ; 346   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 243   ;
-;     -- arithmetic mode                      ; 396   ;
+;     -- normal mode                          ; 283   ;
+;     -- arithmetic mode                      ; 440   ;
 ;                                             ;       ;
-; Total registers                             ; 254   ;
-;     -- Dedicated logic registers            ; 254   ;
+; Total registers                             ; 279   ;
+;     -- Dedicated logic registers            ; 279   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 104   ;
+; I/O pins                                    ; 114   ;
 ; Embedded Multiplier 9-bit elements          ; 10    ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 254   ;
-; Total fan-out                               ; 2826  ;
-; Average fan-out                             ; 2.81  ;
+; Maximum fan-out                             ; 279   ;
+; Total fan-out                               ; 3128  ;
+; Average fan-out                             ; 2.78  ;
 +---------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                    ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                           ; Library Name ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |g31_user_interface                         ; 639 (30)          ; 254 (51)     ; 0           ; 10           ; 0       ; 5         ; 104  ; 0            ; |g31_user_interface                                                                                                                                                           ; work         ;
-;    |g31_HMS_Counter:EarthHMSCounter|        ; 43 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter                                                                                                                           ; work         ;
-;       |g31_hour_counter:hourCounter|        ; 13 (7)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter                                                                                              ; work         ;
-;          |lpm_counter:hourCounter|          ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                                                                      ; work         ;
-;             |cntr_67l:auto_generated|       ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated                                              ; work         ;
-;       |g31_minute_counter:minCounter|       ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter                                                                                             ; work         ;
-;          |lpm_counter:minCounter|           ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                                                                      ; work         ;
-;             |cntr_77l:auto_generated|       ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated                                              ; work         ;
-;       |g31_second_counter:secCounter|       ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter                                                                                             ; work         ;
-;          |lpm_counter:secCounter|           ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                                                                      ; work         ;
-;             |cntr_77l:auto_generated|       ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated                                              ; work         ;
-;    |g31_HMS_Counter:MarsHMSCounter|         ; 44 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter                                                                                                                            ; work         ;
-;       |g31_hour_counter:hourCounter|        ; 13 (7)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter                                                                                               ; work         ;
-;          |lpm_counter:hourCounter|          ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                                                                       ; work         ;
-;             |cntr_67l:auto_generated|       ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated                                               ; work         ;
-;       |g31_minute_counter:minCounter|       ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter                                                                                              ; work         ;
-;          |lpm_counter:minCounter|           ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                                                                       ; work         ;
-;             |cntr_77l:auto_generated|       ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated                                               ; work         ;
-;       |g31_second_counter:secCounter|       ; 16 (9)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter                                                                                              ; work         ;
-;          |lpm_counter:secCounter|           ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                                                                       ; work         ;
-;             |cntr_77l:auto_generated|       ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated                                               ; work         ;
-;    |g31_UTC_to_MTC:synchronizer|            ; 383 (0)           ; 95 (0)       ; 0           ; 10           ; 0       ; 5         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer                                                                                                                               ; work         ;
-;       |g31_date_compressor:compressor|      ; 161 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor                                                                                                ; work         ;
-;          |g31_Seconds_to_Days:fracMaker|    ; 161 (161)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker                                                                  ; work         ;
-;       |g31_mars_converter:converter|        ; 44 (29)           ; 0 (0)        ; 0           ; 10           ; 0       ; 5         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter                                                                                                  ; work         ;
-;          |lpm_mult:conversionMult|          ; 15 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult                                                                          ; work         ;
-;             |mult_lao:auto_generated|       ; 15 (15)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated                                                  ; work         ;
-;          |lpm_mult:hourMult|                ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult                                                                                ; work         ;
-;             |mult_29o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated                                                        ; work         ;
-;          |lpm_mult:minuteMult|              ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult                                                                              ; work         ;
-;             |mult_49o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated                                                      ; work         ;
-;          |lpm_mult:secondMult|              ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult                                                                              ; work         ;
-;             |mult_49o:auto_generated|       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_49o:auto_generated                                                      ; work         ;
-;       |g31_synchronizer:sync|               ; 178 (71)          ; 95 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync                                                                                                         ; work         ;
-;          |g31_HMS_Counter:HMSCounter|       ; 26 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter                                                                              ; work         ;
-;             |g31_hour_counter:hourCounter|  ; 8 (2)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter                                                 ; work         ;
-;                |lpm_counter:hourCounter|    ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                         ; work         ;
-;                   |cntr_67l:auto_generated| ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated ; work         ;
-;             |g31_minute_counter:minCounter| ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter                                                ; work         ;
-;                |lpm_counter:minCounter|     ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                         ; work         ;
-;                   |cntr_77l:auto_generated| ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated ; work         ;
-;             |g31_second_counter:secCounter| ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter                                                ; work         ;
-;                |lpm_counter:secCounter|     ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                         ; work         ;
-;                   |cntr_77l:auto_generated| ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated ; work         ;
-;          |g31_YMD_Counter:YMDCounter|       ; 44 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter                                                                              ; work         ;
-;             |g31_Day_Block:day_block|       ; 22 (22)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block                                                      ; work         ;
-;             |g31_Month_Block:month_block|   ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block                                                  ; work         ;
-;             |g31_Year_Block:year_block|     ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block                                                    ; work         ;
-;          |g31_basic_timer:timer|            ; 37 (10)           ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer                                                                                   ; work         ;
-;             |lpm_counter:counter|           ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter                                                               ; work         ;
-;                |cntr_cfl:auto_generated|    ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated                                       ; work         ;
-;    |g31_YMD_Counter:YMDCounter|             ; 65 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter                                                                                                                                ; work         ;
-;       |g31_Day_Block:day_block|             ; 24 (24)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block                                                                                                        ; work         ;
-;       |g31_Month_Block:month_block|         ; 15 (15)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block                                                                                                    ; work         ;
-;       |g31_Year_Block:year_block|           ; 26 (26)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block                                                                                                      ; work         ;
-;    |g31_basic_timer:timer|                  ; 74 (20)           ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer                                                                                                                                     ;              ;
-;       |lpm_counter:counter2|                ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter2                                                                                                                ; work         ;
-;          |cntr_cfl:auto_generated|          ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated                                                                                        ; work         ;
-;       |lpm_counter:counter|                 ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter                                                                                                                 ; work         ;
-;          |cntr_cfl:auto_generated|          ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated                                                                                         ; work         ;
-+---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                         ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                           ; Library Name ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |g31_user_interface                              ; 723 (31)          ; 279 (56)     ; 0           ; 10           ; 0       ; 5         ; 114  ; 0            ; |g31_user_interface                                                                                                                                                           ; work         ;
+;    |g31_HMS_Counter:EarthHMSCounter|             ; 43 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter                                                                                                                           ; work         ;
+;       |g31_hour_counter:hourCounter|             ; 13 (7)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter                                                                                              ; work         ;
+;          |lpm_counter:hourCounter|               ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                                                                      ; work         ;
+;             |cntr_67l:auto_generated|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated                                              ; work         ;
+;       |g31_minute_counter:minCounter|            ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter                                                                                             ; work         ;
+;          |lpm_counter:minCounter|                ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                                                                      ; work         ;
+;             |cntr_77l:auto_generated|            ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated                                              ; work         ;
+;       |g31_second_counter:secCounter|            ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter                                                                                             ; work         ;
+;          |lpm_counter:secCounter|                ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                                                                      ; work         ;
+;             |cntr_77l:auto_generated|            ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:EarthHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated                                              ; work         ;
+;    |g31_HMS_Counter:MarsHMSCounter|              ; 44 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter                                                                                                                            ; work         ;
+;       |g31_hour_counter:hourCounter|             ; 13 (7)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter                                                                                               ; work         ;
+;          |lpm_counter:hourCounter|               ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                                                                       ; work         ;
+;             |cntr_67l:auto_generated|            ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated                                               ; work         ;
+;       |g31_minute_counter:minCounter|            ; 15 (8)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter                                                                                              ; work         ;
+;          |lpm_counter:minCounter|                ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                                                                       ; work         ;
+;             |cntr_77l:auto_generated|            ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated                                               ; work         ;
+;       |g31_second_counter:secCounter|            ; 16 (9)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter                                                                                              ; work         ;
+;          |lpm_counter:secCounter|                ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                                                                       ; work         ;
+;             |cntr_77l:auto_generated|            ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated                                               ; work         ;
+;    |g31_UTC_to_MTC:synchronizer|                 ; 382 (0)           ; 95 (0)       ; 0           ; 10           ; 0       ; 5         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer                                                                                                                               ; work         ;
+;       |g31_date_compressor:compressor|           ; 161 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor                                                                                                ; work         ;
+;          |g31_Seconds_to_Days:fracMaker|         ; 161 (161)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_date_compressor:compressor|g31_Seconds_to_Days:fracMaker                                                                  ; work         ;
+;       |g31_mars_converter:converter|             ; 44 (29)           ; 0 (0)        ; 0           ; 10           ; 0       ; 5         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter                                                                                                  ; work         ;
+;          |lpm_mult:conversionMult|               ; 15 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult                                                                          ; work         ;
+;             |mult_lao:auto_generated|            ; 15 (15)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated                                                  ; work         ;
+;          |lpm_mult:hourMult|                     ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult                                                                                ; work         ;
+;             |mult_29o:auto_generated|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated                                                        ; work         ;
+;          |lpm_mult:minuteMult|                   ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult                                                                              ; work         ;
+;             |mult_49o:auto_generated|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated                                                      ; work         ;
+;          |lpm_mult:secondMult|                   ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult                                                                              ; work         ;
+;             |mult_49o:auto_generated|            ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_49o:auto_generated                                                      ; work         ;
+;       |g31_synchronizer:sync|                    ; 177 (71)          ; 95 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync                                                                                                         ; work         ;
+;          |g31_HMS_Counter:HMSCounter|            ; 26 (0)            ; 17 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter                                                                              ; work         ;
+;             |g31_hour_counter:hourCounter|       ; 8 (2)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter                                                 ; work         ;
+;                |lpm_counter:hourCounter|         ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter                         ; work         ;
+;                   |cntr_67l:auto_generated|      ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_hour_counter:hourCounter|lpm_counter:hourCounter|cntr_67l:auto_generated ; work         ;
+;             |g31_minute_counter:minCounter|      ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter                                                ; work         ;
+;                |lpm_counter:minCounter|          ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter                         ; work         ;
+;                   |cntr_77l:auto_generated|      ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_minute_counter:minCounter|lpm_counter:minCounter|cntr_77l:auto_generated ; work         ;
+;             |g31_second_counter:secCounter|      ; 9 (2)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter                                                ; work         ;
+;                |lpm_counter:secCounter|          ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter                         ; work         ;
+;                   |cntr_77l:auto_generated|      ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated ; work         ;
+;          |g31_YMD_Counter:YMDCounter|            ; 43 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter                                                                              ; work         ;
+;             |g31_Day_Block:day_block|            ; 21 (21)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block                                                      ; work         ;
+;             |g31_Month_Block:month_block|        ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block                                                  ; work         ;
+;             |g31_Year_Block:year_block|          ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block                                                    ; work         ;
+;          |g31_basic_timer:timer|                 ; 37 (10)           ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer                                                                                   ; work         ;
+;             |lpm_counter:counter|                ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter                                                               ; work         ;
+;                |cntr_cfl:auto_generated|         ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated                                       ; work         ;
+;    |g31_YMD_Counter:YMDCounter|                  ; 65 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter                                                                                                                                ; work         ;
+;       |g31_Day_Block:day_block|                  ; 24 (24)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block                                                                                                        ; work         ;
+;       |g31_Month_Block:month_block|              ; 15 (15)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block                                                                                                    ; work         ;
+;       |g31_Year_Block:year_block|                ; 26 (26)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block                                                                                                      ; work         ;
+;    |g31_basic_timer:timer|                       ; 74 (20)           ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer                                                                                                                                     ;              ;
+;       |lpm_counter:counter2|                     ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter2                                                                                                                ; work         ;
+;          |cntr_cfl:auto_generated|               ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated                                                                                        ; work         ;
+;       |lpm_counter:counter|                      ; 27 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter                                                                                                                 ; work         ;
+;          |cntr_cfl:auto_generated|               ; 27 (27)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated                                                                                         ; work         ;
+;    |g31_time_zone_converter:time_zone_converter| ; 84 (84)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |g31_user_interface|g31_time_zone_converter:time_zone_converter                                                                                                               ; work         ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -359,12 +362,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 254   ;
+; Total registers                              ; 279   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
-; Number of registers using Synchronous Load   ; 141   ;
+; Number of registers using Synchronous Load   ; 146   ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 228   ;
+; Number of registers using Clock Enable       ; 233   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -374,13 +377,14 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |g31_user_interface|stateD                                                                                                                 ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[3]                                                         ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[5]       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[6]                                                      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block|months_out[1]                                                   ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[0]    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block|months_out[0] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |g31_user_interface|g31_time_zone_converter:time_zone_converter|earth_tz_days_out[0]                                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |g31_user_interface|stateA                                                                                                                 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[0]                                                         ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[3]       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[1]                                                      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block|months_out[0]                                                   ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[11]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |g31_user_interface|g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Month_Block:month_block|months_out[3] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1123,6 +1127,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+----------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "g31_time_zone_converter:time_zone_converter"                                                     ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; mars_tz_hours_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter"                                                      ;
 +------------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -1235,20 +1248,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Apr 04 18:56:01 2014
+    Info: Processing started: Sun Apr 06 15:02:26 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab5-1 -c Lab5-1
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab1.2/g31_seconds_to_days.vhd
     Info: Found design unit 1: g31_Seconds_to_Days-lab1
     Info: Found entity 1: g31_Seconds_to_Days
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_day_block.vhd
-    Info: Found design unit 1: g31_Day_Block-behaviour
-    Info: Found entity 1: g31_Day_Block
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_month_block.vhd
-    Info: Found design unit 1: g31_Month_Block-behaviour
-    Info: Found entity 1: g31_Month_Block
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_year_block.vhd
-    Info: Found design unit 1: g31_Year_Block-behaviour
-    Info: Found entity 1: g31_Year_Block
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab3.2/g31_hour_counter.vhd
     Info: Found design unit 1: g31_hour_counter-a
     Info: Found entity 1: g31_hour_counter
@@ -1258,47 +1262,62 @@ Info: Found 2 design units, including 1 entities, in source file /users/andreas/
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab3.2/g31_second_counter.vhd
     Info: Found design unit 1: g31_second_counter-a
     Info: Found entity 1: g31_second_counter
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_binary_to_seven_segment.vhd
-    Info: Found design unit 1: g31_binary_to_seven_segment-a
-    Info: Found entity 1: g31_binary_to_seven_segment
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_date_compressor.vhd
-    Info: Found design unit 1: g31_date_compressor-a
-    Info: Found entity 1: g31_date_compressor
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_mars_converter.vhd
-    Info: Found design unit 1: g31_mars_converter-a
-    Info: Found entity 1: g31_mars_converter
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_synchronizer.vhd
-    Info: Found design unit 1: g31_synchronizer-a
-    Info: Found entity 1: g31_synchronizer
-Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_utc_to_mtc.vhd
-    Info: Found design unit 1: g31_UTC_to_MTC-a
-    Info: Found entity 1: g31_UTC_to_MTC
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab3.2/g31_hms_counter.vhd
     Info: Found design unit 1: g31_HMS_Counter-a
     Info: Found entity 1: g31_HMS_Counter
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_day_block.vhd
+    Info: Found design unit 1: g31_Day_Block-behaviour
+    Info: Found entity 1: g31_Day_Block
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_month_block.vhd
+    Info: Found design unit 1: g31_Month_Block-behaviour
+    Info: Found entity 1: g31_Month_Block
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_year_block.vhd
+    Info: Found design unit 1: g31_Year_Block-behaviour
+    Info: Found entity 1: g31_Year_Block
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_binary_to_seven_segment.vhd
+    Info: Found design unit 1: g31_binary_to_seven_segment-a
+    Info: Found entity 1: g31_binary_to_seven_segment
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_basic_timer.vhd
     Info: Found design unit 1: g31_basic_timer-a
     Info: Found entity 1: g31_basic_timer
 Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.1/g31_ymd_counter.vhd
     Info: Found design unit 1: g31_YMD_Counter-behaviour
     Info: Found entity 1: g31_YMD_Counter
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_synchronizer.vhd
+    Info: Found design unit 1: g31_synchronizer-a
+    Info: Found entity 1: g31_synchronizer
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_utc_to_mtc.vhd
+    Info: Found design unit 1: g31_UTC_to_MTC-a
+    Info: Found entity 1: g31_UTC_to_MTC
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_date_compressor.vhd
+    Info: Found design unit 1: g31_date_compressor-a
+    Info: Found entity 1: g31_date_compressor
+Info: Found 2 design units, including 1 entities, in source file /users/andreas/workspace/github/dsdlabs/lab4.3/g31_mars_converter.vhd
+    Info: Found design unit 1: g31_mars_converter-a
+    Info: Found entity 1: g31_mars_converter
 Info: Found 2 design units, including 1 entities, in source file g31_user_interface.vhd
     Info: Found design unit 1: g31_user_interface-a
     Info: Found entity 1: g31_user_interface
+Info: Found 2 design units, including 1 entities, in source file g31_time_zone.vhd
+    Info: Found design unit 1: g31_time_zone-behaviour
+    Info: Found entity 1: g31_time_zone
+Info: Found 2 design units, including 1 entities, in source file g31_time_zone_converter.vhd
+    Info: Found design unit 1: g31_time_zone_converter-behaviour
+    Info: Found entity 1: g31_time_zone_converter
 Info: Elaborating entity "g31_user_interface" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at g31_user_interface.vhd(22): used implicit default value for signal "first_seven_seg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at g31_user_interface.vhd(23): used implicit default value for signal "second_seven_seg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at g31_user_interface.vhd(24): used implicit default value for signal "third_seven_seg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at g31_user_interface.vhd(25): used implicit default value for signal "last_seven_seg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(105): object "TorD" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(132): object "Meod" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(139): object "ETimeZone" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(140): object "MTimeZone" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(167): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(132): object "TorD" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(133): object "EorM" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(163): object "Meod" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at g31_user_interface.vhd(167): object "Mhours_tz" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(201): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(221): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(260): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(278): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(235): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(255): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(294): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_user_interface.vhd(311): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "g31_basic_timer" for hierarchy "g31_basic_timer:timer"
 Info: Elaborating entity "LPM_CONSTANT" for hierarchy "g31_basic_timer:timer|LPM_CONSTANT:const"
 Info: Elaborated megafunction instantiation "g31_basic_timer:timer|LPM_CONSTANT:const"
@@ -1427,6 +1446,10 @@ Info: Instantiated megafunction "g31_UTC_to_MTC:synchronizer|g31_mars_converter:
     Info: Parameter "LPM_PIPELINE" = "0"
     Info: Parameter "LPM_TYPE" = "LPM_MULT"
     Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "g31_time_zone_converter" for hierarchy "g31_time_zone_converter:time_zone_converter"
+Warning (10492): VHDL Process Statement warning at g31_time_zone_converter.vhd(40): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_time_zone_converter.vhd(53): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at g31_time_zone_converter.vhd(76): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Ignored 72 buffer(s)
     Info: Ignored 72 SOFT buffer(s)
 Warning: 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -1486,14 +1509,14 @@ Info: 26 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[2]" lost all its fanouts during netlist optimizations.
     Info: Register "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[1]" lost all its fanouts during netlist optimizations.
     Info: Register "g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter2|cntr_cfl:auto_generated|safe_q[0]" lost all its fanouts during netlist optimizations.
-Info: Implemented 792 device resources after synthesis - the final resource count might be different
+Info: Implemented 892 device resources after synthesis - the final resource count might be different
     Info: Implemented 15 input pins
-    Info: Implemented 89 output pins
-    Info: Implemented 678 logic cells
+    Info: Implemented 99 output pins
+    Info: Implemented 768 logic cells
     Info: Implemented 10 DSP elements
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 51 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 54 warnings
     Info: Peak virtual memory: 253 megabytes
-    Info: Processing ended: Fri Apr 04 18:56:13 2014
+    Info: Processing ended: Sun Apr 06 15:02:38 2014
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:16
 
