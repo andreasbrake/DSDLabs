@@ -14,7 +14,7 @@ entity g31_binary_to_seven_segment is
 			segments4	: out std_logic_vector(6 downto 0)); -- msb 7 seg
 end g31_binary_to_seven_segment;
 
-Architecture a of g31_binary_to_seven_segment is
+Architecture behaviour of g31_binary_to_seven_segment is
 	signal BCD1: std_logic_vector(7 downto 0);
 	signal BCD2: std_logic_vector(7 downto 0);
 	
@@ -92,4 +92,4 @@ begin
 		RippleBlank_Out => rb4,
 		segments => segments4
 	);
-end a;
+end behaviour;

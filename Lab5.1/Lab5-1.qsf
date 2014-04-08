@@ -47,7 +47,59 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name SIMULATOR_GENERATE_POWERPLAY_VCD_FILE OFF
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE g31_user_interface_wave.vwf
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_E2 -to first_seven_seg[6]
+set_location_assignment PIN_F1 -to first_seven_seg[5]
+set_location_assignment PIN_F2 -to first_seven_seg[4]
+set_location_assignment PIN_H1 -to first_seven_seg[3]
+set_location_assignment PIN_H2 -to first_seven_seg[2]
+set_location_assignment PIN_J1 -to first_seven_seg[1]
+set_location_assignment PIN_J2 -to first_seven_seg[0]
+set_location_assignment PIN_E1 -to second_seven_seg[0]
+set_location_assignment PIN_H6 -to second_seven_seg[1]
+set_location_assignment PIN_H5 -to second_seven_seg[2]
+set_location_assignment PIN_H4 -to second_seven_seg[3]
+set_location_assignment PIN_G3 -to second_seven_seg[4]
+set_location_assignment PIN_D2 -to second_seven_seg[5]
+set_location_assignment PIN_D1 -to second_seven_seg[6]
+set_location_assignment PIN_G5 -to third_seven_seg[0]
+set_location_assignment PIN_G6 -to third_seven_seg[1]
+set_location_assignment PIN_C2 -to third_seven_seg[2]
+set_location_assignment PIN_C1 -to third_seven_seg[3]
+set_location_assignment PIN_E3 -to third_seven_seg[4]
+set_location_assignment PIN_E4 -to third_seven_seg[5]
+set_location_assignment PIN_D3 -to third_seven_seg[6]
+set_location_assignment PIN_F4 -to last_seven_seg[0]
+set_location_assignment PIN_D5 -to last_seven_seg[1]
+set_location_assignment PIN_D6 -to last_seven_seg[2]
+set_location_assignment PIN_J4 -to last_seven_seg[3]
+set_location_assignment PIN_L8 -to last_seven_seg[4]
+set_location_assignment PIN_F3 -to last_seven_seg[5]
+set_location_assignment PIN_D4 -to last_seven_seg[6]
+set_location_assignment PIN_R22 -to daySecond
+set_location_assignment PIN_R21 -to monthMinute
+set_location_assignment PIN_T21 -to reset
+set_location_assignment PIN_T22 -to yearHour
+set_location_assignment PIN_L22 -to inputs[0]
+set_location_assignment PIN_L21 -to inputs[1]
+set_location_assignment PIN_M22 -to inputs[2]
+set_location_assignment PIN_V12 -to inputs[3]
+set_location_assignment PIN_W12 -to inputs[4]
+set_location_assignment PIN_U12 -to inputs[5]
+set_location_assignment PIN_U11 -to inputs[6]
+set_location_assignment PIN_M2 -to stateSelectors[0]
+set_location_assignment PIN_M1 -to stateSelectors[1]
+set_location_assignment PIN_L2 -to stateSelectors[2]
+set_location_assignment PIN_L1 -to clock
+set_global_assignment -name MISC_FILE "C:/altera/DSDLabs-master/DSDLabs-master/Lab5.1/Lab5-1.dpf"
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_BCD.vhd
 set_global_assignment -name VHDL_FILE ../Lab1.2/g31_Seconds_to_Days.vhd
+set_global_assignment -name VHDL_FILE ../Lab4.1/g31_seven_segment_decoder.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_hour_counter.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_minute_counter.vhd
 set_global_assignment -name VHDL_FILE ../Lab3.2/g31_second_counter.vhd
@@ -69,9 +121,4 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE g31_time_zone_wave.vwf
 set_global_assignment -name VHDL_FILE g31_user_interface.vhd
 set_global_assignment -name VHDL_FILE g31_time_zone.vhd
 set_global_assignment -name VHDL_FILE g31_time_zone_converter.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE g31_user_interface_wave.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

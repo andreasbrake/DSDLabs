@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.167 ns
+From           : reset
+To             : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[2]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.223 ns
+From           : g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|altrom:srom|altsyncram:rom_block|altsyncram_e501:auto_generated|ram_block1a0~porta_address_reg5
+To             : second_seven_seg[5]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.385 ns
+From           : inputs[1]
+To             : load_value[1]
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 21.59 MHz ( period = 46.310 ns )
+From           : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|Nsec[4]
+To             : g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[1]
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

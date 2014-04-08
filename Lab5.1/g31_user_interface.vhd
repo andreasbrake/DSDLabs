@@ -4,6 +4,7 @@ use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
 entity g31_user_interface is
+	
 	port(
 		clock: 				in std_logic;
 		
@@ -40,9 +41,11 @@ entity g31_user_interface is
 		
 		state:				out std_logic_vector(3 downto 0)
 	);
+
 end g31_user_interface;
 
-architecture a of g31_user_interface is
+architecture behaviour of g31_user_interface is
+	
 	component g31_basic_timer
 	PORT(
 			reset	: in std_logic;
@@ -52,6 +55,7 @@ architecture a of g31_user_interface is
 			MPULSE	: out std_logic
 	);
 	end component;
+	
 	component g31_YMD_Counter
 	PORT(	clock			: in std_logic; -- master clock
 			reset			: in std_logic; -- master reset
@@ -65,6 +69,7 @@ architecture a of g31_user_interface is
 			Days			: out std_logic_vector(4 downto 0)
 		);
 	end component;
+	
 	component g31_HMS_Counter
 	PORT(	clock			: in std_logic; --master clock
 			reset			: in std_logic; --master reset
@@ -79,6 +84,7 @@ architecture a of g31_user_interface is
 			end_of_day		: out std_logic);
 			
 	end component;
+	
 	component g31_UTC_to_MTC
 		PORT(
 			clock: 				in std_logic;
@@ -96,6 +102,7 @@ architecture a of g31_user_interface is
 			MSeconds:			out std_logic_vector(5 downto 0)
 		);
 	end component;
+	
 	component g31_time_zone_converter
 		port (
 			clock		: in std_logic;
@@ -119,6 +126,17 @@ architecture a of g31_user_interface is
 			earth_tz_hours_out	: out std_logic_vector(4 downto 0);
 			
 			mars_tz_hours_out	: out std_logic_vector(4 downto 0)
+		);
+	end component;
+
+	component g31_binary_to_seven_segment
+		port (
+			clock		: in std_logic;
+			bin			: in unsigned(11 downto 0);
+			segments1	: out std_logic_vector(6 downto 0); -- lsb 7 seg
+			segments2	: out std_logic_vector(6 downto 0);
+			segments3	: out std_logic_vector(6 downto 0);
+			segments4	: out std_logic_vector(6 downto 0) -- msb 7 seg
 		);
 	end component;
 
@@ -177,6 +195,9 @@ architecture a of g31_user_interface is
 	signal stateB:		std_logic; -- Set date/time
 	signal stateC:		std_logic; -- Set time zone
 	signal stateD:		std_logic; -- synchronize
+	
+	-- Output signals
+	signal seven_segment_in:	std_logic_vector(11 downto 0);
 	
 begin	
 	year_out <= years;
@@ -238,6 +259,43 @@ begin
 				TorD <= inputs(1);
 				EorM <= inputs(2);
 				DST_en1 <= inputs(3);
+				if TorD = '0' then
+					if EorM = '0' then
+						if daySecond = '0' then
+							seven_segment_in <= "000000" & seconds;
+						elsif monthMinute = '0' then
+							seven_segment_in <= "000000" & minutes;
+						elsif yearHour = '0' then
+							seven_segment_in <= "0000000" & hours_tz;
+						else 
+							seven_segment_in <= "000000000000";
+						end if;
+					else
+						if daySecond = '0' then
+							seven_segment_in <= "000000" & Mseconds;
+						elsif monthMinute = '0' then
+							seven_segment_in <= "000000" & Mminutes;
+						elsif yearHour = '0' then
+							seven_segment_in <= "0000000" & Mhours_tz;
+						else 
+							seven_segment_in <= "000000000000";
+						end if;
+					end if;
+				else 
+					if EorM = '0' then
+						if daySecond = '0' then
+							seven_segment_in <= "0000000" & days_tz;
+						elsif monthMinute = '0' then
+							seven_segment_in <= "00000000" & months;
+						elsif yearHour = '0' then
+							seven_segment_in <= years;
+						else 
+							seven_segment_in <= "000000000000";
+						end if;
+					else
+						seven_segment_in <= "000000000000";
+					end if;
+				end if;
 			else
 				count_en <= '0';
 			end if;
@@ -245,7 +303,7 @@ begin
 	end process;
 	
 	-- State B -- Set date/time value --
-		-- switch value list
+	-- switch value list
 	-- 0-3) set bits
 	-- 4) set upper/lower bits
 	-- 5) set time or date
@@ -322,6 +380,11 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	buttonsProcess : process()
+	begin
+	
+	end process;	
 	
 	timer : g31_basic_timer
 	PORT MAP(
@@ -413,4 +476,16 @@ begin
 		mars_tz_hours_out => Mhours_tz
 	);
 	
-end a;
+	display: g31_binary_to_seven_segment
+	PORT MAP(
+		
+		clock		=> clock,
+		bin			=> unsigned (seven_segment_in),
+		segments1	=> first_seven_seg, -- lsb 7 seg
+		segments2	=> second_seven_seg,
+		segments3	=> third_seven_seg,
+		segments4	=> last_seven_seg -- msb 7 seg
+	
+	);
+	
+end behaviour;

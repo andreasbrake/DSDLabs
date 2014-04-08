@@ -67,7 +67,7 @@ begin
 	sevenseg1 : g31_seven_segment_decoder
 	PORT MAP(
 		code => LCD1,
-		RippleBlank_In => rb2,
+		RippleBlank_In => '0',
 		RippleBlank_Out => rb1,
 		segments => segments1
 	);
