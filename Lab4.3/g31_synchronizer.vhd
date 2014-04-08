@@ -30,7 +30,7 @@ entity g31_synchronizer is
 end g31_synchronizer;
 
 architecture a of g31_synchronizer is
-	component g31_basic_timer
+	component g31_short_timer
 		PORT(	reset	: in std_logic;
 				clock	: in std_logic;
 				enable	: in std_logic;
@@ -133,7 +133,7 @@ begin
 	end process;
 	
 -- COMPONENT CREATION / PORT MAPS --
-	timer: g31_basic_timer
+	timer: g31_short_timer
 	PORT MAP(	
 		reset	=> reset,
 		clock	=> clock,
