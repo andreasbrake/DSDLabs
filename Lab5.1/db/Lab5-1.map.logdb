@@ -1,6 +1,0 @@
-v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_49o:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out4,

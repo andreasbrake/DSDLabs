@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 v1
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated|mac_out2,
@@ -5,3 +6,12 @@ DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_con
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out4,
 PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_mult3,
+=======
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_49o:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_out4,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated|mac_mult3,
+>>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
