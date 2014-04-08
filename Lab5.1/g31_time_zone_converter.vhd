@@ -52,7 +52,7 @@ architecture behaviour of g31_time_zone_converter is
 		
 		mars_tz_hours_out 	<= mars_tz_hours_out_internal(4 downto 0);
 		
-		earth_local_to_utc: process(earth_local_hours, dst_vector)
+		earth_local_to_utc: process(earth_local_hours, dst_vector, earth_time_zone, earth_local_days)
 		begin
 			if earth_time_zone > 11 then
 				if earth_local_hours < ((earth_time_zone - 12) - dst_vector) then
@@ -73,7 +73,7 @@ architecture behaviour of g31_time_zone_converter is
 			end if;
 		end process;
 		
-		earth_utc_to_tz: process(earth_utc_hours, dst_vector)
+		earth_utc_to_tz: process(earth_utc_hours, dst_vector, earth_time_zone, earth_utc_days)
 		begin 
 			if earth_time_zone > 11 then
 				if (earth_utc_hours + (earth_time_zone - 12) + dst_vector) > 23 then
@@ -94,7 +94,7 @@ architecture behaviour of g31_time_zone_converter is
 			end if;
 		end process;
 		
-		mars_mtc_to_tz: process(mars_mtc_hours)
+		mars_mtc_to_tz: process(mars_mtc_hours, mars_time_zone)
 		begin
 			if mars_time_zone > 11 then
 				if (mars_mtc_hours + mars_time_zone - 12) > 23 then

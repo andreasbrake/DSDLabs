@@ -21,8 +21,8 @@ begin
 		lpm_file => "crc_rom.mif",
 		lpm_numwords => 99,
 		lpm_outdata => "UNREGISTERED",
-		lpm_widthad => 7,
-		lpm_width => 8
+		lpm_widthad => 6,
+		lpm_width => 7
 	)
 	PORT MAP (
 		inclock => clock,

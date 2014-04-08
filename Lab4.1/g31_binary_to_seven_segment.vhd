@@ -28,10 +28,13 @@ Architecture behaviour of g31_binary_to_seven_segment is
 	signal rb3: std_logic;
 	signal rb4: std_logic;
 	
+	signal lower: std_logic_vector(6 downto 0);
+	signal upper: std_logic_vector(11 downto 0);
+	
 	component g31_binary_to_BCD
 		port(
 			clock	: in std_logic;
-			bin		: in unsigned(5 downto 0);
+			bin		: in unsigned(6 downto 0);
 			BCD		: out std_logic_vector(7 downto 0));
 	end component;
 	
@@ -44,17 +47,29 @@ Architecture behaviour of g31_binary_to_seven_segment is
 	end component;
 	
 begin
+	divider: lpm_divide
+	GENERIC MAP(
+		LPM_WIDTHN => 12,
+		LPM_WIDTHD => 7
+	)
+	PORT MAP(
+		numer => std_logic_vector(bin),
+		denom => "1100100",
+		quotient => upper,
+		remain => lower
+	);
 -- BINARY TO BCD 
 	bin_BCD_1 : g31_binary_to_BCD
 	PORT MAP(
 		clock => clock,
-		bin => bin(5 downto 0),
+		bin => unsigned(lower),
 		BCD => BCD1
 	);
+	
 	bin_BCD_2 : g31_binary_to_BCD
 	PORT MAP(
 		clock => clock,
-		bin => bin(11 downto 6),
+		bin => unsigned(upper(6 downto 0)),
 		BCD => BCD2
 	);
 	

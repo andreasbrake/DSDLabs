@@ -25,6 +25,7 @@ entity g31_user_interface is
 		third_seven_seg: 	out std_logic_vector(6 downto 0);
 		last_seven_seg: 	out std_logic_vector(6 downto 0);	--msb
 		
+		leds:				out std_logic_vector(5 downto 0);
 		-- test outputs --
 		year_out:			out std_logic_vector(11 downto 0);
 		months_out:			out std_logic_vector(3 downto 0);
@@ -200,7 +201,7 @@ architecture behaviour of g31_user_interface is
 	signal seven_segment_in:	std_logic_vector(11 downto 0);
 	
 begin	
-	year_out <= years;
+	year_out <= years + "011111010000";
 	months_out <= months;
 	days_utc_out <= days_utc;
 	days_tz_out <= days_tz;
@@ -215,9 +216,8 @@ begin
 	dst_value <= dst_enable;
 	load_sync_out <= load_sync;
 	
-	DST_enable <= DST_en1 or DST_en2;
 	-- State determiner -- 
-	state_values: process(stateSelectors, sync_en)
+	state_values: process(stateSelectors, sync_en, clock)
 	begin
 		if clock = '1' and clock'event then			
 			if stateSelectors = "001" then -- Set B
@@ -251,14 +251,14 @@ begin
 	-- 2) view earth or mars
 	-- 3) set DST
 	-- 4-6) null
-	stateA_process: process(stateA, inputs)
+	stateA_process: process(stateA, inputs, clock)
 	begin
 		if clock = '1' and clock'event then
 			if stateA = '1' then
 				count_en <= inputs(0);
 				TorD <= inputs(1);
 				EorM <= inputs(2);
-				DST_en1 <= inputs(3);
+				DST_enable <= inputs(3);
 				if TorD = '0' then
 					if EorM = '0' then
 						if daySecond = '0' then
@@ -268,7 +268,7 @@ begin
 						elsif yearHour = '0' then
 							seven_segment_in <= "0000000" & hours_tz;
 						else 
-							seven_segment_in <= "000000000000";
+							seven_segment_in <= "0000000" & ETimeZone;
 						end if;
 					else
 						if daySecond = '0' then
@@ -278,7 +278,7 @@ begin
 						elsif yearHour = '0' then
 							seven_segment_in <= "0000000" & Mhours_tz;
 						else 
-							seven_segment_in <= "000000000000";
+							seven_segment_in <= "0000000" & MTimeZone;
 						end if;
 					end if;
 				else 
@@ -288,9 +288,9 @@ begin
 						elsif monthMinute = '0' then
 							seven_segment_in <= "00000000" & months;
 						elsif yearHour = '0' then
-							seven_segment_in <= years;
+							seven_segment_in <= years + "011111010000";
 						else 
-							seven_segment_in <= "000000000000";
+							seven_segment_in <= "0000000" & ETimeZone;
 						end if;
 					else
 						seven_segment_in <= "000000000000";
@@ -308,11 +308,10 @@ begin
 	-- 4) set upper/lower bits
 	-- 5) set time or date
 	-- 6) set DST
-	stateB_process: process(stateB, inputs, yearHour, monthMinute, daySecond)
+	stateB_process: process(stateB, inputs, yearHour, monthMinute, daySecond, clock)
 	begin
 		if clock = '1' and clock'event then
-			if stateB = '1' then 
-				DST_en2 <= inputs(6);
+			if stateB = '1' then
 				load_EDT <= '1';
 				
 				-- set load value
@@ -322,18 +321,43 @@ begin
 					load_value(7 downto 4) <= inputs(3 downto 0);
 				end if;
 				
+				-- set default set values (i.e. current values)
+
+				second_set		<= seconds;
+				minute_set		<= minutes;
+				hour_local_set	<= hours_tz;
+				day_local_set 	<= days_tz;
+				month_set 		<= months;
+				year_set 		<= years;				
+				
+				if daySecond = '1' and monthMinute = '1' and yearHour = '1' then
+					leds <= "000000";
+				end if;
+				
 				-- set load type
-				if daySecond = '1' then
-					if inputs(5) = '0' then second_set <= load_value(5 downto 0);
-					else day_local_set <= load_value(4 downto 0);
+				if daySecond = '0' then
+					if inputs(5) = '0' then 
+						second_set <= load_value(5 downto 0);
+						leds(0) <= '1';
+					else 
+						day_local_set <= load_value(4 downto 0);
+						leds(3) <= '1';
 					end if;
-				elsif monthMinute = '1' then
-					if inputs(5) = '0' then minute_set <= load_value(5 downto 0);
-					else month_set <= load_value(3 downto 0);
+				elsif monthMinute = '0' then
+					if inputs(5) = '0' then 
+						minute_set <= load_value(5 downto 0);
+						leds(1) <= '1';
+					else 
+						month_set <= load_value(3 downto 0);
+						leds(4) <= '1';
 					end if;
-				elsif yearHour = '1' then
-					if inputs(5) = '0' then hour_local_set <= load_value(4 downto 0);
-					else year_set <= ("00000" & load_value(6 downto 0)) + 2000;
+				elsif yearHour = '0' then
+					if inputs(5) = '0' then 
+						hour_local_set <= load_value(4 downto 0);
+						leds(2) <= '1';
+					else 
+						year_set <= ("00000" & load_value(6 downto 0));
+						leds(5) <= '1';
 					end if;
 				end if;
 			else
@@ -347,7 +371,7 @@ begin
 	-- 0-4) time-zone bits
 	-- 5) set earth or mars
 	-- 6) null
-	stateC_process: process(stateC, inputs)
+	stateC_process: process(stateC, inputs, clock)
 	begin
 		if clock = '1' and clock'event then
 			if stateC = '1' then
@@ -364,7 +388,7 @@ begin
 	-- State D -- Synchronize mars clock --
 	-- switch value list
 	-- 0-6) null
-	stateD_process: process(stateD)
+	stateD_process: process(stateD, clock)
 	begin
 		if clock = '1' and clock'event then
 			if stateD = '1' then 
@@ -381,11 +405,10 @@ begin
 		end if;
 	end process;
 	
-	buttonsProcess : process()
-	begin
+	--buttonsProcess : process()
+	--begin
 	
-	end process;	
-	
+	--end process;	
 	
 	timer : g31_basic_timer
 	PORT MAP(
@@ -393,7 +416,8 @@ begin
 		clock => clock,
 		enable => count_en,
 		EPULSE => epulse,
-		MPULSE => mpulse);
+		MPULSE => mpulse
+	);
 	
 	YMDCounter : g31_YMD_Counter
 	PORT MAP(
@@ -406,7 +430,8 @@ begin
 		D_Set => day_utc_set,
 		Years => years,
 		Months => months,
-		Days => days_utc);
+		Days => days_utc
+	);
 	
 	EarthHMSCounter: g31_HMS_Counter
 	PORT MAP(
@@ -420,7 +445,8 @@ begin
 		Hours => hours_utc,
 		Minutes => minutes,
 		Seconds => seconds,
-		end_of_day => Eeod);
+		end_of_day => Eeod
+	);
 		
 	MarsHMSCounter: g31_HMS_Counter
 	PORT MAP(
@@ -434,7 +460,8 @@ begin
 		Hours => Mhours_mtc,
 		Minutes => Mminutes,
 		Seconds => Mseconds,
-		end_of_day => Meod);
+		end_of_day => Meod
+	);
 		
 	synchronizer: g31_UTC_to_MTC
 	PORT MAP(
@@ -442,7 +469,7 @@ begin
 		reset => not reset,
 		load_enabled => load_sync,
 		count_enabled => sync_en,
-		desired_years => years + 2000,
+		desired_years => years,
 		desired_months => months,
 		desired_days => days_utc,
 		desired_hours => hours_utc,
@@ -450,12 +477,13 @@ begin
 		desired_seconds => seconds,
 		MHours => Mhours_set,
 		MMinutes => Mminutes_set,
-		MSeconds => Mseconds_set);
+		MSeconds => Mseconds_set
+	);
 		
 	time_zone_converter: g31_time_zone_converter
 	PORT MAP(
 		clock => clock,
-		dst	=> dst_enable,
+		dst	=> DST_enable,
 		
 		earth_time_zone => ETimeZone,
 		mars_time_zone => MTimeZone,

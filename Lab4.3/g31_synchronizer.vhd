@@ -99,13 +99,13 @@ begin
 	out_seconds <= seconds;
 	
 	-- Sets the done value if the conditions are met
-	process_done_days: process(years, months, days)
+	process_done_days: process(years, months, days, desired_years, desired_months, desired_days, doneD)
 	begin
 		if years >= desired_years and months >= desired_months and days >= desired_days then doneD <= '1';
 		else doneD <= '0';
 		end if;
 	end process;
-	process_done_seconds: process(hours, minutes, seconds)
+	process_done_seconds: process(hours, minutes, seconds, desired_hours, desired_minutes, desired_seconds, doneS)
 	begin
 		if hours >= desired_hours and minutes >= desired_minutes and seconds >= desired_seconds then doneS <= '1';
 		else doneS <= '0';
@@ -113,7 +113,7 @@ begin
 	end process;
 	
 	-- increments the Nday counter on the epulse when doneD = '0'
-	process_coun_d: process(epulse, doneD)
+	process_coun_d: process(epulse, doneD, clock)
 	begin
 		if clock = '1' and clock'event then
 			if doneD = '0' and epulse = '1' then Nday <=Nday  + 1;
@@ -123,7 +123,7 @@ begin
 	end process;
 	
 	-- increments the Nsec counter on the epulse and the Nday counter on the eod pulse
-	process_count_s: process(epulse, doneS)
+	process_count_s: process(epulse, doneS, clock)
 	begin
 		if clock = '1' and clock'event then
 			if doneS = '0'  and epulse = '1' then Nsec <= Nsec + 1;

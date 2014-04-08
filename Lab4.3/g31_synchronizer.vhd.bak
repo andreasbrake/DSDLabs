@@ -30,7 +30,7 @@ entity g31_synchronizer is
 end g31_synchronizer;
 
 architecture a of g31_synchronizer is
-	component g31_basic_timer
+	component g31_short_timer
 		PORT(	reset	: in std_logic;
 				clock	: in std_logic;
 				enable	: in std_logic;
@@ -99,13 +99,13 @@ begin
 	out_seconds <= seconds;
 	
 	-- Sets the done value if the conditions are met
-	process_done_days: process(years, months, days)
+	process_done_days: process(years, months, days, desired_years, desired_months, desired_days, doneD)
 	begin
 		if years >= desired_years and months >= desired_months and days >= desired_days then doneD <= '1';
 		else doneD <= '0';
 		end if;
 	end process;
-	process_done_seconds: process(hours, minutes, seconds)
+	process_done_seconds: process(hours, minutes, seconds, desired_hours, desired_minutes, desired_seconds, doneS)
 	begin
 		if hours >= desired_hours and minutes >= desired_minutes and seconds >= desired_seconds then doneS <= '1';
 		else doneS <= '0';
@@ -113,7 +113,7 @@ begin
 	end process;
 	
 	-- increments the Nday counter on the epulse when doneD = '0'
-	process_coun_d: process(epulse, doneD)
+	process_coun_d: process(epulse, doneD, clock)
 	begin
 		if clock = '1' and clock'event then
 			if doneD = '0' and epulse = '1' then Nday <=Nday  + 1;
@@ -133,7 +133,7 @@ begin
 	end process;
 	
 -- COMPONENT CREATION / PORT MAPS --
-	timer: g31_basic_timer
+	timer: g31_short_timer
 	PORT MAP(	
 		reset	=> reset,
 		clock	=> clock,

@@ -1,0 +1,17 @@
+MED
+C:\altera\DSDLabs-master\DSDLabs\trunk\Lab2.3\crc_rom.mif
+
+	Undo Commands
+	     1.	Cells
+	     2.	Cells
+	     3.	Cells
+	     4.	Paste from Clipboard
+	     5.	Cells
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
