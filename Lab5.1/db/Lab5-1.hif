@@ -1,5 +1,5 @@
-Quartus II 64-Bit
-Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 11
 980
 OFF
@@ -20,6 +20,39 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
+g31_basic_timer
+# storage
+db|Lab5-1.(1).cnf
+db|Lab5-1.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_basic_timer.vhd
+cbc19e29d844164893738b80a8ace29
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+g31_basic_timer:timer
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 LPM_CONSTANT
 # storage
 db|Lab5-1.(2).cnf
@@ -35,7 +68,7 @@ LPM_WIDTH
 PARAMETER_SIGNED_DEC
 USR
 LPM_CVALUE
-1
+499999
 PARAMETER_SIGNED_DEC
 USR
 ENABLE_RUNTIME_MOD
@@ -43,7 +76,7 @@ NO
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-lpm_constant_kh4
+lpm_constant_3l4
 PARAMETER_UNKNOWN
 USR
 }
@@ -126,6 +159,9 @@ RESULT1
 RESULT0
 -1
 3
+}
+# hierarchies {
+g31_basic_timer:timer|lpm_constant:const
 }
 # macro_sequence
 
@@ -398,7 +434,7 @@ db|Lab5-1.(4).cnf
 # case_insensitive
 # source_file
 db|cntr_cfl.tdf
-b0dd1e97ca46d45ec85efb96c2486a
+e6ec5cdf060b592df6edefa4baa1
 7
 # used_port {
 sload
@@ -577,17 +613,131 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_short_timer:timer|lpm_coun
 
 # end
 # entity
-g31_YMD_Counter
+LPM_CONSTANT
 # storage
 db|Lab5-1.(5).cnf
 db|Lab5-1.(5).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
+20a173884457e9df4e4d620451461d
+7
+# user_parameter {
+LPM_WIDTH
+26
+PARAMETER_SIGNED_DEC
+USR
+LPM_CVALUE
+513745
+PARAMETER_SIGNED_DEC
+USR
+ENABLE_RUNTIME_MOD
+NO
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_constant_9l4
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT3
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+}
+# hierarchies {
+g31_basic_timer:timer|lpm_constant:const2
+}
+# macro_sequence
+
+# end
+# entity
+g31_YMD_Counter
+# storage
+db|Lab5-1.(6).cnf
+db|Lab5-1.(6).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_ymd_counter.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_ymd_counter.vhd
 a692b27dfcc0473e4422c4ab32929440
 5
 # internal_option {
@@ -639,15 +789,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_Day_Block
 # storage
-db|Lab5-1.(6).cnf
-db|Lab5-1.(6).cnf
+db|Lab5-1.(7).cnf
+db|Lab5-1.(7).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_day_block.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_day_block.vhd
 efc15f9a481357f675831e655f5afd0
 5
 # internal_option {
@@ -687,15 +837,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_Month_Block
 # storage
-db|Lab5-1.(7).cnf
-db|Lab5-1.(7).cnf
+db|Lab5-1.(8).cnf
+db|Lab5-1.(8).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_month_block.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_month_block.vhd
 d277cecb7f958b4a3c08cf231831e64
 5
 # internal_option {
@@ -735,15 +885,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_Year_Block
 # storage
-db|Lab5-1.(8).cnf
-db|Lab5-1.(8).cnf
+db|Lab5-1.(9).cnf
+db|Lab5-1.(9).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_year_block.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_year_block.vhd
 a1a398a2378380c6abd79b3364058f
 5
 # internal_option {
@@ -779,15 +929,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_HMS_Counter
 # storage
-db|Lab5-1.(9).cnf
-db|Lab5-1.(9).cnf
+db|Lab5-1.(10).cnf
+db|Lab5-1.(10).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab3.2|g31_hms_counter.vhd
+|users|andreas|workspace|github|dsdlabs|lab3.2|g31_hms_counter.vhd
 af939a921d82fa7b35ba1a9ab71ded8
 5
 # internal_option {
@@ -840,15 +990,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_second_counter
 # storage
-db|Lab5-1.(10).cnf
-db|Lab5-1.(10).cnf
+db|Lab5-1.(11).cnf
+db|Lab5-1.(11).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab3.2|g31_second_counter.vhd
+|users|andreas|workspace|github|dsdlabs|lab3.2|g31_second_counter.vhd
 48b0268164d56ea1e5b6425b3294ca9
 5
 # internal_option {
@@ -885,8 +1035,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 LPM_COUNTER
 # storage
-db|Lab5-1.(11).cnf
-db|Lab5-1.(11).cnf
+db|Lab5-1.(12).cnf
+db|Lab5-1.(12).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_counter.tdf
@@ -1027,12 +1177,12 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31
 # entity
 cntr_77l
 # storage
-db|Lab5-1.(12).cnf
-db|Lab5-1.(12).cnf
+db|Lab5-1.(13).cnf
+db|Lab5-1.(13).cnf
 # case_insensitive
 # source_file
 db|cntr_77l.tdf
-7c33e3b01797b3a0c9a28ae9da98881
+2a4ec889de7acd68e495176811de3c6
 7
 # used_port {
 sload
@@ -1095,15 +1245,15 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31
 # entity
 g31_minute_counter
 # storage
-db|Lab5-1.(13).cnf
-db|Lab5-1.(13).cnf
+db|Lab5-1.(14).cnf
+db|Lab5-1.(14).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab3.2|g31_minute_counter.vhd
+|users|andreas|workspace|github|dsdlabs|lab3.2|g31_minute_counter.vhd
 7c101b06cb4a4788fdc5f8117f7f91e
 5
 # internal_option {
@@ -1140,15 +1290,15 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_hour_counter
 # storage
-db|Lab5-1.(14).cnf
-db|Lab5-1.(14).cnf
+db|Lab5-1.(15).cnf
+db|Lab5-1.(15).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab3.2|g31_hour_counter.vhd
+|users|andreas|workspace|github|dsdlabs|lab3.2|g31_hour_counter.vhd
 5d389a1c9a5d48cebe19dca382563df6
 5
 # internal_option {
@@ -1185,8 +1335,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 LPM_COUNTER
 # storage
-db|Lab5-1.(15).cnf
-db|Lab5-1.(15).cnf
+db|Lab5-1.(16).cnf
+db|Lab5-1.(16).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_counter.tdf
@@ -1318,12 +1468,12 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31
 # entity
 cntr_67l
 # storage
-db|Lab5-1.(16).cnf
-db|Lab5-1.(16).cnf
+db|Lab5-1.(17).cnf
+db|Lab5-1.(17).cnf
 # case_insensitive
 # source_file
 db|cntr_67l.tdf
-bf84c416cf2580f665776fab9c87ef21
+17e17da9956069af355b4bce49667558
 7
 # used_port {
 sload
@@ -1377,15 +1527,15 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31
 # entity
 g31_UTC_to_MTC
 # storage
-db|Lab5-1.(17).cnf
-db|Lab5-1.(17).cnf
+db|Lab5-1.(18).cnf
+db|Lab5-1.(18).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.3|g31_utc_to_mtc.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.3|g31_utc_to_mtc.vhd
 3fa84ae590559fa32ac3390a21f6e51
 5
 # internal_option {
@@ -1448,16 +1598,16 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_synchronizer
 # storage
-db|Lab5-1.(18).cnf
-db|Lab5-1.(18).cnf
+db|Lab5-1.(19).cnf
+db|Lab5-1.(19).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.3|g31_synchronizer.vhd
-ad8284b8359ec73eacd41e77532f556
+|users|andreas|workspace|github|dsdlabs|lab4.3|g31_synchronizer.vhd
+dafb9c1cc68b5a814f96a018e7a2b390
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1513,17 +1663,128 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+LPM_CONSTANT
+# storage
+db|Lab5-1.(21).cnf
+db|Lab5-1.(21).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
+20a173884457e9df4e4d620451461d
+7
+# user_parameter {
+LPM_WIDTH
+26
+PARAMETER_SIGNED_DEC
+USR
+LPM_CVALUE
+1
+PARAMETER_SIGNED_DEC
+USR
+ENABLE_RUNTIME_MOD
+NO
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_constant_kh4
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT3
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
 g31_date_compressor
 # storage
-db|Lab5-1.(19).cnf
-db|Lab5-1.(19).cnf
+db|Lab5-1.(22).cnf
+db|Lab5-1.(22).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.3|g31_date_compressor.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.3|g31_date_compressor.vhd
 c81023688a5cc730dedd69b3f1fdff7
 5
 # internal_option {
@@ -1562,16 +1823,16 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 g31_Seconds_to_Days
 # storage
-db|Lab5-1.(20).cnf
-db|Lab5-1.(20).cnf
+db|Lab5-1.(23).cnf
+db|Lab5-1.(23).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab1.2|g31_seconds_to_days.vhd
-2c2f8eab7e24839d6445b6c6a438c99
+|users|andreas|workspace|github|dsdlabs|lab1.2|g31_seconds_to_days.vhd
+ee62edc4b71a3f9f1c206ae389249772
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1603,61 +1864,10 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-g31_mars_converter
-# storage
-db|Lab5-1.(21).cnf
-db|Lab5-1.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.3|g31_mars_converter.vhd
-c7275d5463e2ca2a8f63c214cf32a6b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(jdearth)
-29 downto 0
-PARAMETER_STRING
-USR
- constraint(mhours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(mminutes)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(mseconds)
-5 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 LPM_MULT
 # storage
-db|Lab5-1.(22).cnf
-db|Lab5-1.(22).cnf
+db|Lab5-1.(25).cnf
+db|Lab5-1.(25).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
@@ -2047,21 +2257,18 @@ DATAB1
 -1
 2
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult
-}
 # macro_sequence
 
 # end
 # entity
 mult_lao
 # storage
-db|Lab5-1.(23).cnf
-db|Lab5-1.(23).cnf
+db|Lab5-1.(26).cnf
+db|Lab5-1.(26).cnf
 # case_insensitive
 # source_file
 db|mult_lao.tdf
-d96b32362fe4bc9f7cb83e6620a2c222
+36846d01253d931ca40d3238f8c51c2
 7
 # used_port {
 result9
@@ -2341,17 +2548,14 @@ dataa0
 -1
 3
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_lao:auto_generated
-}
 # macro_sequence
 
 # end
 # entity
 LPM_MULT
 # storage
-db|Lab5-1.(24).cnf
-db|Lab5-1.(24).cnf
+db|Lab5-1.(27).cnf
+db|Lab5-1.(27).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
@@ -2597,21 +2801,18 @@ DATAB3
 -1
 2
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult
-}
 # macro_sequence
 
 # end
 # entity
 mult_29o
 # storage
-db|Lab5-1.(25).cnf
-db|Lab5-1.(25).cnf
+db|Lab5-1.(28).cnf
+db|Lab5-1.(28).cnf
 # case_insensitive
 # source_file
 db|mult_29o.tdf
-50d79370323ca7e7909a22668b59a3be
+862ee12f4f33881c59653225bce2d7
 7
 # used_port {
 result9
@@ -2747,17 +2948,14 @@ dataa0
 -1
 3
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_29o:auto_generated
-}
 # macro_sequence
 
 # end
 # entity
 LPM_MULT
 # storage
-db|Lab5-1.(26).cnf
-db|Lab5-1.(26).cnf
+db|Lab5-1.(29).cnf
+db|Lab5-1.(29).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
@@ -3009,21 +3207,18 @@ DATAB2
 -1
 2
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult
-}
 # macro_sequence
 
 # end
 # entity
 mult_49o
 # storage
-db|Lab5-1.(27).cnf
-db|Lab5-1.(27).cnf
+db|Lab5-1.(30).cnf
+db|Lab5-1.(30).cnf
 # case_insensitive
 # source_file
 db|mult_49o.tdf
-894564924421aab841171d021bd38f7
+cf5ebcd4e17fa4491cc4975a1ecb2cc
 7
 # used_port {
 result9
@@ -3165,18 +3360,14 @@ dataa0
 -1
 3
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_49o:auto_generated
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_49o:auto_generated
-}
 # macro_sequence
 
 # end
 # entity
 LPM_MULT
 # storage
-db|Lab5-1.(28).cnf
-db|Lab5-1.(28).cnf
+db|Lab5-1.(31).cnf
+db|Lab5-1.(31).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
@@ -3377,17 +3568,14 @@ DATAB2
 -1
 2
 }
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult
-}
 # macro_sequence
 
 # end
 # entity
 g31_time_zone_converter
 # storage
-db|Lab5-1.(29).cnf
-db|Lab5-1.(29).cnf
+db|Lab5-1.(32).cnf
+db|Lab5-1.(32).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -3395,7 +3583,7 @@ ON
 # case_insensitive
 # source_file
 g31_time_zone_converter.vhd
-b45ba858596b032662597f2f4bcfe
+378732da4ac0f4e0b7a1cdc0749c
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -3467,116 +3655,641 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-LPM_CONSTANT
+LPM_DIVIDE
 # storage
-db|Lab5-1.(30).cnf
-db|Lab5-1.(30).cnf
+db|Lab5-1.(34).cnf
+db|Lab5-1.(34).cnf
 # case_insensitive
 # source_file
-|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
-20a173884457e9df4e4d620451461d
+|altera|91sp2|quartus|libraries|megafunctions|lpm_divide.tdf
+54966f81ff8a917b1dc9b9ad1a09648
 7
 # user_parameter {
-LPM_WIDTH
-26
+LPM_WIDTHN
+12
 PARAMETER_SIGNED_DEC
 USR
-LPM_CVALUE
-49999999
+LPM_WIDTHD
+7
 PARAMETER_SIGNED_DEC
 USR
-ENABLE_RUNTIME_MOD
-NO
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-lpm_constant_fo4
+lpm_divide_mfo
 PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
 USR
 }
 # used_port {
-RESULT9
+REMAIN6
 -1
 3
-RESULT8
+REMAIN5
 -1
 3
-RESULT7
+REMAIN4
 -1
 3
-RESULT6
+REMAIN3
 -1
 3
-RESULT5
+REMAIN2
 -1
 3
-RESULT4
+REMAIN1
 -1
 3
-RESULT3
+REMAIN0
 -1
 3
-RESULT25
+QUOTIENT6
 -1
 3
-RESULT24
+QUOTIENT5
 -1
 3
-RESULT23
+QUOTIENT4
 -1
 3
-RESULT22
+QUOTIENT3
 -1
 3
-RESULT21
+QUOTIENT2
 -1
 3
-RESULT20
+QUOTIENT1
 -1
 3
-RESULT2
+QUOTIENT0
 -1
 3
-RESULT19
+NUMER9
 -1
 3
-RESULT18
+NUMER8
 -1
 3
-RESULT17
+NUMER7
 -1
 3
-RESULT16
+NUMER6
 -1
 3
-RESULT15
+NUMER5
 -1
 3
-RESULT14
+NUMER4
 -1
 3
-RESULT13
+NUMER3
 -1
 3
-RESULT12
+NUMER2
 -1
 3
-RESULT11
+NUMER11
 -1
 3
-RESULT10
+NUMER10
 -1
 3
-RESULT1
+NUMER1
 -1
 3
-RESULT0
+NUMER0
+-1
+3
+DENOM4
+-1
+1
+DENOM3
+-1
+1
+DENOM1
+-1
+1
+DENOM0
+-1
+1
+DENOM6
+-1
+2
+DENOM5
+-1
+2
+DENOM2
+-1
+2
+}
+# hierarchies {
+g31_binary_to_seven_segment:display|lpm_divide:divider
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide_mfo
+# storage
+db|Lab5-1.(35).cnf
+db|Lab5-1.(35).cnf
+# case_insensitive
+# source_file
+db|lpm_divide_mfo.tdf
+51aceb37f2357fa89aaab2503d39a477
+7
+# used_port {
+remain6
+-1
+3
+remain5
+-1
+3
+remain4
+-1
+3
+remain3
+-1
+3
+remain2
+-1
+3
+remain1
+-1
+3
+remain0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numer9
+-1
+3
+numer8
+-1
+3
+numer7
+-1
+3
+numer6
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom6
+-1
+3
+denom5
+-1
+3
+denom4
+-1
+3
+denom3
+-1
+3
+denom2
+-1
+3
+denom1
+-1
+3
+denom0
 -1
 3
 }
 # hierarchies {
-g31_basic_timer:timer|lpm_constant:const
-g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_constant:const
+g31_binary_to_seven_segment:display|lpm_divide:divider|lpm_divide_mfo:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+sign_div_unsign_plh
+# storage
+db|Lab5-1.(36).cnf
+db|Lab5-1.(36).cnf
+# case_insensitive
+# source_file
+db|sign_div_unsign_plh.tdf
+c0c3e428104acfd6e64392647148042
+7
+# used_port {
+remainder6
+-1
+3
+remainder5
+-1
+3
+remainder4
+-1
+3
+remainder3
+-1
+3
+remainder2
+-1
+3
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator9
+-1
+3
+numerator8
+-1
+3
+numerator7
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator6
+-1
+3
+denominator5
+-1
+3
+denominator4
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# hierarchies {
+g31_binary_to_seven_segment:display|lpm_divide:divider|lpm_divide_mfo:auto_generated|sign_div_unsign_plh:divider
+}
+# macro_sequence
+
+# end
+# entity
+alt_u_div_k2f
+# storage
+db|Lab5-1.(37).cnf
+db|Lab5-1.(37).cnf
+# case_insensitive
+# source_file
+db|alt_u_div_k2f.tdf
+8d58bb6913b8344c69be152a2b5e4
+7
+# used_port {
+remainder6
+-1
+3
+remainder5
+-1
+3
+remainder4
+-1
+3
+remainder3
+-1
+3
+remainder2
+-1
+3
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator9
+-1
+3
+numerator8
+-1
+3
+numerator7
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator6
+-1
+3
+denominator5
+-1
+3
+denominator4
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# hierarchies {
+g31_binary_to_seven_segment:display|lpm_divide:divider|lpm_divide_mfo:auto_generated|sign_div_unsign_plh:divider|alt_u_div_k2f:divider
+}
+# macro_sequence
+
+# end
+# entity
+add_sub_lkc
+# storage
+db|Lab5-1.(38).cnf
+db|Lab5-1.(38).cnf
+# case_insensitive
+# source_file
+db|add_sub_lkc.tdf
+b2a1251a432948d540b9ad92d3593
+7
+# used_port {
+result0
+-1
+3
+datab0
+-1
+3
+dataa0
+-1
+3
+cout
+-1
+3
+}
+# hierarchies {
+g31_binary_to_seven_segment:display|lpm_divide:divider|lpm_divide_mfo:auto_generated|sign_div_unsign_plh:divider|alt_u_div_k2f:divider|add_sub_lkc:add_sub_0
+}
+# macro_sequence
+
+# end
+# entity
+add_sub_mkc
+# storage
+db|Lab5-1.(39).cnf
+db|Lab5-1.(39).cnf
+# case_insensitive
+# source_file
+db|add_sub_mkc.tdf
+57177a76ef9543d7eb6282b9a890a9
+7
+# used_port {
+result1
+-1
+3
+result0
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+cout
+-1
+3
+}
+# hierarchies {
+g31_binary_to_seven_segment:display|lpm_divide:divider|lpm_divide_mfo:auto_generated|sign_div_unsign_plh:divider|alt_u_div_k2f:divider|add_sub_mkc:add_sub_1
 }
 # macro_sequence
 
@@ -3584,16 +4297,16 @@ g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_cons
 # entity
 g31_binary_to_BCD
 # storage
-db|Lab5-1.(32).cnf
-db|Lab5-1.(32).cnf
+db|Lab5-1.(40).cnf
+db|Lab5-1.(40).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_binary_to_bcd.vhd
-8d2c753b9fefdea3390649a889b29c0
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_binary_to_bcd.vhd
+3bb7708d8bc6d72a407afa58d8d749
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -3607,7 +4320,7 @@ ON
 }
 # user_parameter {
  constraint(bin)
-5 downto 0
+6 downto 0
 PARAMETER_STRING
 USR
  constraint(bcd)
@@ -3628,8 +4341,8 @@ a36c8ec425c8a2589af98b2d4daabc3
 # entity
 LPM_ROM
 # storage
-db|Lab5-1.(33).cnf
-db|Lab5-1.(33).cnf
+db|Lab5-1.(41).cnf
+db|Lab5-1.(41).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_rom.tdf
@@ -3641,11 +4354,11 @@ LPM_WIDTH
 PARAMETER_SIGNED_DEC
 USR
 LPM_WIDTHAD
-6
+7
 PARAMETER_SIGNED_DEC
 USR
 LPM_NUMWORDS
-64
+99
 PARAMETER_SIGNED_DEC
 USR
 LPM_ADDRESS_CONTROL
@@ -3709,6 +4422,9 @@ Q0
 INCLOCK
 -1
 3
+ADDRESS6
+-1
+3
 ADDRESS5
 -1
 3
@@ -3738,8 +4454,8 @@ g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom
 # entity
 altrom
 # storage
-db|Lab5-1.(34).cnf
-db|Lab5-1.(34).cnf
+db|Lab5-1.(42).cnf
+db|Lab5-1.(42).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|altrom.tdf
@@ -3759,11 +4475,11 @@ WIDTH
 PARAMETER_UNKNOWN
 USR
 AD_WIDTH
-6
+7
 PARAMETER_UNKNOWN
 USR
 NUMWORDS
-64
+99
 PARAMETER_UNKNOWN
 USR
 FILE
@@ -3835,6 +4551,9 @@ q0
 clocki
 -1
 3
+address6
+-1
+3
 address5
 -1
 3
@@ -3864,8 +4583,8 @@ g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|
 # entity
 altsyncram
 # storage
-db|Lab5-1.(35).cnf
-db|Lab5-1.(35).cnf
+db|Lab5-1.(43).cnf
+db|Lab5-1.(43).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|altsyncram.tdf
@@ -3905,11 +4624,11 @@ WIDTH_A
 PARAMETER_UNKNOWN
 USR
 WIDTHAD_A
-6
+7
 PARAMETER_UNKNOWN
 USR
 NUMWORDS_A
-64
+99
 PARAMETER_UNKNOWN
 USR
 OUTDATA_REG_A
@@ -4069,7 +4788,7 @@ Cyclone II
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_e501
+altsyncram_n501
 PARAMETER_UNKNOWN
 USR
 }
@@ -4101,6 +4820,9 @@ q_a0
 clock0
 -1
 3
+address_a6
+-1
+3
 address_a5
 -1
 3
@@ -4128,14 +4850,14 @@ g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|
 
 # end
 # entity
-altsyncram_e501
+altsyncram_n501
 # storage
-db|Lab5-1.(36).cnf
-db|Lab5-1.(36).cnf
+db|Lab5-1.(44).cnf
+db|Lab5-1.(44).cnf
 # case_insensitive
 # source_file
-db|altsyncram_e501.tdf
-628480d6e2b9da90258cd873e23b315d
+db|altsyncram_n501.tdf
+361d1a396e817dcd776fc16b45fd37
 7
 # used_port {
 q_a7
@@ -4165,6 +4887,9 @@ q_a0
 clock0
 -1
 3
+address_a6
+-1
+3
 address_a5
 -1
 3
@@ -4189,8 +4914,8 @@ crc_rom.mif
 0
 }
 # hierarchies {
-g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_1|lpm_rom:crc_rom|altrom:srom|altsyncram:rom_block|altsyncram_e501:auto_generated
-g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|altrom:srom|altsyncram:rom_block|altsyncram_e501:auto_generated
+g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_1|lpm_rom:crc_rom|altrom:srom|altsyncram:rom_block|altsyncram_n501:auto_generated
+g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|altrom:srom|altsyncram:rom_block|altsyncram_n501:auto_generated
 }
 # macro_sequence
 
@@ -4198,15 +4923,15 @@ g31_binary_to_seven_segment:display|g31_binary_to_BCD:bin_BCD_2|lpm_rom:crc_rom|
 # entity
 g31_seven_segment_decoder
 # storage
-db|Lab5-1.(37).cnf
-db|Lab5-1.(37).cnf
+db|Lab5-1.(45).cnf
+db|Lab5-1.(45).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_seven_segment_decoder.vhd
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_seven_segment_decoder.vhd
 2652549e42d45b3a9a78b7b879f467d5
 5
 # internal_option {
@@ -4242,6 +4967,61 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+g31_binary_to_seven_segment
+# storage
+db|Lab5-1.(33).cnf
+db|Lab5-1.(33).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|andreas|workspace|github|dsdlabs|lab4.1|g31_binary_to_seven_segment.vhd
+c3ae7b76faf853eeb36dd3c2367b2a55
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(bin)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(segments1)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(segments2)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(segments3)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(segments4)
+6 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_binary_to_seven_segment:display
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 g31_user_interface
 # storage
 db|Lab5-1.(0).cnf
@@ -4253,7 +5033,7 @@ ON
 # case_insensitive
 # source_file
 g31_user_interface.vhd
-afc7d69310a1cf558866a5a61cffb17
+a76b550aea733f061b149d23e28c0f0
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -4275,10 +5055,2286 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+LPM_MULT
+# storage
+db|Lab5-1.(46).cnf
+db|Lab5-1.(46).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
+6ec8d746e6da2f4aae33fe9d4e4dfb1
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTHA
+30
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHB
+32
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHP
+62
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHR
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_WIDTHS
+1
+PARAMETER_SIGNED_DEC
+USR
+LPM_REPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LATENCY
+0
+PARAMETER_UNKNOWN
+DEF
+INPUT_A_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+USE_EAB
+OFF
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+APEX20K_TECHNOLOGY_MAPPER
+LUT
+TECH_MAPPER_APEX20K
+USR
+DEDICATED_MULTIPLIER_CIRCUITRY
+AUTO
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+mult_hao
+PARAMETER_UNKNOWN
+USR
+INPUT_A_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+USE_AHDL_IMPLEMENTATION
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT61
+-1
+3
+RESULT60
+-1
+3
+RESULT6
+-1
+3
+RESULT59
+-1
+3
+RESULT58
+-1
+3
+RESULT57
+-1
+3
+RESULT56
+-1
+3
+RESULT55
+-1
+3
+RESULT54
+-1
+3
+RESULT53
+-1
+3
+RESULT52
+-1
+3
+RESULT51
+-1
+3
+RESULT50
+-1
+3
+RESULT5
+-1
+3
+RESULT49
+-1
+3
+RESULT48
+-1
+3
+RESULT47
+-1
+3
+RESULT46
+-1
+3
+RESULT45
+-1
+3
+RESULT44
+-1
+3
+RESULT43
+-1
+3
+RESULT42
+-1
+3
+RESULT41
+-1
+3
+RESULT40
+-1
+3
+RESULT4
+-1
+3
+RESULT39
+-1
+3
+RESULT38
+-1
+3
+RESULT37
+-1
+3
+RESULT36
+-1
+3
+RESULT35
+-1
+3
+RESULT34
+-1
+3
+RESULT33
+-1
+3
+RESULT32
+-1
+3
+RESULT31
+-1
+3
+RESULT30
+-1
+3
+RESULT3
+-1
+3
+RESULT29
+-1
+3
+RESULT28
+-1
+3
+RESULT27
+-1
+3
+RESULT26
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+DATAA9
+-1
+3
+DATAA8
+-1
+3
+DATAA7
+-1
+3
+DATAA6
+-1
+3
+DATAA5
+-1
+3
+DATAA4
+-1
+3
+DATAA3
+-1
+3
+DATAA29
+-1
+3
+DATAA28
+-1
+3
+DATAA27
+-1
+3
+DATAA26
+-1
+3
+DATAA25
+-1
+3
+DATAA24
+-1
+3
+DATAA23
+-1
+3
+DATAA22
+-1
+3
+DATAA21
+-1
+3
+DATAA20
+-1
+3
+DATAA2
+-1
+3
+DATAA19
+-1
+3
+DATAA18
+-1
+3
+DATAA17
+-1
+3
+DATAA16
+-1
+3
+DATAA15
+-1
+3
+DATAA14
+-1
+3
+DATAA13
+-1
+3
+DATAA12
+-1
+3
+DATAA11
+-1
+3
+DATAA10
+-1
+3
+DATAA1
+-1
+3
+DATAA0
+-1
+3
+DATAB9
+-1
+1
+DATAB5
+-1
+1
+DATAB4
+-1
+1
+DATAB26
+-1
+1
+DATAB25
+-1
+1
+DATAB23
+-1
+1
+DATAB22
+-1
+1
+DATAB20
+-1
+1
+DATAB2
+-1
+1
+DATAB19
+-1
+1
+DATAB16
+-1
+1
+DATAB14
+-1
+1
+DATAB13
+-1
+1
+DATAB12
+-1
+1
+DATAB10
+-1
+1
+DATAB0
+-1
+1
+DATAB8
+-1
+2
+DATAB7
+-1
+2
+DATAB6
+-1
+2
+DATAB31
+-1
+2
+DATAB30
+-1
+2
+DATAB3
+-1
+2
+DATAB29
+-1
+2
+DATAB28
+-1
+2
+DATAB27
+-1
+2
+DATAB24
+-1
+2
+DATAB21
+-1
+2
+DATAB18
+-1
+2
+DATAB17
+-1
+2
+DATAB15
+-1
+2
+DATAB11
+-1
+2
+DATAB1
+-1
+2
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult
+}
+# macro_sequence
+
+# end
+# entity
+mult_hao
+# storage
+db|Lab5-1.(47).cnf
+db|Lab5-1.(47).cnf
+# case_insensitive
+# source_file
+db|mult_hao.tdf
+71357c9cdb4f3d4ae3742a53e98bf412
+7
+# used_port {
+result9
+-1
+3
+result8
+-1
+3
+result7
+-1
+3
+result61
+-1
+3
+result60
+-1
+3
+result6
+-1
+3
+result59
+-1
+3
+result58
+-1
+3
+result57
+-1
+3
+result56
+-1
+3
+result55
+-1
+3
+result54
+-1
+3
+result53
+-1
+3
+result52
+-1
+3
+result51
+-1
+3
+result50
+-1
+3
+result5
+-1
+3
+result49
+-1
+3
+result48
+-1
+3
+result47
+-1
+3
+result46
+-1
+3
+result45
+-1
+3
+result44
+-1
+3
+result43
+-1
+3
+result42
+-1
+3
+result41
+-1
+3
+result40
+-1
+3
+result4
+-1
+3
+result39
+-1
+3
+result38
+-1
+3
+result37
+-1
+3
+result36
+-1
+3
+result35
+-1
+3
+result34
+-1
+3
+result33
+-1
+3
+result32
+-1
+3
+result31
+-1
+3
+result30
+-1
+3
+result3
+-1
+3
+result29
+-1
+3
+result28
+-1
+3
+result27
+-1
+3
+result26
+-1
+3
+result25
+-1
+3
+result24
+-1
+3
+result23
+-1
+3
+result22
+-1
+3
+result21
+-1
+3
+result20
+-1
+3
+result2
+-1
+3
+result19
+-1
+3
+result18
+-1
+3
+result17
+-1
+3
+result16
+-1
+3
+result15
+-1
+3
+result14
+-1
+3
+result13
+-1
+3
+result12
+-1
+3
+result11
+-1
+3
+result10
+-1
+3
+result1
+-1
+3
+result0
+-1
+3
+datab9
+-1
+3
+datab8
+-1
+3
+datab7
+-1
+3
+datab6
+-1
+3
+datab5
+-1
+3
+datab4
+-1
+3
+datab31
+-1
+3
+datab30
+-1
+3
+datab3
+-1
+3
+datab29
+-1
+3
+datab28
+-1
+3
+datab27
+-1
+3
+datab26
+-1
+3
+datab25
+-1
+3
+datab24
+-1
+3
+datab23
+-1
+3
+datab22
+-1
+3
+datab21
+-1
+3
+datab20
+-1
+3
+datab2
+-1
+3
+datab19
+-1
+3
+datab18
+-1
+3
+datab17
+-1
+3
+datab16
+-1
+3
+datab15
+-1
+3
+datab14
+-1
+3
+datab13
+-1
+3
+datab12
+-1
+3
+datab11
+-1
+3
+datab10
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa9
+-1
+3
+dataa8
+-1
+3
+dataa7
+-1
+3
+dataa6
+-1
+3
+dataa5
+-1
+3
+dataa4
+-1
+3
+dataa3
+-1
+3
+dataa29
+-1
+3
+dataa28
+-1
+3
+dataa27
+-1
+3
+dataa26
+-1
+3
+dataa25
+-1
+3
+dataa24
+-1
+3
+dataa23
+-1
+3
+dataa22
+-1
+3
+dataa21
+-1
+3
+dataa20
+-1
+3
+dataa2
+-1
+3
+dataa19
+-1
+3
+dataa18
+-1
+3
+dataa17
+-1
+3
+dataa16
+-1
+3
+dataa15
+-1
+3
+dataa14
+-1
+3
+dataa13
+-1
+3
+dataa12
+-1
+3
+dataa11
+-1
+3
+dataa10
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:conversionMult|mult_hao:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+g31_mars_converter
+# storage
+db|Lab5-1.(24).cnf
+db|Lab5-1.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|andreas|workspace|github|dsdlabs|lab4.3|g31_mars_converter.vhd
+8fc72690d174f6da2c79f33ec5ba0f5
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(jdearth)
+29 downto 0
+PARAMETER_STRING
+USR
+ constraint(mhours)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(mminutes)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(mseconds)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LPM_MULT
+# storage
+db|Lab5-1.(48).cnf
+db|Lab5-1.(48).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
+6ec8d746e6da2f4aae33fe9d4e4dfb1
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTHA
+27
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHB
+5
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHP
+32
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHR
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_WIDTHS
+1
+PARAMETER_SIGNED_DEC
+USR
+LPM_REPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LATENCY
+0
+PARAMETER_UNKNOWN
+DEF
+INPUT_A_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+USE_EAB
+OFF
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+APEX20K_TECHNOLOGY_MAPPER
+LUT
+TECH_MAPPER_APEX20K
+USR
+DEDICATED_MULTIPLIER_CIRCUITRY
+AUTO
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+mult_59o
+PARAMETER_UNKNOWN
+USR
+INPUT_A_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+USE_AHDL_IMPLEMENTATION
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT31
+-1
+3
+RESULT30
+-1
+3
+RESULT3
+-1
+3
+RESULT29
+-1
+3
+RESULT28
+-1
+3
+RESULT27
+-1
+3
+RESULT26
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+DATAA9
+-1
+3
+DATAA8
+-1
+3
+DATAA7
+-1
+3
+DATAA6
+-1
+3
+DATAA5
+-1
+3
+DATAA4
+-1
+3
+DATAA3
+-1
+3
+DATAA26
+-1
+3
+DATAA25
+-1
+3
+DATAA24
+-1
+3
+DATAA23
+-1
+3
+DATAA22
+-1
+3
+DATAA21
+-1
+3
+DATAA20
+-1
+3
+DATAA2
+-1
+3
+DATAA19
+-1
+3
+DATAA18
+-1
+3
+DATAA17
+-1
+3
+DATAA16
+-1
+3
+DATAA15
+-1
+3
+DATAA14
+-1
+3
+DATAA13
+-1
+3
+DATAA12
+-1
+3
+DATAA11
+-1
+3
+DATAA10
+-1
+3
+DATAA1
+-1
+3
+DATAA0
+-1
+3
+DATAB2
+-1
+1
+DATAB1
+-1
+1
+DATAB0
+-1
+1
+DATAB4
+-1
+2
+DATAB3
+-1
+2
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult
+}
+# macro_sequence
+
+# end
+# entity
+mult_59o
+# storage
+db|Lab5-1.(49).cnf
+db|Lab5-1.(49).cnf
+# case_insensitive
+# source_file
+db|mult_59o.tdf
+9b5854335ffa617b987f157aef57069
+7
+# used_port {
+result9
+-1
+3
+result8
+-1
+3
+result7
+-1
+3
+result6
+-1
+3
+result5
+-1
+3
+result4
+-1
+3
+result31
+-1
+3
+result30
+-1
+3
+result3
+-1
+3
+result29
+-1
+3
+result28
+-1
+3
+result27
+-1
+3
+result26
+-1
+3
+result25
+-1
+3
+result24
+-1
+3
+result23
+-1
+3
+result22
+-1
+3
+result21
+-1
+3
+result20
+-1
+3
+result2
+-1
+3
+result19
+-1
+3
+result18
+-1
+3
+result17
+-1
+3
+result16
+-1
+3
+result15
+-1
+3
+result14
+-1
+3
+result13
+-1
+3
+result12
+-1
+3
+result11
+-1
+3
+result10
+-1
+3
+result1
+-1
+3
+result0
+-1
+3
+datab4
+-1
+3
+datab3
+-1
+3
+datab2
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa9
+-1
+3
+dataa8
+-1
+3
+dataa7
+-1
+3
+dataa6
+-1
+3
+dataa5
+-1
+3
+dataa4
+-1
+3
+dataa3
+-1
+3
+dataa26
+-1
+3
+dataa25
+-1
+3
+dataa24
+-1
+3
+dataa23
+-1
+3
+dataa22
+-1
+3
+dataa21
+-1
+3
+dataa20
+-1
+3
+dataa2
+-1
+3
+dataa19
+-1
+3
+dataa18
+-1
+3
+dataa17
+-1
+3
+dataa16
+-1
+3
+dataa15
+-1
+3
+dataa14
+-1
+3
+dataa13
+-1
+3
+dataa12
+-1
+3
+dataa11
+-1
+3
+dataa10
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:hourMult|mult_59o:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+LPM_MULT
+# storage
+db|Lab5-1.(50).cnf
+db|Lab5-1.(50).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
+6ec8d746e6da2f4aae33fe9d4e4dfb1
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTHA
+27
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHB
+6
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHP
+33
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHR
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_WIDTHS
+1
+PARAMETER_SIGNED_DEC
+USR
+LPM_REPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LATENCY
+0
+PARAMETER_UNKNOWN
+DEF
+INPUT_A_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+USE_EAB
+OFF
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+APEX20K_TECHNOLOGY_MAPPER
+LUT
+TECH_MAPPER_APEX20K
+USR
+DEDICATED_MULTIPLIER_CIRCUITRY
+AUTO
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+mult_69o
+PARAMETER_UNKNOWN
+USR
+INPUT_A_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+USE_AHDL_IMPLEMENTATION
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT32
+-1
+3
+RESULT31
+-1
+3
+RESULT30
+-1
+3
+RESULT3
+-1
+3
+RESULT29
+-1
+3
+RESULT28
+-1
+3
+RESULT27
+-1
+3
+RESULT26
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+DATAA9
+-1
+3
+DATAA8
+-1
+3
+DATAA7
+-1
+3
+DATAA6
+-1
+3
+DATAA5
+-1
+3
+DATAA4
+-1
+3
+DATAA3
+-1
+3
+DATAA26
+-1
+3
+DATAA25
+-1
+3
+DATAA24
+-1
+3
+DATAA23
+-1
+3
+DATAA22
+-1
+3
+DATAA21
+-1
+3
+DATAA20
+-1
+3
+DATAA2
+-1
+3
+DATAA19
+-1
+3
+DATAA18
+-1
+3
+DATAA17
+-1
+3
+DATAA16
+-1
+3
+DATAA15
+-1
+3
+DATAA14
+-1
+3
+DATAA13
+-1
+3
+DATAA12
+-1
+3
+DATAA11
+-1
+3
+DATAA10
+-1
+3
+DATAA1
+-1
+3
+DATAA0
+-1
+3
+DATAB1
+-1
+1
+DATAB0
+-1
+1
+DATAB5
+-1
+2
+DATAB4
+-1
+2
+DATAB3
+-1
+2
+DATAB2
+-1
+2
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult
+}
+# macro_sequence
+
+# end
+# entity
+mult_69o
+# storage
+db|Lab5-1.(51).cnf
+db|Lab5-1.(51).cnf
+# case_insensitive
+# source_file
+db|mult_69o.tdf
+4742a4a8c1623b44e9232429eeab6c8
+7
+# used_port {
+result9
+-1
+3
+result8
+-1
+3
+result7
+-1
+3
+result6
+-1
+3
+result5
+-1
+3
+result4
+-1
+3
+result32
+-1
+3
+result31
+-1
+3
+result30
+-1
+3
+result3
+-1
+3
+result29
+-1
+3
+result28
+-1
+3
+result27
+-1
+3
+result26
+-1
+3
+result25
+-1
+3
+result24
+-1
+3
+result23
+-1
+3
+result22
+-1
+3
+result21
+-1
+3
+result20
+-1
+3
+result2
+-1
+3
+result19
+-1
+3
+result18
+-1
+3
+result17
+-1
+3
+result16
+-1
+3
+result15
+-1
+3
+result14
+-1
+3
+result13
+-1
+3
+result12
+-1
+3
+result11
+-1
+3
+result10
+-1
+3
+result1
+-1
+3
+result0
+-1
+3
+datab5
+-1
+3
+datab4
+-1
+3
+datab3
+-1
+3
+datab2
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa9
+-1
+3
+dataa8
+-1
+3
+dataa7
+-1
+3
+dataa6
+-1
+3
+dataa5
+-1
+3
+dataa4
+-1
+3
+dataa3
+-1
+3
+dataa26
+-1
+3
+dataa25
+-1
+3
+dataa24
+-1
+3
+dataa23
+-1
+3
+dataa22
+-1
+3
+dataa21
+-1
+3
+dataa20
+-1
+3
+dataa2
+-1
+3
+dataa19
+-1
+3
+dataa18
+-1
+3
+dataa17
+-1
+3
+dataa16
+-1
+3
+dataa15
+-1
+3
+dataa14
+-1
+3
+dataa13
+-1
+3
+dataa12
+-1
+3
+dataa11
+-1
+3
+dataa10
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:minuteMult|mult_69o:auto_generated
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult|mult_69o:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+LPM_MULT
+# storage
+db|Lab5-1.(52).cnf
+db|Lab5-1.(52).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_mult.tdf
+6ec8d746e6da2f4aae33fe9d4e4dfb1
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+LPM_WIDTHA
+27
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHB
+6
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHP
+33
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHR
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_WIDTHS
+1
+PARAMETER_SIGNED_DEC
+USR
+LPM_REPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_SIGNED_DEC
+USR
+LATENCY
+0
+PARAMETER_UNKNOWN
+DEF
+INPUT_A_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_IS_CONSTANT
+NO
+PARAMETER_UNKNOWN
+DEF
+USE_EAB
+OFF
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+APEX20K_TECHNOLOGY_MAPPER
+LUT
+TECH_MAPPER_APEX20K
+USR
+DEDICATED_MULTIPLIER_CIRCUITRY
+AUTO
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
+0
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+mult_69o
+PARAMETER_UNKNOWN
+USR
+INPUT_A_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+INPUT_B_FIXED_VALUE
+Bx
+PARAMETER_UNKNOWN
+DEF
+USE_AHDL_IMPLEMENTATION
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+RESULT32
+-1
+3
+RESULT31
+-1
+3
+RESULT30
+-1
+3
+RESULT29
+-1
+3
+RESULT28
+-1
+3
+RESULT27
+-1
+3
+DATAA9
+-1
+3
+DATAA8
+-1
+3
+DATAA7
+-1
+3
+DATAA6
+-1
+3
+DATAA5
+-1
+3
+DATAA4
+-1
+3
+DATAA3
+-1
+3
+DATAA26
+-1
+3
+DATAA25
+-1
+3
+DATAA24
+-1
+3
+DATAA23
+-1
+3
+DATAA22
+-1
+3
+DATAA21
+-1
+3
+DATAA20
+-1
+3
+DATAA2
+-1
+3
+DATAA19
+-1
+3
+DATAA18
+-1
+3
+DATAA17
+-1
+3
+DATAA16
+-1
+3
+DATAA15
+-1
+3
+DATAA14
+-1
+3
+DATAA13
+-1
+3
+DATAA12
+-1
+3
+DATAA11
+-1
+3
+DATAA10
+-1
+3
+DATAA1
+-1
+3
+DATAA0
+-1
+3
+DATAB1
+-1
+1
+DATAB0
+-1
+1
+DATAB5
+-1
+2
+DATAB4
+-1
+2
+DATAB3
+-1
+2
+DATAB2
+-1
+2
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_mars_converter:converter|lpm_mult:secondMult
+}
+# macro_sequence
+
+# end
+# entity
+g31_short_timer
+# storage
+db|Lab5-1.(20).cnf
+db|Lab5-1.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+g31_short_timer.vhd
+24fd1e37c73f74a7ae60e099c48b7042
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_short_timer:timer
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
 LPM_CONSTANT
 # storage
-db|Lab5-1.(30).cnf
-db|Lab5-1.(30).cnf
+db|Lab5-1.(53).cnf
+db|Lab5-1.(53).cnf
 # case_insensitive
 # source_file
 |altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
@@ -4290,7 +7346,7 @@ LPM_WIDTH
 PARAMETER_SIGNED_DEC
 USR
 LPM_CVALUE
-1
+4
 PARAMETER_SIGNED_DEC
 USR
 ENABLE_RUNTIME_MOD
@@ -4298,7 +7354,7 @@ NO
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-lpm_constant_kh4
+lpm_constant_oh4
 PARAMETER_UNKNOWN
 USR
 }
@@ -4384,585 +7440,121 @@ RESULT0
 }
 # hierarchies {
 g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_short_timer:timer|lpm_constant:const
+}
+# macro_sequence
+
+# end
+# entity
+LPM_CONSTANT
+# storage
+db|Lab5-1.(54).cnf
+db|Lab5-1.(54).cnf
+# case_insensitive
+# source_file
+|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
+20a173884457e9df4e4d620451461d
+7
+# user_parameter {
+LPM_WIDTH
+26
+PARAMETER_SIGNED_DEC
+USR
+LPM_CVALUE
+5
+PARAMETER_SIGNED_DEC
+USR
+ENABLE_RUNTIME_MOD
+NO
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_constant_qh4
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+RESULT9
+-1
+3
+RESULT8
+-1
+3
+RESULT7
+-1
+3
+RESULT6
+-1
+3
+RESULT5
+-1
+3
+RESULT4
+-1
+3
+RESULT3
+-1
+3
+RESULT25
+-1
+3
+RESULT24
+-1
+3
+RESULT23
+-1
+3
+RESULT22
+-1
+3
+RESULT21
+-1
+3
+RESULT20
+-1
+3
+RESULT2
+-1
+3
+RESULT19
+-1
+3
+RESULT18
+-1
+3
+RESULT17
+-1
+3
+RESULT16
+-1
+3
+RESULT15
+-1
+3
+RESULT14
+-1
+3
+RESULT13
+-1
+3
+RESULT12
+-1
+3
+RESULT11
+-1
+3
+RESULT10
+-1
+3
+RESULT1
+-1
+3
+RESULT0
+-1
+3
+}
+# hierarchies {
 g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_short_timer:timer|lpm_constant:const2
 }
-# macro_sequence
-
-# end
-# entity
-g31_UTC_to_MTC
-# storage
-db|Lab5-1.(31).cnf
-db|Lab5-1.(31).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|users|andreas|workspace|github|dsdlabs|lab4.3|g31_utc_to_mtc.vhd
-3fa84ae590559fa32ac3390a21f6e51
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_time_zone
-# storage
-db|Lab5-1.(32).cnf
-db|Lab5-1.(32).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_time_zone.vhd
-20d447c8f0da7fdc6fd7db97a2be417
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_user_interface
-# storage
-db|Lab5-1.(0).cnf
-db|Lab5-1.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_user_interface.vhd
-42362bd99efd20cf678df1dac6d6fa85
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-|
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_basic_timer
-# storage
-db|Lab5-1.(1).cnf
-db|Lab5-1.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-<<<<<<< HEAD
-|users|andreas|workspace|github|dsdlabs|lab4.1|g31_basic_timer.vhd
-27e8184abe78cd737375b448e89bdc6
-=======
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_basic_timer.vhd
-1cf1e41899fd8cce521959f3fb5974e8
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-g31_basic_timer:timer
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-LPM_CONSTANT
-# storage
-<<<<<<< HEAD
-db|Lab5-1.(9).cnf
-db|Lab5-1.(9).cnf
-=======
-db|Lab5-1.(31).cnf
-db|Lab5-1.(31).cnf
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
-20a173884457e9df4e4d620451461d
-7
-# user_parameter {
-LPM_WIDTH
-26
-PARAMETER_SIGNED_DEC
-USR
-LPM_CVALUE
-<<<<<<< HEAD
-49
-=======
-51374562
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-PARAMETER_SIGNED_DEC
-USR
-ENABLE_RUNTIME_MOD
-NO
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-<<<<<<< HEAD
-lpm_constant_nh4
-=======
-lpm_constant_1n4
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-RESULT9
--1
-3
-RESULT8
--1
-3
-RESULT7
--1
-3
-RESULT6
--1
-3
-RESULT5
--1
-3
-RESULT4
--1
-3
-RESULT3
--1
-3
-RESULT25
--1
-3
-RESULT24
--1
-3
-RESULT23
--1
-3
-RESULT22
--1
-3
-RESULT21
--1
-3
-RESULT20
--1
-3
-RESULT2
--1
-3
-RESULT19
--1
-3
-RESULT18
--1
-3
-RESULT17
--1
-3
-RESULT16
--1
-3
-RESULT15
--1
-3
-RESULT14
--1
-3
-RESULT13
--1
-3
-RESULT12
--1
-3
-RESULT11
--1
-3
-RESULT10
--1
-3
-RESULT1
--1
-3
-RESULT0
--1
-3
-}
-# hierarchies {
-<<<<<<< HEAD
-g31_basic_timer:timer|lpm_constant:const
-=======
-g31_basic_timer:timer|lpm_constant:const2
-g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_basic_timer:timer|lpm_constant:const2
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-}
-# macro_sequence
-
-# end
-# entity
-<<<<<<< HEAD
-LPM_CONSTANT
-# storage
-db|Lab5-1.(33).cnf
-db|Lab5-1.(33).cnf
-# case_insensitive
-# source_file
-|altera|91sp2|quartus|libraries|megafunctions|lpm_constant.tdf
-20a173884457e9df4e4d620451461d
-7
-# user_parameter {
-LPM_WIDTH
-26
-PARAMETER_SIGNED_DEC
-USR
-LPM_CVALUE
-51
-PARAMETER_SIGNED_DEC
-USR
-ENABLE_RUNTIME_MOD
-NO
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-lpm_constant_ph4
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-RESULT9
--1
-3
-RESULT8
--1
-3
-RESULT7
--1
-3
-RESULT6
--1
-3
-RESULT5
--1
-3
-RESULT4
--1
-3
-RESULT3
--1
-3
-RESULT25
--1
-3
-RESULT24
--1
-3
-RESULT23
--1
-3
-RESULT22
--1
-3
-RESULT21
--1
-3
-RESULT20
--1
-3
-RESULT2
--1
-3
-RESULT19
--1
-3
-RESULT18
--1
-3
-RESULT17
--1
-3
-RESULT16
--1
-3
-RESULT15
--1
-3
-RESULT14
--1
-3
-RESULT13
--1
-3
-RESULT12
--1
-3
-RESULT11
--1
-3
-RESULT10
--1
-3
-RESULT1
--1
-3
-RESULT0
--1
-3
-}
-# hierarchies {
-g31_basic_timer:timer|lpm_constant:const2
-}
-# macro_sequence
-
-# end
-# entity
-g31_synchronizer
-# storage
-db|Lab5-1.(34).cnf
-db|Lab5-1.(34).cnf
-=======
-g31_binary_to_seven_segment
-# storage
-db|Lab5-1.(38).cnf
-db|Lab5-1.(38).cnf
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-<<<<<<< HEAD
-|users|andreas|workspace|github|dsdlabs|lab4.3|g31_synchronizer.vhd
-e0f1e694725eceff95bbc1df47266d9a
-=======
-|altera|dsdlabs-master|dsdlabs-master|lab4.1|g31_binary_to_seven_segment.vhd
-e261c5b9077c4c1213148865fd7785
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(bin)
-11 downto 0
-PARAMETER_STRING
-USR
-<<<<<<< HEAD
- constraint(desired_months)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(desired_days)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(desired_hours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(desired_minutes)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(desired_seconds)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(day_count)
-12 downto 0
-PARAMETER_STRING
-USR
- constraint(second_count)
-16 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_short_timer
-# storage
-db|Lab5-1.(35).cnf
-db|Lab5-1.(35).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_short_timer.vhd
-763ccfd03e129cafcfb8063a6431549
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_short_timer:timer
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
-g31_time_zone_converter
-# storage
-db|Lab5-1.(36).cnf
-db|Lab5-1.(36).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-g31_time_zone_converter.vhd
-0e25061b38e8bff7ccc88733a9493
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(earth_time_zone)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(mars_time_zone)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_local_days)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_local_hours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_utc_days)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_utc_hours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(mars_mtc_hours)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_utc_days_out)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(earth_utc_hours_out)
-4 downto 0
-=======
- constraint(segments1)
-6 downto 0
->>>>>>> e013eda973ede30d19ca260ce0e42c23a4d3cd00
-PARAMETER_STRING
-USR
- constraint(segments2)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(segments3)
-6 downto 0
-PARAMETER_STRING
-USR
- constraint(segments4)
-6 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-g31_binary_to_seven_segment:display
-}
-# lmf
-|altera|91sp2|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
 # macro_sequence
 
 # end

@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 9.422 ns
-From           : desired_hours[2]
-To             : g31_synchronizer:sync|g31_basic_timer:timer|lpm_counter:counter|cntr_cfl:auto_generated|safe_q[9]
+Actual Time    : 10.254 ns
+From           : desired_years[2]
+To             : g31_synchronizer:sync|Nday[12]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 55.466 ns
+Actual Time    : 65.198 ns
 From           : g31_synchronizer:sync|Nsec[0]
-To             : MSeconds[2]
+To             : MSeconds[4]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -3.146 ns
-From           : desired_years[0]
-To             : g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[3]
+Actual Time    : -1.187 ns
+From           : desired_months[3]
+To             : g31_synchronizer:sync|Nday[0]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 160.57 MHz ( period = 6.228 ns )
-From           : g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[5]
-To             : g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Day_Block:day_block|days_out[4]
+Actual Time    : 139.08 MHz ( period = 7.190 ns )
+From           : g31_synchronizer:sync|g31_YMD_Counter:YMDCounter|g31_Year_Block:year_block|years_out[0]
+To             : g31_synchronizer:sync|Nday[12]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0

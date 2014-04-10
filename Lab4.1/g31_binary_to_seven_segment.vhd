@@ -54,7 +54,7 @@ begin
 	)
 	PORT MAP(
 		numer => std_logic_vector(bin),
-		denom => "1100100",
+		denom => "1100100", -- divide by 100
 		quotient => upper,
 		remain => lower
 	);

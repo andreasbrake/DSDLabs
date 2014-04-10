@@ -392,15 +392,11 @@ begin
 	begin
 		if clock = '1' and clock'event then
 			if stateD = '1' then 
-				if sync_en <= '0' and load_sync <= '0' then
-					load_sync <= '1';
-				else
-					load_sync <= '0';
-				end if;
-				
-				sync_en <= '1';
-			else
+				load_sync <= '1';				
 				sync_en <= '0';
+			else
+				load_sync <= '0';
+				sync_en <= '1';
 			end if;
 		end if;
 	end process;
@@ -485,6 +481,7 @@ begin
 		clock => clock,
 		dst	=> DST_enable,
 		
+		-- Inputs
 		earth_time_zone => ETimeZone,
 		mars_time_zone => MTimeZone,
 		
@@ -496,6 +493,7 @@ begin
 		
 		mars_MTC_hours => Mhours_mtc,
 		
+		-- Outputs
 		earth_utc_days_out => day_utc_set,
 		earth_utc_hours_out	=> hour_utc_set,
 

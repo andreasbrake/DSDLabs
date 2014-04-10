@@ -5,15 +5,15 @@ use ieee.numeric_std.all;
 library lpm;
 use lpm.lpm_components.all;
 
-entity g31_basic_timer is
+entity g31_short_timer is
 	PORT(	reset	: in std_logic;
 			clock	: in std_logic;
 			enable	: in std_logic;
 			EPULSE	: out std_logic;
 			MPULSE	: out std_logic);
-end g31_basic_timer;
+end g31_short_timer;
 
-architecture a of g31_basic_timer is
+architecture a of g31_short_timer is
 	signal constSig1: std_logic_vector(25 downto 0);
 	signal countOut1: std_logic_vector(25 downto 0);
 	signal orOut1	: std_logic;
@@ -27,7 +27,7 @@ begin
 	const: lpm_constant
 	GENERIC MAP (
 		LPM_WIDTH => 26,
-		LPM_CVALUE => 1--49999999
+		LPM_CVALUE => --49999999
 	)
 	PORT MAP (
 		result => constSig1
@@ -56,7 +56,7 @@ begin
 	const2: lpm_constant
 	GENERIC MAP (
 		LPM_WIDTH => 26,
-		LPM_CVALUE => 1--51374562
+		LPM_CVALUE => 5--51374562
 	)
 	PORT MAP (
 		result => constSig2

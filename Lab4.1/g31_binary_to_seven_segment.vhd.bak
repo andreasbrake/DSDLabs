@@ -28,7 +28,7 @@ Architecture behaviour of g31_binary_to_seven_segment is
 	signal rb3: std_logic;
 	signal rb4: std_logic;
 	
-	signal lower: std_logic_vector(11 downto 0);
+	signal lower: std_logic_vector(6 downto 0);
 	signal upper: std_logic_vector(11 downto 0);
 	
 	component g31_binary_to_BCD
@@ -62,7 +62,7 @@ begin
 	bin_BCD_1 : g31_binary_to_BCD
 	PORT MAP(
 		clock => clock,
-		bin => unsigned(lower(6 downto 0)),
+		bin => unsigned(lower),
 		BCD => BCD1
 	);
 	
