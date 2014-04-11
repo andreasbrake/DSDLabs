@@ -22,7 +22,8 @@ entity g31_UTC_to_MTC is
 		MMinutes:			out std_logic_vector(5 downto 0);
 		MSeconds:			out std_logic_vector(5 downto 0);
 		dayCountOut:		out std_logic_vector(12 downto 0);
-		secCountOut:		out std_logic_vector(16 downto 0)
+		secCountOut:		out std_logic_vector(16 downto 0);
+		leaps:				out std_logic_vector(5 downto 0)
 	);
 end g31_UTC_to_MTC;
 
@@ -41,7 +42,7 @@ architecture a of g31_UTC_to_MTC is
 			desired_seconds:	in std_logic_vector(5 downto 0);
 			day_count:			out std_logic_vector(12 downto 0);
 			second_count:		out std_logic_vector(16 downto 0);
-			done_out:			out std_logic;
+			out_leaps:			out std_logic_vector(5 downto 0)
 		);
 	end component;
 	
@@ -67,9 +68,26 @@ architecture a of g31_UTC_to_MTC is
 	signal dateCount:	std_logic_vector(29 downto 0);
 	signal done:		std_logic;
 	
+	signal dayCount2: 	std_logic_vector(12 downto 0);
+	signal secCount2: 	std_logic_vector(16 downto 0);
+	signal dateCount2:	std_logic_vector(29 downto 0);
 begin
-	dayCountOut <= dayCount;
+	dayCountOut <= dayCount2;
 	secCountOut <= secCount;
+	
+	reset_process: process(reset, dayCount2, secCount2, dateCount2)
+	begin
+		if reset = '1' then
+			dayCount <= "0000000000000";
+			secCount <= "00000000000000000";
+			dateCount <= "000000000000000000000000000000";
+		else
+			dayCount <= dayCount2;
+			secCount <= secCount2;
+			dateCount <= dateCount2;
+		end if;	
+	end process;
+	
 	sync: g31_synchronizer
 	PORT MAP(
 		clock => clock,
@@ -82,15 +100,16 @@ begin
 		desired_hours => desired_hours,
 		desired_minutes => desired_minutes,
 		desired_seconds => desired_seconds,
-		day_count => dayCount,
-		second_count => secCount
+		day_count => dayCount2,
+		second_count => secCount2,
+		out_leaps => leaps
 	);
 	
 	compressor: g31_date_compressor
 	PORT MAP(
 		NDays => dayCount,
 		NSecs => secCount,
-		NDate => dateCount
+		NDate => dateCount2
 	);
 	
 	converter: g31_mars_converter

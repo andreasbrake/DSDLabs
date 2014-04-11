@@ -1,0 +1,33 @@
+--lpm_divide DEVICE_FAMILY="Cyclone II" LPM_DREPRESENTATION="UNSIGNED" LPM_NREPRESENTATION="UNSIGNED" LPM_PIPELINE=0 LPM_WIDTHD=3 LPM_WIDTHN=12 OPTIMIZE_FOR_SPEED=5 denom numer CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48 IGNORE_CARRY_BUFFERS="OFF"
+--VERSION_BEGIN 9.1SP2 cbx_cycloneii 2010:03:24:20:38:24:SJ cbx_lpm_abs 2010:03:24:20:38:24:SJ cbx_lpm_add_sub 2010:03:24:20:38:24:SJ cbx_lpm_divide 2010:03:24:20:38:24:SJ cbx_mgl 2010:03:24:21:00:10:SJ cbx_stratix 2010:03:24:20:38:24:SJ cbx_stratixii 2010:03:24:20:38:24:SJ cbx_util_mgl 2010:03:24:20:38:24:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2010 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = 
+SUBDESIGN lpm_divide_ttm
+( 
+	denom[2..0]	:	input;
+	numer[11..0]	:	input;
+) 
+
+BEGIN 
+	ASSERT (0) 
+	REPORT "In lpm_divide megafunction, at least one of output port quotient or remain must be used"
+	SEVERITY ERROR;
+END;
+--ERROR FILE

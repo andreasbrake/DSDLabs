@@ -52,22 +52,22 @@ architecture behaviour of g31_time_zone_converter is
 		
 		mars_tz_hours_out 	<= mars_tz_hours_out_internal(4 downto 0);
 		
-		earth_local_to_utc: process(earth_local_hours, dst_vector, earth_time_zone, earth_local_days)
+		earth_local_to_utc: process(earth_local_hours, earth_time_zone, earth_local_days)
 		begin
 			if earth_time_zone > 11 then
-				if earth_local_hours < ((earth_time_zone - 12) - dst_vector) then
-					earth_utc_hours_out_internal	<= ('0' & earth_local_hours) - (earth_time_zone - 12) - dst_vector + 24; -- Roll over the hours to the previous day
+				if earth_local_hours < (earth_time_zone - 12) then
+					earth_utc_hours_out_internal	<= ('0' & earth_local_hours) - (earth_time_zone - 12) + 24; -- Roll over the hours to the previous day
 					earth_utc_days_out_internal		<= ('0' & earth_local_days) - 1; -- plus a day
 				else
-					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) - (earth_time_zone - 12) - dst_vector; -- Less the time shift amount
+					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) - (earth_time_zone - 12); -- Less the time shift amount
 					earth_utc_days_out_internal 	<= ('0' & earth_local_days); -- same day
 				end if;
 			else
-				if (earth_local_hours + (12 - earth_time_zone) - dst_vector) > 23 then
-					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) + (12 - earth_time_zone) - dst_vector - 24; -- Roll over the hours to the previous day
+				if (('0' & earth_local_hours) + (12 - earth_time_zone) - dst_vector) > 23 then
+					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) + (12 - earth_time_zone) - 24; -- Roll over the hours to the previous day
 					earth_utc_days_out_internal 	<= ('0' & earth_local_days) + 1; -- plus a day
 				else
-					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) + (12 - earth_time_zone) - dst_vector; -- Less the time shift amount
+					earth_utc_hours_out_internal 	<= ('0' & earth_local_hours) + (12 - earth_time_zone); -- Less the time shift amount
 					earth_utc_days_out_internal 	<= ('0' & earth_local_days); -- same day
 				end if;						
 			end if;
@@ -76,7 +76,7 @@ architecture behaviour of g31_time_zone_converter is
 		earth_utc_to_tz: process(earth_utc_hours, dst_vector, earth_time_zone, earth_utc_days)
 		begin 
 			if earth_time_zone > 11 then
-				if (earth_utc_hours + (earth_time_zone - 12) + dst_vector) > 23 then
+				if (('0' & earth_utc_hours) + (earth_time_zone - 12) + dst_vector) > 23 then
 					earth_tz_hours_out_internal <= ('0' & earth_utc_hours) + (earth_time_zone - 12) + dst_vector - 24; -- Roll over upwards
 					earth_tz_days_out_internal 	<= ('0' & earth_utc_days) + 1; -- plus a day
 				else
@@ -97,7 +97,7 @@ architecture behaviour of g31_time_zone_converter is
 		mars_mtc_to_tz: process(mars_mtc_hours, mars_time_zone)
 		begin
 			if mars_time_zone > 11 then
-				if (mars_mtc_hours + mars_time_zone - 12) > 23 then
+				if (('0' & mars_mtc_hours) + mars_time_zone - 12) > 23 then
 					mars_tz_hours_out_internal 	<= ('0' & mars_mtc_hours) + (mars_time_zone - 12) - 24; -- Roll over upwards
 				else
 					mars_tz_hours_out_internal 	<= ('0' & mars_mtc_hours) + (mars_time_zone - 12); -- Add time shift

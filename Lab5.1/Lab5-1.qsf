@@ -99,6 +99,7 @@ set_location_assignment PIN_V21 -to leds[3]
 set_location_assignment PIN_W22 -to leds[4]
 set_location_assignment PIN_W21 -to leds[5]
 set_location_assignment PIN_R20 -to DST_value
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../Lab4.3/g31_synchronizer_wave.vwf
 set_global_assignment -name MIF_FILE ../Lab2.3/crc_rom.mif
 set_global_assignment -name VHDL_FILE ../Lab4.1/g31_binary_to_BCD.vhd
 set_global_assignment -name VHDL_FILE ../Lab1.2/g31_Seconds_to_Days.vhd
@@ -127,9 +128,10 @@ set_global_assignment -name VHDL_FILE g31_time_zone_converter.vhd
 set_global_assignment -name VHDL_FILE g31_short_timer.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE g31_binary_to_seven_segment_wave.vwf
 set_global_assignment -name MIF_FILE ../Lab4.1/crc_rom.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE g31_YMT_wave.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE g31_user_interface_wave.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE g31_user_interface_wave.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,6 +1,6 @@
 Assembler report for Lab5-1
-Thu Apr 10 13:29:43 2014
-Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+Thu Apr 10 21:45:41 2014
+Quartus II 64-Bit Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.sof
-  6. Assembler Device Options: C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.pof
+  5. Assembler Device Options: C:/altera/g31/Lab5.1/Lab5-1.sof
+  6. Assembler Device Options: C:/altera/g31/Lab5.1/Lab5-1.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Apr 10 13:29:43 2014 ;
+; Assembler Status      ; Successful - Thu Apr 10 21:45:41 2014 ;
 ; Revision Name         ; Lab5-1                                ;
 ; Top-level Entity Name ; g31_user_interface                    ;
 ; Family                ; Cyclone II                            ;
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------+
-; Assembler Generated Files                                   ;
-+-------------------------------------------------------------+
-; File Name                                                   ;
-+-------------------------------------------------------------+
-; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.sof ;
-; C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.pof ;
-+-------------------------------------------------------------+
++---------------------------------+
+; Assembler Generated Files       ;
++---------------------------------+
+; File Name                       ;
++---------------------------------+
+; C:/altera/g31/Lab5.1/Lab5-1.sof ;
+; C:/altera/g31/Lab5.1/Lab5-1.pof ;
++---------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.sof ;
-+----------------+----------------------------------------------------------------------+
-; Option         ; Setting                                                              ;
-+----------------+----------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                         ;
-; JTAG usercode  ; 0xFFFFFFFF                                                           ;
-; Checksum       ; 0x0027A06C                                                           ;
-+----------------+----------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Device Options: C:/altera/g31/Lab5.1/Lab5-1.sof ;
++----------------+------------------------------------------+
+; Option         ; Setting                                  ;
++----------------+------------------------------------------+
+; Device         ; EP2C20F484C7                             ;
+; JTAG usercode  ; 0xFFFFFFFF                               ;
+; Checksum       ; 0x00292B8D                               ;
++----------------+------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Andreas/workspace/GitHub/DSDLabs/Lab5.1/Lab5-1.pof ;
-+--------------------+------------------------------------------------------------------+
-; Option             ; Setting                                                          ;
-+--------------------+------------------------------------------------------------------+
-; Device             ; EPCS16                                                           ;
-; JTAG usercode      ; 0x00000000                                                       ;
-; Checksum           ; 0x1DC65D2C                                                       ;
-; Compression Ratio  ; 3                                                                ;
-+--------------------+------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Device Options: C:/altera/g31/Lab5.1/Lab5-1.pof ;
++--------------------+--------------------------------------+
+; Option             ; Setting                              ;
++--------------------+--------------------------------------+
+; Device             ; EPCS16                               ;
+; JTAG usercode      ; 0x00000000                           ;
+; Checksum           ; 0x1DC3962C                           ;
+; Compression Ratio  ; 3                                    ;
++--------------------+--------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II Assembler
-    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Apr 10 13:29:42 2014
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+    Info: Processing started: Thu Apr 10 21:45:40 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Lab5-1 -c Lab5-1
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
-Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 221 megabytes
-    Info: Processing ended: Thu Apr 10 13:29:43 2014
-    Info: Elapsed time: 00:00:01
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 274 megabytes
+    Info: Processing ended: Thu Apr 10 21:45:42 2014
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

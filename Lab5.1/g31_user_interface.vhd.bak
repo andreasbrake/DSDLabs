@@ -31,6 +31,7 @@ entity g31_user_interface is
 		months_out:			out std_logic_vector(3 downto 0);
 		days_utc_out:		out std_logic_vector(4 downto 0);
 		days_tz_out:		out std_logic_vector(4 downto 0);
+		hours_set_out:		out std_logic_vector(4 downto 0);
 		hours_utc_out:		out std_logic_vector(4 downto 0);
 		hours_tz_out:		out std_logic_vector(4 downto 0);
 		minutes_out:		out std_logic_vector(5 downto 0);
@@ -39,7 +40,10 @@ entity g31_user_interface is
 		Mminutes_out:		out std_logic_vector(5 downto 0);
 		Mseconds_out:		out std_logic_vector(5 downto 0);
 		load_sync_out:		out std_logic;
-		
+		load_value_out:		out std_logic_vector(7 downto 0);
+		dayOut:				out std_logic_vector(12 downto 0);
+		secOut:				out std_logic_vector(16 downto 0);
+			
 		state:				out std_logic_vector(3 downto 0)
 	);
 
@@ -100,7 +104,9 @@ architecture behaviour of g31_user_interface is
 			desired_seconds:	in std_logic_vector(5 downto 0);
 			MHours:				out std_logic_vector(4 downto 0);
 			MMinutes:			out std_logic_vector(5 downto 0);
-			MSeconds:			out std_logic_vector(5 downto 0)
+			MSeconds:			out std_logic_vector(5 downto 0);
+			dayCountOut:		out std_logic_vector(12 downto 0);
+			secCountOut:		out std_logic_vector(16 downto 0)
 		);
 	end component;
 	
@@ -145,8 +151,7 @@ architecture behaviour of g31_user_interface is
 	signal count_en:	std_logic;
 	signal sync_en:		std_logic;
 	signal DST_enable:	std_logic;
-	signal DST_en1:		std_logic;
-	signal DST_en2:		std_logic;
+	signal DST_enable2:	std_logic;
 	
 	signal TorD:		std_logic;
 	signal EorM:		std_logic;
@@ -154,6 +159,7 @@ architecture behaviour of g31_user_interface is
 	signal load_EDT:	std_logic;
 	signal load_MDT:	std_logic;
 	signal load_sync:	std_logic;
+	signal sync_reset:	std_logic;
 	
 	-- Set signals
 	signal year_set: 		std_logic_vector(11 downto 0);
@@ -205,16 +211,18 @@ begin
 	months_out <= months;
 	days_utc_out <= days_utc;
 	days_tz_out <= days_tz;
+	hours_set_out <= hour_local_set;
 	hours_utc_out <= hours_utc;
 	hours_tz_out <= hours_tz;
 	minutes_out <= minutes;
 	seconds_out <= seconds;
-	Mhours_out <= Mhours_mtc;
-	Mminutes_out <= Mminutes;
-	Mseconds_out <= Mseconds;
+	Mhours_out <= Mhours_set;
+	Mminutes_out <= Mminutes_set;
+	Mseconds_out <= Mseconds_set;
 	state <= stateA & stateB & stateC & stateD;
-	dst_value <= dst_enable;
+	dst_value <= dst_enable or dst_enable2;
 	load_sync_out <= load_sync;
+	load_value_out <= load_value;
 	
 	-- State determiner -- 
 	state_values: process(stateSelectors, sync_en, clock)
@@ -249,8 +257,8 @@ begin
 	-- 0) count enable
 	-- 1) view time or date
 	-- 2) view earth or mars
-	-- 3) set DST
-	-- 4-6) null
+	-- 3-5) null
+	-- 6) set DST
 	stateA_process: process(stateA, inputs, clock)
 	begin
 		if clock = '1' and clock'event then
@@ -258,7 +266,7 @@ begin
 				count_en <= inputs(0);
 				TorD <= inputs(1);
 				EorM <= inputs(2);
-				DST_enable <= inputs(3);
+				DST_enable <= inputs(6);
 				if TorD = '0' then
 					if EorM = '0' then
 						if daySecond = '0' then
@@ -313,23 +321,31 @@ begin
 		if clock = '1' and clock'event then
 			if stateB = '1' then
 				load_EDT <= '1';
+				DST_enable2 <= inputs(6);
 				
 				-- set load value
 				if inputs(4) = '0' then
 					load_value(3 downto 0) <= inputs(3 downto 0);
 				else
 					load_value(7 downto 4) <= inputs(3 downto 0);
+					load_value(3 downto 0) <= "0000";
 				end if;
 				
 				-- set default set values (i.e. current values)
 
-				second_set		<= seconds;
-				minute_set		<= minutes;
-				hour_local_set	<= hours_tz;
-				day_local_set 	<= days_tz;
-				month_set 		<= months;
-				year_set 		<= years;				
-				
+				if second_set = "000000" then second_set <= seconds; 
+				end if;
+				if minute_set = "000000" then minute_set <= minutes;
+				end if;
+				if hour_local_set = "00000" then hour_local_set <= hours_tz;
+				end if;
+				if day_local_set = "00000" then day_local_set <= days_tz;
+				end if;
+				if month_set = "0000" then month_set <= months;
+				end if;
+				if year_set = "000000000000" then year_set <= years;
+				end if;
+
 				if daySecond = '1' and monthMinute = '1' and yearHour = '1' then
 					leds <= "000000";
 				end if;
@@ -353,7 +369,12 @@ begin
 					end if;
 				elsif yearHour = '0' then
 					if inputs(5) = '0' then 
-						hour_local_set <= load_value(4 downto 0);
+						if DST_enable2 = '0' then
+							hour_local_set <= load_value(4 downto 0);
+						else
+							hour_local_set <= load_value(4 downto 0) - 1;
+						end if;
+						
 						leds(2) <= '1';
 					else 
 						year_set <= ("00000" & load_value(6 downto 0));
@@ -362,6 +383,12 @@ begin
 				end if;
 			else
 				load_EDT <= '0';
+				second_set		<= "000000";
+				minute_set		<= "000000";
+				hour_local_set	<= "00000";
+				day_local_set 	<= "00000";
+				month_set 		<= "0000";
+				year_set 		<= "000000000000";
 			end if;
 		end if;
 	end process;
@@ -394,8 +421,11 @@ begin
 			if stateD = '1' then 
 				load_sync <= '1';				
 				sync_en <= '0';
+				sync_reset <= '1';
 			else
 				load_sync <= '0';
+				sync_en <= '1';
+				sync_reset <= '0';
 			end if;
 		end if;
 	end process;
@@ -461,7 +491,7 @@ begin
 	synchronizer: g31_UTC_to_MTC
 	PORT MAP(
 		clock => clock,
-		reset => not reset,
+		reset => sync_reset or (not reset),
 		load_enabled => load_sync,
 		count_enabled => sync_en,
 		desired_years => years,
@@ -472,7 +502,9 @@ begin
 		desired_seconds => seconds,
 		MHours => Mhours_set,
 		MMinutes => Mminutes_set,
-		MSeconds => Mseconds_set
+		MSeconds => Mseconds_set,
+		dayCountOut => dayOut,
+		secCountOut => secOut
 	);
 		
 	time_zone_converter: g31_time_zone_converter

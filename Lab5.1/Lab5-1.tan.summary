@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.993 ns
+Actual Time    : 59.121 ns
 From           : reset
-To             : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|g31_HMS_Counter:HMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[2]
+To             : g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[2]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,19 +15,29 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.842 ns
-From           : ETimeZone[0]
-To             : hours_tz_out[4]
+Actual Time    : 62.019 ns
+From           : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|Nsec[3]
+To             : Mseconds_out[4]
 From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 65.924 ns
+From           : reset
+To             : Mseconds_out[4]
+From Clock     : --
 To Clock       : --
 Failed Paths   : 0
 
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.512 ns
-From           : inputs[5]
-To             : second_set[3]
+Actual Time    : 0.553 ns
+From           : inputs[1]
+To             : load_value[1]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 18.94 MHz ( period = 52.798 ns )
-From           : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|Nsec[0]
-To             : g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[5]
+Actual Time    : 18.11 MHz ( period = 55.216 ns )
+From           : g31_UTC_to_MTC:synchronizer|g31_synchronizer:sync|Nsec[3]
+To             : g31_HMS_Counter:MarsHMSCounter|g31_second_counter:secCounter|lpm_counter:secCounter|cntr_77l:auto_generated|safe_q[2]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
